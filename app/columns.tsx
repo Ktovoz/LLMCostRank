@@ -15,12 +15,28 @@ export type LLMModel = {
   features: string[] // 功能列表: prefix_cache, vision, tool_calls, reasoning
 }
 
-// 功能配置
-export const featureConfig: Record<string, { label: string; className: string }> = {
-  prefix_cache: { label: "前缀缓存", className: "bg-blue-500/15 text-blue-600 dark:bg-blue-500/20 dark:text-blue-300" },
-  vision: { label: "视觉", className: "bg-purple-500/15 text-purple-600 dark:bg-purple-500/20 dark:text-purple-300" },
-  tool_calls: { label: "工具调用", className: "bg-emerald-500/15 text-emerald-600 dark:bg-emerald-500/20 dark:text-emerald-300" },
-  reasoning: { label: "推理", className: "bg-amber-500/15 text-amber-600 dark:bg-amber-500/20 dark:text-amber-300" },
+// 功能配置 - 移动端使用更短的标签
+export const featureConfig: Record<string, { label: string; shortLabel: string; className: string }> = {
+  prefix_cache: {
+    label: "前缀缓存",
+    shortLabel: "缓存",
+    className: "bg-blue-500/15 text-blue-600 dark:bg-blue-500/20 dark:text-blue-300"
+  },
+  vision: {
+    label: "视觉",
+    shortLabel: "视觉",
+    className: "bg-purple-500/15 text-purple-600 dark:bg-purple-500/20 dark:text-purple-300"
+  },
+  tool_calls: {
+    label: "工具调用",
+    shortLabel: "工具",
+    className: "bg-emerald-500/15 text-emerald-600 dark:bg-emerald-500/20 dark:text-emerald-300"
+  },
+  reasoning: {
+    label: "推理",
+    shortLabel: "推理",
+    className: "bg-amber-500/15 text-amber-600 dark:bg-amber-500/20 dark:text-amber-300"
+  },
 }
 
 export const columns: ColumnDef<LLMModel>[] = [
@@ -132,9 +148,10 @@ export const columns: ColumnDef<LLMModel>[] = [
             return (
               <span
                 key={feature}
-                className={`px-2 py-0.5 rounded-full text-xs font-medium ${config.className}`}
+                className={`px-1.5 sm:px-2 py-0.5 rounded-full text-xs font-medium ${config.className}`}
               >
-                {config.label}
+                <span className="sm:hidden">{config.shortLabel}</span>
+                <span className="hidden sm:inline">{config.label}</span>
               </span>
             )
           })}

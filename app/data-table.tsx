@@ -38,7 +38,7 @@ import {
   DialogTrigger,
 } from "@/components/ui/dialog"
 import { Toggle } from "@/components/ui/toggle"
-import { ChevronLeft, ChevronRight, Search, SlidersHorizontal, ArrowUpDown } from "lucide-react"
+import { ChevronLeft, ChevronRight, Search, SlidersHorizontal, ArrowUpDown, ChevronsRightLeft } from "lucide-react"
 import { LLMModel, featureConfig } from "./columns"
 
 // 汇率：1 USD = 7.2 CNY
@@ -172,9 +172,10 @@ function createColumns(currency: Currency): ColumnDef<LLMModel>[] {
               return (
                 <span
                   key={feature}
-                  className={`px-2 py-0.5 rounded-full text-xs font-medium ${config.className}`}
+                  className={`px-1.5 sm:px-2 py-0.5 rounded-full text-xs font-medium ${config.className}`}
                 >
-                  {config.label}
+                  <span className="sm:hidden">{config.shortLabel}</span>
+                  <span className="hidden sm:inline">{config.label}</span>
                 </span>
               )
             })}
@@ -206,7 +207,10 @@ export function DataTable<TData, TValue>({
   const { resolvedTheme } = useTheme()
   const [sorting, setSorting] = React.useState<SortingState>(initialSorting)
   const [columnFilters, setColumnFilters] = React.useState<ColumnFiltersState>([])
-  const [columnVisibility, setColumnVisibility] = React.useState<VisibilityState>({})
+  // 移动端默认隐藏编号列
+  const [columnVisibility, setColumnVisibility] = React.useState<VisibilityState>({
+    rowNumber: false, // 默认隐藏编号列
+  })
 
   // 货币状态
   const [currency, setCurrency] = React.useState<Currency>("USD")
@@ -532,6 +536,14 @@ export function DataTable<TData, TValue>({
         </Dialog>
       </div>
     </div>
+
+      {/* 水平滚动提示 */}
+      <div className={`flex items-center justify-center gap-1.5 py-1.5 text-xs sm:hidden ${
+        isDark ? "text-gray-500" : "text-gray-400"
+      }`}>
+        <ChevronsRightLeft className="h-3.5 w-3.5" />
+        <span>左右滑动查看更多</span>
+      </div>
 
       {/* 表格 */}
       <div className={`rounded-xl overflow-hidden border ${

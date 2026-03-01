@@ -25,7 +25,7 @@ import {
 } from "@/components/ui/table"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
-import { ChevronLeft, ChevronRight, Search } from "lucide-react"
+import { ChevronLeft, ChevronRight, Search, ChevronsRightLeft } from "lucide-react"
 
 interface DataTableProps<TData, TValue> {
   columns: ColumnDef<TData, TValue>[]
@@ -88,6 +88,14 @@ export function DataTable<TData, TValue>({
             }`}
           />
         </div>
+      </div>
+
+      {/* 水平滚动提示 */}
+      <div className={`flex items-center justify-center gap-1.5 py-1.5 text-xs sm:hidden ${
+        isDark ? "text-gray-500" : "text-gray-400"
+      }`}>
+        <ChevronsRightLeft className="h-3.5 w-3.5" />
+        <span>左右滑动查看更多</span>
       </div>
 
       {/* 表格 */}
