@@ -333,10 +333,10 @@ export function DataTable<TData, TValue>({
                 onChange={(event) =>
                   table.getColumn("name")?.setFilterValue(event.target.value)
                 }
-                className={`pl-10 h-10 transition-all duration-200 ${
+                className={`pl-10 h-10 transition-all duration-300 rounded-xl ${
                   isDark
-                    ? "bg-[#161616] border-white/10 focus:border-sky-500/50 focus:ring-1 focus:ring-sky-500/20 hover:border-white/20"
-                    : "bg-white border-black/10 focus:border-sky-500/60 focus:ring-1 focus:ring-sky-500/20 hover:border-black/20"
+                    ? "bg-black/20 border-white/10 focus:bg-black/40 focus:border-sky-500/50 focus:ring-2 focus:ring-sky-500/20 hover:border-white/20 hover:bg-black/30 text-white placeholder:text-gray-500 shadow-inner"
+                    : "bg-white/40 border-black/10 focus:bg-white/60 focus:border-sky-500/60 focus:ring-2 focus:ring-sky-500/20 hover:border-black/20 hover:bg-white/50 text-black placeholder:text-gray-400 shadow-inner"
                 }`}
               />
             </div>
@@ -352,10 +352,10 @@ export function DataTable<TData, TValue>({
                 onChange={(event) =>
                   table.getColumn("provider")?.setFilterValue(event.target.value)
                 }
-                className={`pl-10 h-10 transition-all duration-200 ${
+                className={`pl-10 h-10 transition-all duration-300 rounded-xl ${
                   isDark
-                    ? "bg-[#161616] border-white/10 focus:border-sky-500/50 focus:ring-1 focus:ring-sky-500/20 hover:border-white/20"
-                    : "bg-white border-black/10 focus:border-sky-500/60 focus:ring-1 focus:ring-sky-500/20 hover:border-black/20"
+                    ? "bg-black/20 border-white/10 focus:bg-black/40 focus:border-sky-500/50 focus:ring-2 focus:ring-sky-500/20 hover:border-white/20 hover:bg-black/30 text-white placeholder:text-gray-500 shadow-inner"
+                    : "bg-white/40 border-black/10 focus:bg-white/60 focus:border-sky-500/60 focus:ring-2 focus:ring-sky-500/20 hover:border-black/20 hover:bg-white/50 text-black placeholder:text-gray-400 shadow-inner"
                 }`}
               />
             </div>
@@ -559,8 +559,8 @@ export function DataTable<TData, TValue>({
                 key={headerGroup.id}
                 className={
                   isDark
-                    ? "border-b border-white/10 bg-[#1e1e1e] hover:bg-[#252525]"
-                    : "border-b border-black/5 bg-gray-50 hover:bg-gray-100"
+                    ? "border-b border-white/10 bg-white/5 hover:bg-white/10"
+                    : "border-b border-black/5 bg-black/[0.03] hover:bg-black/[0.05]"
                 }
               >
                 {headerGroup.headers.map((header) => {
@@ -587,10 +587,10 @@ export function DataTable<TData, TValue>({
                 <TableRow
                   key={row.id}
                   data-state={row.getIsSelected() && "selected"}
-                  className={`transition-colors border-b ${
+                  className={`transition-all duration-200 border-b ${
                     isDark
-                      ? "border-white/5 hover:bg-white/[0.06]"
-                      : "border-black/5 hover:bg-black/[0.03]"
+                      ? "border-white/5 hover:bg-white/[0.08] hover:shadow-[inset_0_1px_0_0_rgba(255,255,255,0.1)]"
+                      : "border-black/5 hover:bg-black/[0.04] hover:shadow-[inset_0_1px_0_0_rgba(0,0,0,0.05)]"
                   } ${index % 2 === 0 ? "bg-transparent" : isDark ? "bg-white/[0.02]" : "bg-black/[0.015]"}`}
                 >
                   {row.getVisibleCells().map((cell) => (

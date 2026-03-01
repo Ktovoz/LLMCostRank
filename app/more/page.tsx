@@ -95,8 +95,8 @@ export default function MorePage() {
                 key={index}
                 className={`rounded-2xl sm:rounded-3xl p-5 sm:p-7 transition-all duration-300 hover:shadow-xl ${
                   isDark
-                    ? "bg-[#0a0a0a]/60 border border-white/10 shadow-[0_8px_30px_-12px_rgba(0,0,0,0.5)]"
-                    : "bg-white/80 border border-black/5 shadow-[0_8px_30px_-12px_rgba(0,0,0,0.05)]"
+                    ? "bg-[#0a0a0a]/95 border border-white/10 shadow-[0_8px_30px_-12px_rgba(0,0,0,0.5)]"
+                    : "bg-white/95 border border-black/5 shadow-[0_8px_30px_-12px_rgba(0,0,0,0.05)] ring-1 ring-black/5"
                 }`}
               >
                 <div className="flex flex-col sm:flex-row sm:items-center justify-between mb-4 gap-3">
@@ -157,8 +157,8 @@ export default function MorePage() {
         <div className="w-full lg:w-[40%] flex flex-col mt-4 lg:mt-0">
           <div className={`rounded-2xl sm:rounded-3xl p-2 sm:p-3 transition-all duration-300 ${
             isDark
-              ? "bg-[#0a0a0a]/60 border border-white/10 shadow-[0_8px_30px_-12px_rgba(0,0,0,0.5)]"
-              : "bg-white/80 border border-black/5 shadow-[0_8px_30px_-12px_rgba(0,0,0,0.05)]"
+              ? "bg-[#0a0a0a]/95 border border-white/10 shadow-[0_8px_30px_-12px_rgba(0,0,0,0.5)]"
+              : "bg-white/95 border border-black/5 shadow-[0_8px_30px_-12px_rgba(0,0,0,0.05)] ring-1 ring-black/5"
           }`}>
             {links.map((item, index) => (
               <a

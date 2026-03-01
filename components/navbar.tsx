@@ -123,23 +123,23 @@ export function Navbar() {
     <>
       {/* 桌面端导航栏 - md 及以上显示 */}
       <nav
-        className={`hidden md:flex fixed top-4 left-1/2 -translate-x-1/2 z-50 rounded-2xl transition-all duration-300 ease-out ${
+        className={`hidden md:flex fixed top-4 left-1/2 -translate-x-1/2 z-50 rounded-full transition-all duration-500 ease-out ${
           scrolled
             ? isDark
-              ? "bg-[#111111] shadow-[0_8px_30px_rgb(0,0,0,0.4)] border border-white/10 ring-1 ring-white/5"
-              : "bg-white shadow-[0_8px_30px_rgb(0,0,0,0.08)] border border-black/5 ring-1 ring-black/5"
+              ? "bg-[#111111]/95 shadow-[0_8px_30px_rgb(0,0,0,0.4)] border border-white/20 ring-1 ring-white/10"
+              : "bg-white/95 shadow-[0_8px_30px_rgb(0,0,0,0.08)] border border-black/10 ring-1 ring-black/5"
             : isDark
-              ? "bg-[#161618] shadow-lg shadow-black/20 border border-white/10"
-              : "bg-white shadow-sm shadow-black/5 border border-black/5"
+              ? "bg-[#161618]/90 shadow-lg shadow-black/20 border border-white/10"
+              : "bg-white/90 shadow-sm shadow-black/5 border border-black/5"
         }`}
       >
         <div ref={navRef} className="relative flex items-center gap-2 px-3 py-2">
           {/* 滑动指示器 - 选中效果 */}
           <div
-            className={`absolute top-2 h-[calc(100%-16px)] transition-all duration-300 ease-out rounded-xl ${
+            className={`absolute top-2 h-[calc(100%-16px)] transition-all duration-300 ease-out rounded-full ${
               isDark
-                ? "bg-white/10 border border-white/5 shadow-sm"
-                : "bg-gray-100 border border-black/5 shadow-sm"
+                ? "bg-white/10 border border-white/10 shadow-sm"
+                : "bg-gray-100 border border-black/10 shadow-sm"
             }`}
             style={{
               width: indicatorStyle.width,
@@ -174,14 +174,14 @@ export function Navbar() {
 
       {/* 移动端导航栏 - md 以下显示 */}
       <nav
-        className={`md:hidden fixed top-0 left-0 right-0 z-50 transition-all duration-300 ease-out ${
+        className={`md:hidden fixed top-0 left-0 right-0 z-50 transition-all duration-500 ease-out ${
           scrolled || mobileMenuOpen
             ? isDark
-              ? "bg-[#111111] shadow-[0_4px_20px_rgb(0,0,0,0.5)] border-b border-white/10"
-              : "bg-white shadow-[0_4px_20px_rgb(0,0,0,0.08)] border-b border-black/5"
+              ? "bg-[#111111]/95 shadow-[0_4px_20px_rgb(0,0,0,0.5)] border-b border-white/10"
+              : "bg-white/95 shadow-[0_4px_20px_rgb(0,0,0,0.08)] border-b border-black/5"
             : isDark
-              ? "bg-[#111111] border-b border-transparent"
-              : "bg-white border-b border-transparent"
+              ? "bg-transparent border-b border-transparent"
+              : "bg-transparent border-b border-transparent"
         }`}
       >
         <div className="flex items-center justify-between px-5 py-4">
@@ -228,7 +228,7 @@ export function Navbar() {
           }`}
         >
           <div className={`px-4 pb-6 pt-2 space-y-2 border-b shadow-[0_20px_40px_rgb(0,0,0,0.15)] ${
-            isDark ? "bg-[#111111] border-white/10" : "bg-white border-black/5"
+            isDark ? "bg-[#111111]/95 border-white/10" : "bg-white/95 border-black/5"
           }`}>
             {navItems.map((item, index) => {
               const isActive = index === activeIndex
