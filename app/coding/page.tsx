@@ -102,7 +102,7 @@ export default function CodingPage() {
           ? "bg-black/30 border border-white/10"
           : "bg-white/70 border border-black/10 shadow-lg shadow-black/5"
       }`}>
-        <DataTable columns={codingColumns} data={data} initialSorting={[{ id: "id", desc: false }]} />
+        <DataTable columns={codingColumns} data={data} initialSorting={[{ id: "id", desc: false }]} unitLabel="套餐" />
       </div>
     </div>
   )

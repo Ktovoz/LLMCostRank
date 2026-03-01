@@ -31,12 +31,14 @@ interface DataTableProps<TData, TValue> {
   columns: ColumnDef<TData, TValue>[]
   data: TData[]
   initialSorting?: SortingState
+  unitLabel?: string // 单位名称，默认为"模型"
 }
 
 export function DataTable<TData, TValue>({
   columns,
   data,
   initialSorting = [],
+  unitLabel = "模型",
 }: DataTableProps<TData, TValue>) {
   const { resolvedTheme } = useTheme()
   const [sorting, setSorting] = React.useState<SortingState>(initialSorting)
@@ -164,7 +166,7 @@ export function DataTable<TData, TValue>({
       {/* 分页 */}
       <div className={`flex flex-col sm:flex-row items-center justify-between gap-4 py-2 px-1`}>
         <div className={`text-sm ${isDark ? "text-gray-400" : "text-gray-500"}`}>
-          共 <span className="font-medium">{table.getFilteredRowModel().rows.length}</span> 个模型
+          共 <span className="font-medium">{table.getFilteredRowModel().rows.length}</span> 个{unitLabel}
         </div>
         <div className="flex items-center gap-2">
           <Button
