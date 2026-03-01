@@ -127,8 +127,8 @@ export function DataTable<TData, TValue>({
                 key={headerGroup.id}
                 className={
                   isDark
-                    ? "border-b border-white/10 bg-white/[0.04] hover:bg-white/[0.06] backdrop-blur-sm"
-                    : "border-b border-black/5 bg-black/[0.02] hover:bg-black/[0.04] backdrop-blur-sm"
+                    ? "border-b border-white/10 bg-[#1e1e1e] hover:bg-[#252525]"
+                    : "border-b border-black/5 bg-gray-50 hover:bg-gray-100"
                 }
               >
                 {headerGroup.headers.map((header) => {

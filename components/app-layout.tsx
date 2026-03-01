@@ -30,10 +30,10 @@ export function AppLayout({ children }: { children: React.ReactNode }) {
   const yearRange = currentYear === 2025 ? "2025" : `2025-${currentYear}`
 
   return (
-    <div className={`animate-gradient min-h-screen flex flex-col bg-gradient-to-r ${
+    <div className={`animate-gradient min-h-screen flex flex-col bg-gradient-to-br ${
       isDark
-        ? "from-stone-900 via-zinc-900 to-slate-900"
-        : "from-indigo-50 via-purple-50 to-pink-50"
+        ? "from-zinc-950 via-neutral-900 to-stone-950 text-slate-50"
+        : "from-slate-50 via-gray-50 to-zinc-100 text-slate-900"
     }`}>
       <Navbar />
       {/* 主题切换按钮 - 桌面端显示在右上角 */}

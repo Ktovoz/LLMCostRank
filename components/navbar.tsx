@@ -126,11 +126,11 @@ export function Navbar() {
         className={`hidden md:flex fixed top-4 left-1/2 -translate-x-1/2 z-50 rounded-2xl transition-all duration-300 ease-out ${
           scrolled
             ? isDark
-              ? "bg-[#161618] shadow-xl shadow-black/40 border border-white/10"
-              : "bg-white shadow-xl shadow-black/5 border border-black/5"
+              ? "bg-[#111111] shadow-[0_8px_30px_rgb(0,0,0,0.4)] border border-white/10 ring-1 ring-white/5"
+              : "bg-white shadow-[0_8px_30px_rgb(0,0,0,0.08)] border border-black/5 ring-1 ring-black/5"
             : isDark
-              ? "bg-[#161618] border border-white/10"
-              : "bg-white border border-black/5"
+              ? "bg-[#161618] shadow-lg shadow-black/20 border border-white/10"
+              : "bg-white shadow-sm shadow-black/5 border border-black/5"
         }`}
       >
         <div ref={navRef} className="relative flex items-center gap-2 px-3 py-2">
@@ -177,11 +177,11 @@ export function Navbar() {
         className={`md:hidden fixed top-0 left-0 right-0 z-50 transition-all duration-300 ease-out ${
           scrolled || mobileMenuOpen
             ? isDark
-              ? "bg-[#111111] shadow-xl shadow-black/40 border-b border-white/10"
-              : "bg-white shadow-xl shadow-black/5 border-b border-black/5"
+              ? "bg-[#111111] shadow-[0_4px_20px_rgb(0,0,0,0.5)] border-b border-white/10"
+              : "bg-white shadow-[0_4px_20px_rgb(0,0,0,0.08)] border-b border-black/5"
             : isDark
-              ? "bg-transparent"
-              : "bg-transparent"
+              ? "bg-[#111111] border-b border-transparent"
+              : "bg-white border-b border-transparent"
         }`}
       >
         <div className="flex items-center justify-between px-5 py-4">

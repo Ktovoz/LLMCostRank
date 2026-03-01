@@ -77,31 +77,33 @@ export default function Home() {
   return (
     <div className="flex flex-col items-center px-4 sm:px-6 py-8 sm:py-12 pt-20 sm:pt-28 md:pt-36">
       {/* 主标题区域 */}
-      <div className="text-center mb-8 sm:mb-12 md:mb-16 relative z-10">
-        <h1 className={`text-3xl sm:text-4xl md:text-5xl lg:text-7xl font-extrabold tracking-tight mb-4 sm:mb-6 ${
+      <div className="text-center mb-10 sm:mb-16 md:mb-20 relative z-10">
+        <h1 className={`text-4xl sm:text-5xl md:text-6xl lg:text-[5rem] font-extrabold tracking-tight mb-6 sm:mb-8 leading-tight ${
           isDark 
-            ? "bg-gradient-to-b from-white via-gray-200 to-gray-500 bg-clip-text text-transparent drop-shadow-sm" 
-            : "bg-gradient-to-b from-gray-900 via-gray-700 to-gray-500 bg-clip-text text-transparent drop-shadow-sm"
+            ? "bg-gradient-to-b from-white via-neutral-200 to-neutral-500 bg-clip-text text-transparent drop-shadow-[0_2px_2px_rgba(0,0,0,0.8)]" 
+            : "bg-gradient-to-b from-slate-900 via-slate-700 to-slate-500 bg-clip-text text-transparent drop-shadow-[0_1px_1px_rgba(255,255,255,0.8)]"
         }`}>
           Token 计费列表
         </h1>
-        <p className={`text-base sm:text-lg md:text-xl max-w-2xl mx-auto font-medium mb-3 ${
-          isDark ? "text-gray-400" : "text-gray-600"
+        <p className={`text-lg sm:text-xl md:text-2xl max-w-2xl mx-auto font-medium mb-4 tracking-wide ${
+          isDark ? "text-neutral-400" : "text-slate-600"
         }`}>
           LLM API 成本全网对比，找到最具性价比的模型
         </p>
-        <p className={`text-xs sm:text-sm font-mono ${
-          isDark ? "text-gray-600" : "text-gray-400"
-        }`}>
-          Updated: 2026-03-01
-        </p>
+        <div className="inline-flex items-center justify-center px-4 py-1.5 rounded-full border bg-opacity-50 backdrop-filter-none">
+          <span className={`text-xs sm:text-sm font-mono tracking-wider font-medium ${
+            isDark ? "text-neutral-500 border-neutral-800" : "text-slate-500 border-slate-200"
+          }`}>
+            UPDATED: 2026-03-01
+          </span>
+        </div>
       </div>
 
       {/* 数据表格 */}
       <div className={`w-full max-w-7xl p-3 sm:p-5 md:p-8 rounded-2xl sm:rounded-3xl relative z-10 transition-all duration-500 hover:shadow-2xl ${
         isDark
-          ? "bg-[#0a0a0a]/60 border border-white/10 shadow-[0_0_40px_-15px_rgba(0,0,0,0.7)] backdrop-blur-xl"
-          : "bg-white/70 border border-black/5 shadow-[0_20px_60px_-15px_rgba(0,0,0,0.05)] backdrop-blur-xl"
+          ? "bg-[#0a0a0a]/95 border border-white/10 shadow-[0_0_40px_-15px_rgba(0,0,0,0.5)]"
+          : "bg-white/95 border border-black/5 shadow-[0_20px_60px_-15px_rgba(0,0,0,0.05)]"
       }`}>
         <DataTable columns={[]} data={data} />
       </div>
