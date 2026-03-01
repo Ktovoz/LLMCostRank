@@ -14,7 +14,7 @@ export function AppLayout({ children }: { children: React.ReactNode }) {
   const { resolvedTheme } = useTheme()
   // 使用 useSyncExternalStore 替代 useState + useEffect 模式
   const mounted = useSyncExternalStore(subscribe, getClientSnapshot, getServerSnapshot)
-  
+
   // 直接计算年份，不需要 useEffect
   const currentYear = new Date().getFullYear()
 
@@ -41,16 +41,16 @@ export function AppLayout({ children }: { children: React.ReactNode }) {
         <ThemeToggle />
       </div>
 
-      {/* 内容区域 */}
-      <div className="flex-1">
+      {/* 内容区域 - 移动端添加底部安全区域 */}
+      <div className="flex-1 pb-16 md:pb-0">
         {children}
       </div>
 
-      {/* 页脚 */}
-      <footer className={`py-4 text-center ${
+      {/* 页脚 - 移动端固定在底部 */}
+      <footer className={`py-3 md:py-4 text-center ${
         isDark ? "text-gray-500" : "text-gray-400"
       }`}>
-        <p className="text-sm">© {yearRange} Powered by Kto. All rights reserved.</p>
+        <p className="text-xs md:text-sm">© {yearRange} Powered by Kto. All rights reserved.</p>
       </footer>
     </div>
   )

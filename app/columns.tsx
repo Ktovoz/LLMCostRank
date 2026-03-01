@@ -47,15 +47,15 @@ export const columns: ColumnDef<LLMModel>[] = [
         <Button
           variant="ghost"
           onClick={() => column.toggleSorting(column.getIsSorted() === "asc")}
-          className="-ml-4"
+          className="-ml-4 px-2 sm:px-4"
         >
-          模型名称
-          <ArrowUpDown className="ml-2 h-4 w-4" />
+          <span className="text-xs sm:text-sm">模型</span>
+          <ArrowUpDown className="ml-1 sm:ml-2 h-3.5 w-3.5 sm:h-4 sm:w-4" />
         </Button>
       )
     },
     cell: ({ row }) => {
-      return <div className="font-medium">{row.getValue("name")}</div>
+      return <div className="font-medium text-xs sm:text-sm">{row.getValue("name")}</div>
     },
   },
   {
@@ -65,12 +65,15 @@ export const columns: ColumnDef<LLMModel>[] = [
         <Button
           variant="ghost"
           onClick={() => column.toggleSorting(column.getIsSorted() === "asc")}
-          className="-ml-4"
+          className="-ml-4 px-2 sm:px-4"
         >
-          提供商
-          <ArrowUpDown className="ml-2 h-4 w-4" />
+          <span className="text-xs sm:text-sm">提供商</span>
+          <ArrowUpDown className="ml-1 sm:ml-2 h-3.5 w-3.5 sm:h-4 sm:w-4" />
         </Button>
       )
+    },
+    cell: ({ row }) => {
+      return <div className="text-xs sm:text-sm">{row.getValue("provider")}</div>
     },
   },
   {
@@ -81,10 +84,10 @@ export const columns: ColumnDef<LLMModel>[] = [
           <Button
             variant="ghost"
             onClick={() => column.toggleSorting(column.getIsSorted() === "asc")}
-            className="-mr-2"
+            className="-mr-2 px-2 sm:px-4"
           >
-            输入价格 (缓存命中)
-            <ArrowUpDown className="ml-2 h-4 w-4" />
+            <span className="text-xs sm:text-sm">输入<span className="hidden sm:inline">价格</span></span>
+            <ArrowUpDown className="ml-1 sm:ml-2 h-3.5 w-3.5 sm:h-4 sm:w-4" />
           </Button>
         </div>
       )
@@ -93,11 +96,12 @@ export const columns: ColumnDef<LLMModel>[] = [
       const price = row.getValue("inputPrice") as number
       const cachedPrice = row.original.cachedInputPrice
       return (
-        <div className="text-right font-mono pr-4">
+        <div className="text-right font-mono pr-2 sm:pr-4 text-xs sm:text-sm">
           ${price.toFixed(2)}
           {cachedPrice !== undefined && cachedPrice < price && (
-            <span className="ml-1">
-              (${cachedPrice.toFixed(2)})
+            <span className="ml-0.5 sm:ml-1 text-green-500">
+              <span className="sm:hidden">({cachedPrice.toFixed(1)})</span>
+              <span className="hidden sm:inline">(${cachedPrice.toFixed(2)})</span>
             </span>
           )}
         </div>
@@ -112,43 +116,43 @@ export const columns: ColumnDef<LLMModel>[] = [
           <Button
             variant="ghost"
             onClick={() => column.toggleSorting(column.getIsSorted() === "asc")}
-            className="-mr-2"
+            className="-mr-2 px-2 sm:px-4"
           >
-            输出价格
-            <ArrowUpDown className="ml-2 h-4 w-4" />
+            <span className="text-xs sm:text-sm">输出<span className="hidden sm:inline">价格</span></span>
+            <ArrowUpDown className="ml-1 sm:ml-2 h-3.5 w-3.5 sm:h-4 sm:w-4" />
           </Button>
         </div>
       )
     },
     cell: ({ row }) => {
       const price = row.getValue("outputPrice") as number
-      return <div className="text-right font-mono pr-4">${price.toFixed(2)}</div>
+      return <div className="text-right font-mono pr-2 sm:pr-4 text-xs sm:text-sm">${price.toFixed(2)}</div>
     },
   },
   {
     accessorKey: "contextWindow",
-    header: () => <div className="text-right">上下文长度</div>,
+    header: () => <div className="text-right text-xs sm:text-sm">上下文</div>,
     cell: ({ row }) => {
       const ctx = row.getValue("contextWindow") as number
-      return <div className="text-right pr-4">{(ctx / 1000).toFixed(0)}K</div>
+      return <div className="text-right pr-2 sm:pr-4 text-xs sm:text-sm">{(ctx / 1000).toFixed(0)}K</div>
     },
   },
   {
     accessorKey: "features",
-    header: "功能",
+    header: () => <span className="text-xs sm:text-sm">功能</span>,
     cell: ({ row }) => {
       const features = row.getValue("features") as string[]
       if (!features || features.length === 0) return null
 
       return (
-        <div className="flex flex-wrap gap-1">
+        <div className="flex flex-wrap gap-0.5 sm:gap-1">
           {features.map((feature) => {
             const config = featureConfig[feature]
             if (!config) return null
             return (
               <span
                 key={feature}
-                className={`px-1.5 sm:px-2 py-0.5 rounded-full text-xs font-medium ${config.className}`}
+                className={`px-1 sm:px-1.5 py-0.5 rounded-full text-xs font-medium ${config.className}`}
               >
                 <span className="sm:hidden">{config.shortLabel}</span>
                 <span className="hidden sm:inline">{config.label}</span>

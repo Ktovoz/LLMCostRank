@@ -16,3 +16,7 @@ id,name,provider,monthly,quarterly,yearly,limit,calculationMethod,windowQuota,re
 15,Moderato,Kimi,99,-,1188|948,月,按Agent额度计费,2倍,Agent多任务 K2.5 2倍 Kimi Code 4倍
 16,Allegretto,Kimi,199,-,-,月,按Agent额度计费,4倍,Agent多任务 K2.5 4倍 Kimi Code 20倍 专属助理
 17,Allegro,Kimi,699,-,-,月,按Agent额度计费,10倍,Agent多任务 K2.5 10倍 Kimi Code 60倍 专属助理 Agent集群
+18,Mini,KwaiKAT,29|8.8,-,-,月,按prompt计费,40次,轻量化体验
+19,Starter,KwaiKAT,70|48,-,-,月,按prompt计费,100次,适配主流编程工具
+20,Pro,KwaiKAT,140|96,-,-,月,按prompt计费,300次,Starter 3倍用量
+21,Max,KwaiKAT,350|240,-,-,月,按prompt计费,1000次,跨文件/仓库级代码理解，Pro 3倍以上用量
