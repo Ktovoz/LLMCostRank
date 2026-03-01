@@ -223,12 +223,12 @@ export function Navbar() {
 
         {/* 移动端菜单下拉 */}
         <div
-          className={`overflow-hidden transition-all duration-400 ease-[cubic-bezier(0.4,0,0.2,1)] origin-top ${
+          className={`absolute top-full left-0 right-0 overflow-hidden transition-all duration-400 ease-[cubic-bezier(0.4,0,0.2,1)] origin-top ${
             mobileMenuOpen ? "max-h-[400px] opacity-100" : "max-h-0 opacity-0"
           }`}
         >
-          <div className={`px-4 pb-6 pt-2 space-y-2 ${
-            isDark ? "bg-[#111111]" : "bg-white"
+          <div className={`px-4 pb-6 pt-2 space-y-2 border-b shadow-[0_20px_40px_rgb(0,0,0,0.15)] ${
+            isDark ? "bg-[#111111] border-white/10" : "bg-white border-black/5"
           }`}>
             {navItems.map((item, index) => {
               const isActive = index === activeIndex
@@ -237,14 +237,14 @@ export function Navbar() {
                 <Link
                   key={item.href}
                   href={item.href}
-                  className={`flex items-center w-full px-5 py-3.5 rounded-2xl text-[17px] font-semibold transition-all duration-200 relative overflow-hidden group ${
+                  className={`flex items-center w-full px-5 py-3.5 rounded-xl text-[17px] font-semibold transition-all duration-200 relative overflow-hidden group ${
                     isActive
                       ? isDark
-                        ? "bg-white/10 text-white shadow-[inset_0_1px_1px_rgba(255,255,255,0.05)] border border-white/10"
-                        : "bg-gray-100 text-gray-900 shadow-[inset_0_1px_1px_rgba(255,255,255,1)] border border-black/5"
+                        ? "bg-[#1a1a1c] text-white border border-white/10 shadow-sm"
+                        : "bg-slate-50 text-slate-900 border border-slate-200/60 shadow-sm"
                       : isDark
-                        ? "text-gray-400 hover:bg-white/5 hover:text-white border border-transparent"
-                        : "text-gray-600 hover:bg-gray-50 hover:text-gray-900 border border-transparent"
+                        ? "text-gray-400 hover:bg-[#1a1a1c] hover:text-white border border-transparent"
+                        : "text-gray-600 hover:bg-slate-50 hover:text-slate-900 border border-transparent"
                   }`}
                   style={{
                     transitionDelay: mobileMenuOpen ? `${index * 50}ms` : '0ms'
@@ -252,8 +252,8 @@ export function Navbar() {
                 >
                   <span className="relative z-10">{item.label}</span>
                   {isActive && (
-                    <div className={`absolute left-0 w-1.5 h-1/2 rounded-r-full top-1/2 -translate-y-1/2 ${
-                      isDark ? "bg-white" : "bg-gray-900"
+                    <div className={`absolute left-0 w-1 h-1/2 rounded-r-full top-1/2 -translate-y-1/2 ${
+                      isDark ? "bg-white" : "bg-slate-900"
                     }`} />
                   )}
                 </Link>
