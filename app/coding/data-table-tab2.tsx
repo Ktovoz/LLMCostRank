@@ -70,8 +70,8 @@ export function DataTable<TData, TValue>({
   return (
     <div className="w-full space-y-4">
       {/* 搜索栏 */}
-      <div className="flex flex-col sm:flex-row items-start sm:items-center gap-3">
-        <div className="relative flex-1 max-w-sm">
+      <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-3">
+        <div className="relative flex-1 max-w-full sm:max-w-sm">
           <Search className={`absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 ${
             isDark ? "text-gray-500" : "text-gray-400"
           }`} />
@@ -162,26 +162,26 @@ export function DataTable<TData, TValue>({
       </div>
 
       {/* 分页 */}
-      <div className={`flex flex-col sm:flex-row items-center justify-between gap-4 py-2 px-1`}>
-        <div className={`text-sm ${isDark ? "text-gray-400" : "text-gray-500"}`}>
+      <div className={`flex flex-col sm:flex-row items-center justify-between gap-3 sm:gap-4 py-2 px-1`}>
+        <div className={`text-xs sm:text-sm ${isDark ? "text-gray-400" : "text-gray-500"}`}>
           共 <span className="font-medium">{table.getFilteredRowModel().rows.length}</span> 个模型
         </div>
-        <div className="flex items-center gap-2">
+        <div className="flex items-center gap-1 sm:gap-2">
           <Button
             variant="outline"
             size="sm"
             onClick={() => table.previousPage()}
             disabled={!table.getCanPreviousPage()}
-            className={`gap-1 ${
+            className={`gap-1 h-8 sm:h-9 ${
               isDark
                 ? "border-white/10 bg-white/5 hover:bg-white/10 disabled:opacity-30"
                 : "border-black/10 bg-white hover:bg-black/[0.02] disabled:opacity-30"
             }`}
           >
             <ChevronLeft className="h-4 w-4" />
-            上一页
+            <span className="hidden xs:inline">上一页</span>
           </Button>
-          <div className={`flex items-center gap-1 px-3 py-1.5 rounded-md text-sm ${
+          <div className={`flex items-center gap-1 px-2 sm:px-3 py-1.5 rounded-md text-xs sm:text-sm ${
             isDark ? "bg-white/5 text-gray-300" : "bg-black/[0.05] text-gray-600"
           }`}>
             <span className="font-medium">{table.getState().pagination.pageIndex + 1}</span>
@@ -193,13 +193,13 @@ export function DataTable<TData, TValue>({
             size="sm"
             onClick={() => table.nextPage()}
             disabled={!table.getCanNextPage()}
-            className={`gap-1 ${
+            className={`gap-1 h-8 sm:h-9 ${
               isDark
                 ? "border-white/10 bg-white/5 hover:bg-white/10 disabled:opacity-30"
                 : "border-black/10 bg-white hover:bg-black/[0.02] disabled:opacity-30"
             }`}
           >
-            下一页
+            <span className="hidden xs:inline">下一页</span>
             <ChevronRight className="h-4 w-4" />
           </Button>
         </div>

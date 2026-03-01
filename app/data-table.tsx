@@ -313,62 +313,67 @@ export function DataTable<TData, TValue>({
   return (
     <div className="w-full space-y-4">
       {/* 搜索栏和价格筛选 */}
-      <div className="flex flex-col sm:flex-row items-start sm:items-center gap-3">
-        {hasNameColumn && (
-          <div className="relative flex-1 max-w-sm">
-            <Search className={`absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 ${
-              isDark ? "text-gray-500" : "text-gray-400"
-            }`} />
-            <Input
-              placeholder="搜索模型名称..."
-              value={(table.getColumn("name")?.getFilterValue() as string) ?? ""}
-              onChange={(event) =>
-                table.getColumn("name")?.setFilterValue(event.target.value)
-              }
-              className={`pl-9 ${
-                isDark
-                  ? "bg-white/5 border-white/10 focus:border-sky-500/50"
-                  : "bg-black/[0.03] border-black/10 focus:border-sky-500/60"
-              }`}
-            />
-          </div>
-        )}
-        {hasProviderColumn && (
-          <div className="relative flex-1 max-w-sm">
-            <Search className={`absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 ${
-              isDark ? "text-gray-500" : "text-gray-400"
-            }`} />
-            <Input
-              placeholder="搜索提供商..."
-              value={(table.getColumn("provider")?.getFilterValue() as string) ?? ""}
-              onChange={(event) =>
-                table.getColumn("provider")?.setFilterValue(event.target.value)
-              }
-              className={`pl-9 ${
-                isDark
-                  ? "bg-white/5 border-white/10 focus:border-sky-500/50"
-                  : "bg-black/[0.03] border-black/10 focus:border-sky-500/60"
-              }`}
-            />
-          </div>
-        )}
+      <div className="flex flex-col gap-3">
+        {/* 搜索栏行 */}
+        <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-3">
+          {hasNameColumn && (
+            <div className="relative flex-1 max-w-full sm:max-w-sm">
+              <Search className={`absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 ${
+                isDark ? "text-gray-500" : "text-gray-400"
+              }`} />
+              <Input
+                placeholder="搜索模型名称..."
+                value={(table.getColumn("name")?.getFilterValue() as string) ?? ""}
+                onChange={(event) =>
+                  table.getColumn("name")?.setFilterValue(event.target.value)
+                }
+                className={`pl-9 ${
+                  isDark
+                    ? "bg-white/5 border-white/10 focus:border-sky-500/50"
+                    : "bg-black/[0.03] border-black/10 focus:border-sky-500/60"
+                }`}
+              />
+            </div>
+          )}
+          {hasProviderColumn && (
+            <div className="relative flex-1 max-w-full sm:max-w-sm">
+              <Search className={`absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 ${
+                isDark ? "text-gray-500" : "text-gray-400"
+              }`} />
+              <Input
+                placeholder="搜索提供商..."
+                value={(table.getColumn("provider")?.getFilterValue() as string) ?? ""}
+                onChange={(event) =>
+                  table.getColumn("provider")?.setFilterValue(event.target.value)
+                }
+                className={`pl-9 ${
+                  isDark
+                    ? "bg-white/5 border-white/10 focus:border-sky-500/50"
+                    : "bg-black/[0.03] border-black/10 focus:border-sky-500/60"
+                }`}
+              />
+            </div>
+          )}
+        </div>
 
-        {/* 货币切换 */}
-        <Toggle
-          pressed={currency === "CNY"}
-          onPressedChange={(pressed) => setCurrency(pressed ? "CNY" : "USD")}
-          aria-label="切换货币单位"
-          className={`px-4 py-2 rounded-xl font-medium transition-all duration-200 ${
-            isDark
-              ? "bg-white/[0.06] border border-white/10 hover:bg-white/[0.1] data-[state=on]:bg-white/[0.12] data-[state=on]:border-white/20 data-[state=on]:text-white"
-              : "bg-white border border-black/10 hover:bg-gray-50 data-[state=on]:bg-gray-100 data-[state=on]:border-black/20 data-[state=on]:text-gray-900"
-          }`}
-        >
-          <span>{currency === "CNY" ? "¥ 人民币" : "$ 美元"}</span>
-        </Toggle>
+        {/* 控件行 */}
+        <div className="flex flex-wrap items-center gap-2 sm:gap-3">
+          {/* 货币切换 */}
+          <Toggle
+            pressed={currency === "CNY"}
+            onPressedChange={(pressed) => setCurrency(pressed ? "CNY" : "USD")}
+            aria-label="切换货币单位"
+            className={`px-3 sm:px-4 py-2 rounded-xl font-medium transition-all duration-200 text-sm sm:text-base ${
+              isDark
+                ? "bg-white/[0.06] border border-white/10 hover:bg-white/[0.1] data-[state=on]:bg-white/[0.12] data-[state=on]:border-white/20 data-[state=on]:text-white"
+                : "bg-white border border-black/10 hover:bg-gray-50 data-[state=on]:bg-gray-100 data-[state=on]:border-black/20 data-[state=on]:text-gray-900"
+            }`}
+          >
+            <span>{currency === "CNY" ? "¥ 人民币" : "$ 美元"}</span>
+          </Toggle>
 
-        {/* 价格筛选按钮 */}
-        <Dialog open={dialogOpen} onOpenChange={setDialogOpen}>
+          {/* 价格筛选按钮 */}
+          <Dialog open={dialogOpen} onOpenChange={setDialogOpen}>
           <DialogTrigger asChild>
             <Button
               variant="outline"
@@ -391,24 +396,24 @@ export function DataTable<TData, TValue>({
               )}
             </Button>
           </DialogTrigger>
-          <DialogContent className={`sm:max-w-[425px] p-0 overflow-hidden ${
+          <DialogContent className={`w-[calc(100%-32px)] sm:max-w-[425px] p-0 overflow-hidden ${
             isDark
               ? "bg-[#0a0a0a] border-white/10"
               : "bg-white border-black/10"
           }`}>
             {/* 标题区域 - 带背景色 */}
-            <div className={`px-6 py-5 border-b ${
+            <div className={`px-4 sm:px-6 py-4 sm:py-5 border-b ${
               isDark
                 ? "bg-white/[0.03] border-white/10"
                 : "bg-black/[0.02] border-black/10"
             }`}>
-              <DialogHeader className="space-y-2">
-                <DialogTitle className={`text-lg font-semibold ${
+              <DialogHeader className="space-y-1.5 sm:space-y-2">
+                <DialogTitle className={`text-base sm:text-lg font-semibold ${
                   isDark ? "text-gray-100" : "text-gray-900"
                 }`}>
                   价格筛选
                 </DialogTitle>
-                <DialogDescription className={`text-sm ${
+                <DialogDescription className={`text-xs sm:text-sm ${
                   isDark ? "text-gray-400" : "text-gray-500"
                 }`}>
                   设置价格区间筛选条件 (按{currency === "CNY" ? "人民币" : "美元"}计价)
@@ -417,16 +422,16 @@ export function DataTable<TData, TValue>({
             </div>
 
             {/* 内容区域 */}
-            <div className="flex flex-col gap-6 px-6 py-5">
+            <div className="flex flex-col gap-4 sm:gap-6 px-4 sm:px-6 py-4 sm:py-5">
               {/* 输入价格筛选 */}
-              <div className="flex flex-col gap-4">
-                <div className="flex items-center justify-between">
-                  <Label className={`text-sm font-medium ${
+              <div className="flex flex-col gap-3 sm:gap-4">
+                <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2">
+                  <Label className={`text-xs sm:text-sm font-medium ${
                     isDark ? "text-gray-300" : "text-gray-700"
                   }`}>
                     输入价格 ({currencySymbol}/1M tokens)
                   </Label>
-                  <span className={`text-sm font-mono px-2.5 py-1 rounded-md ${
+                  <span className={`text-xs sm:text-sm font-mono px-2 sm:px-2.5 py-1 rounded-md w-fit ${
                     isDark
                       ? "bg-white/[0.08] text-gray-200 border border-white/10"
                       : "bg-black/[0.05] text-gray-700 border border-black/10"
@@ -457,14 +462,14 @@ export function DataTable<TData, TValue>({
               <Separator className={isDark ? "bg-white/10" : "bg-black/10"} />
 
               {/* 输出价格筛选 */}
-              <div className="flex flex-col gap-4">
-                <div className="flex items-center justify-between">
-                  <Label className={`text-sm font-medium ${
+              <div className="flex flex-col gap-3 sm:gap-4">
+                <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2">
+                  <Label className={`text-xs sm:text-sm font-medium ${
                     isDark ? "text-gray-300" : "text-gray-700"
                   }`}>
                     输出价格 ({currencySymbol}/1M tokens)
                   </Label>
-                  <span className={`text-sm font-mono px-2.5 py-1 rounded-md ${
+                  <span className={`text-xs sm:text-sm font-mono px-2 sm:px-2.5 py-1 rounded-md w-fit ${
                     isDark
                       ? "bg-white/[0.08] text-gray-200 border border-white/10"
                       : "bg-black/[0.05] text-gray-700 border border-black/10"
@@ -494,14 +499,15 @@ export function DataTable<TData, TValue>({
             </div>
 
             {/* 底部按钮区域 - 带背景色 */}
-            <div className={`px-6 py-4 border-t flex flex-row gap-3 ${
+            <div className={`px-4 sm:px-6 py-3 sm:py-4 border-t flex flex-row gap-2 sm:gap-3 ${
               isDark
                 ? "bg-white/[0.03] border-white/10"
                 : "bg-black/[0.02] border-black/10"
             }`}>
               <Button
                 variant="outline"
-                className={`flex-1 ${
+                size="sm"
+                className={`flex-1 text-sm ${
                   isDark
                     ? "bg-white/5 border-white/10 text-gray-300 hover:bg-white/10 hover:text-gray-100"
                     : "bg-white border-black/10 text-gray-700 hover:bg-black/[0.03]"
@@ -511,7 +517,8 @@ export function DataTable<TData, TValue>({
                 重置
               </Button>
               <Button
-                className={`flex-1 ${
+                size="sm"
+                className={`flex-1 text-sm ${
                   isDark
                     ? "bg-white/[0.15] hover:bg-white/20 text-white border border-white/20"
                     : "bg-black/[0.08] hover:bg-black/[0.12] text-gray-900 border border-black/10"
@@ -524,6 +531,7 @@ export function DataTable<TData, TValue>({
           </DialogContent>
         </Dialog>
       </div>
+    </div>
 
       {/* 表格 */}
       <div className={`rounded-xl overflow-hidden border ${
@@ -597,26 +605,26 @@ export function DataTable<TData, TValue>({
       </div>
 
       {/* 分页 */}
-      <div className={`flex flex-col sm:flex-row items-center justify-between gap-4 py-2 px-1`}>
-        <div className={`text-sm ${isDark ? "text-gray-400" : "text-gray-500"}`}>
+      <div className={`flex flex-col sm:flex-row items-center justify-between gap-3 sm:gap-4 py-2 px-1`}>
+        <div className={`text-xs sm:text-sm ${isDark ? "text-gray-400" : "text-gray-500"}`}>
           共 <span className="font-medium">{table.getFilteredRowModel().rows.length}</span> 个模型
         </div>
-        <div className="flex items-center gap-2">
+        <div className="flex items-center gap-1 sm:gap-2">
           <Button
             variant="outline"
             size="sm"
             onClick={() => table.previousPage()}
             disabled={!table.getCanPreviousPage()}
-            className={`gap-1 ${
+            className={`gap-1 h-8 sm:h-9 ${
               isDark
                 ? "border-white/10 bg-white/5 hover:bg-white/10 disabled:opacity-30"
                 : "border-black/10 bg-white hover:bg-black/[0.02] disabled:opacity-30"
             }`}
           >
             <ChevronLeft className="h-4 w-4" />
-            上一页
+            <span className="hidden xs:inline">上一页</span>
           </Button>
-          <div className={`flex items-center gap-1 px-3 py-1.5 rounded-md text-sm ${
+          <div className={`flex items-center gap-1 px-2 sm:px-3 py-1.5 rounded-md text-xs sm:text-sm ${
             isDark ? "bg-white/5 text-gray-300" : "bg-black/[0.05] text-gray-600"
           }`}>
             <span className="font-medium">{table.getState().pagination.pageIndex + 1}</span>
@@ -628,13 +636,13 @@ export function DataTable<TData, TValue>({
             size="sm"
             onClick={() => table.nextPage()}
             disabled={!table.getCanNextPage()}
-            className={`gap-1 ${
+            className={`gap-1 h-8 sm:h-9 ${
               isDark
                 ? "border-white/10 bg-white/5 hover:bg-white/10 disabled:opacity-30"
                 : "border-black/10 bg-white hover:bg-black/[0.02] disabled:opacity-30"
             }`}
           >
-            下一页
+            <span className="hidden xs:inline">下一页</span>
             <ChevronRight className="h-4 w-4" />
           </Button>
         </div>

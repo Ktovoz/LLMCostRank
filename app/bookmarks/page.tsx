@@ -47,15 +47,15 @@ export default function BookmarksPage() {
   ]
 
   return (
-    <div className="flex flex-col items-center justify-center min-h-full px-4 py-8 pt-36">
-      <h1 className={`mb-10 text-4xl font-bold tracking-tight sm:text-5xl ${
+    <div className="flex flex-col items-center justify-center min-h-full px-4 py-8 pt-20 md:pt-36">
+      <h1 className={`mb-6 md:mb-10 text-3xl md:text-4xl font-bold tracking-tight sm:text-5xl ${
         isDark ? "text-gray-50" : "text-gray-900"
       }`}>
         <span className={isDark ? "text-sky-400" : "text-sky-500"}>Kto</span> 书签
       </h1>
 
       <div className="max-w-6xl w-full">
-        <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+        <div className="grid gap-3 md:gap-4 sm:grid-cols-2 lg:grid-cols-3">
           {sites.map((site) => {
             const Icon = site.icon
             return (
@@ -64,26 +64,26 @@ export default function BookmarksPage() {
                 href={site.url}
                 target="_blank"
                 rel="noopener noreferrer"
-                className={`group flex items-start gap-4 rounded-2xl p-5 transition-all duration-200 ${
+                className={`group flex items-start gap-3 md:gap-4 rounded-xl md:rounded-2xl p-4 md:p-5 transition-all duration-200 ${
                   isDark
                     ? "bg-white/5 hover:bg-white/10 border border-white/10 hover:border-white/20"
                     : "bg-white/50 hover:bg-white/80 border border-black/5 hover:border-black/10 shadow-sm"
                 }`}
               >
-                <div className={`flex h-12 w-12 shrink-0 items-center justify-center rounded-xl transition-colors ${
+                <div className={`flex h-10 w-10 md:h-12 md:w-12 shrink-0 items-center justify-center rounded-lg md:rounded-xl transition-colors ${
                   isDark
                     ? "bg-sky-500/20 text-sky-400 group-hover:bg-sky-500/30"
                     : "bg-sky-500/10 text-sky-600 group-hover:bg-sky-500/20"
                 }`}>
-                  <Icon className="h-6 w-6" />
+                  <Icon className="h-5 w-5 md:h-6 md:w-6" />
                 </div>
                 <div className="min-w-0">
-                  <h3 className={`font-semibold mb-1 ${
+                  <h3 className={`font-semibold text-sm md:text-base mb-0.5 md:mb-1 ${
                     isDark ? "text-gray-100" : "text-gray-900"
                   }`}>
                     {site.name}
                   </h3>
-                  <p className={`text-sm truncate ${
+                  <p className={`text-xs md:text-sm truncate ${
                     isDark ? "text-gray-400" : "text-gray-600"
                   }`}>
                     {site.desc}

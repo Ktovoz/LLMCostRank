@@ -75,20 +75,20 @@ export default function Home() {
   const isDark = resolvedTheme === "dark"
 
   return (
-    <div className="flex flex-col items-center px-4 py-8 pt-36">
+    <div className="flex flex-col items-center px-4 py-8 pt-20 md:pt-36">
       {/* 主标题区域 */}
-      <div className="text-center mb-8">
-        <h1 className={`text-5xl sm:text-6xl font-bold tracking-tight mb-4 ${
+      <div className="text-center mb-6 md:mb-8">
+        <h1 className={`text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight mb-3 md:mb-4 ${
           isDark ? "text-gray-50" : "text-gray-900"
         }`}>
           Token 计费列表
         </h1>
-        <p className={`text-lg sm:text-xl ${
+        <p className={`text-base sm:text-lg md:text-xl ${
           isDark ? "text-gray-400" : "text-gray-600"
         }`}>
           LLM API 成本对比与排行
         </p>
-        <p className={`text-sm mt-2 ${
+        <p className={`text-xs sm:text-sm mt-2 ${
           isDark ? "text-gray-500" : "text-gray-400"
         }`}>
           更新时间：2026-03-01
@@ -96,7 +96,7 @@ export default function Home() {
       </div>
 
       {/* 数据表格 */}
-      <div className={`w-full max-w-6xl p-6 rounded-2xl backdrop-blur-sm ${
+      <div className={`w-full max-w-6xl p-3 sm:p-4 md:p-6 rounded-2xl backdrop-blur-sm ${
         isDark
           ? "bg-black/30 border border-white/10"
           : "bg-white/70 border border-black/10 shadow-lg shadow-black/5"

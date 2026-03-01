@@ -36,7 +36,8 @@ export function AppLayout({ children }: { children: React.ReactNode }) {
         : "from-indigo-50 via-purple-50 to-pink-50"
     }`}>
       <Navbar />
-      <div className="fixed top-4 right-4 z-50">
+      {/* 主题切换按钮 - 桌面端显示在右上角 */}
+      <div className="hidden md:block fixed top-4 right-4 z-50">
         <ThemeToggle />
       </div>
 

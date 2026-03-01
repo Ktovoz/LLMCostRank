@@ -48,38 +48,38 @@ export default function MorePage() {
 
   return (
     <main className="min-h-screen flex flex-col">
-      <section className="flex-1 flex flex-col items-center px-4 py-20 pt-36">
+      <section className="flex-1 flex flex-col items-center px-4 py-16 pt-20 md:py-20 md:pt-36">
         {/* 路线图 */}
-        <div className="w-full max-w-2xl mb-12">
-          <div className="flex items-center gap-3 mb-6">
-            <div className={`p-2.5 rounded-xl ${
+        <div className="w-full max-w-2xl mb-8 md:mb-12">
+          <div className="flex items-center gap-3 mb-4 md:mb-6">
+            <div className={`p-2 md:p-2.5 rounded-xl ${
               isDark ? "bg-violet-500/20" : "bg-violet-500/10"
             }`}>
-              <Map className={`h-5 w-5 ${isDark ? "text-violet-400" : "text-violet-500"}`} />
+              <Map className={`h-4 w-4 md:h-5 md:w-5 ${isDark ? "text-violet-400" : "text-violet-500"}`} />
             </div>
-            <h2 className={`text-2xl font-bold ${isDark ? "text-gray-100" : "text-gray-900"}`}>
+            <h2 className={`text-xl md:text-2xl font-bold ${isDark ? "text-gray-100" : "text-gray-900"}`}>
               路线图
             </h2>
           </div>
 
-          <div className="space-y-4">
+          <div className="space-y-3 md:space-y-4">
             {roadmapItems.map((item, index) => (
               <div
                 key={index}
-                className={`rounded-2xl p-5 ${
+                className={`rounded-2xl p-4 md:p-5 ${
                   isDark
                     ? "bg-white/[0.03] border border-white/10"
                     : "bg-white/40 border border-black/5 shadow-sm"
                 }`}
               >
-                <div className="flex items-start justify-between mb-3">
+                <div className="flex items-start justify-between mb-2 md:mb-3 gap-2">
                   <div className="flex items-center gap-2">
                     <Database className={`h-4 w-4 ${isDark ? "text-violet-400" : "text-violet-500"}`} />
-                    <h3 className={`font-semibold ${isDark ? "text-gray-100" : "text-gray-900"}`}>
+                    <h3 className={`font-semibold text-sm md:text-base ${isDark ? "text-gray-100" : "text-gray-900"}`}>
                       {item.title}
                     </h3>
                   </div>
-                  <span className={`px-2.5 py-1 text-xs font-medium rounded-full ${
+                  <span className={`px-2 md:px-2.5 py-1 text-xs font-medium rounded-full shrink-0 ${
                     isDark
                       ? "bg-amber-500/20 text-amber-300"
                       : "bg-amber-500/10 text-amber-600"
@@ -87,7 +87,7 @@ export default function MorePage() {
                     计划中
                   </span>
                 </div>
-                <p className={`text-sm mb-4 ${isDark ? "text-gray-400" : "text-gray-500"}`}>
+                <p className={`text-xs md:text-sm mb-3 md:mb-4 ${isDark ? "text-gray-400" : "text-gray-500"}`}>
                   {item.description}
                 </p>
                 <div className="space-y-2">
@@ -97,21 +97,21 @@ export default function MorePage() {
                       href={source.url}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className={`flex items-center justify-between p-3 rounded-xl transition-all group ${
+                      className={`flex items-center justify-between p-2.5 md:p-3 rounded-xl transition-all group ${
                         isDark
                           ? "bg-white/[0.03] hover:bg-white/[0.06] border border-white/5"
                           : "bg-white/50 hover:bg-black/[0.04] border border-black/5"
                       }`}
                     >
                       <div>
-                        <span className={`text-sm font-medium ${isDark ? "text-gray-200" : "text-gray-700"}`}>
+                        <span className={`text-xs md:text-sm font-medium ${isDark ? "text-gray-200" : "text-gray-700"}`}>
                           {source.name}
                         </span>
                         <p className={`text-xs ${isDark ? "text-gray-500" : "text-gray-400"}`}>
                           {source.description}
                         </p>
                       </div>
-                      <ExternalLink className={`h-4 w-4 transition-all ${
+                      <ExternalLink className={`h-4 w-4 transition-all shrink-0 ${
                         isDark ? "text-gray-500" : "text-gray-400"
                       } group-hover:text-violet-400 group-hover:translate-x-0.5 group-hover:-translate-y-0.5`} />
                     </a>
@@ -123,8 +123,8 @@ export default function MorePage() {
         </div>
 
         {/* 联系方式 */}
-        <div className="w-full max-w-md">
-          <div className={`rounded-2xl p-2 ${
+        <div className="w-full max-w-md mt-8 md:mt-0">
+          <div className={`rounded-2xl p-1.5 md:p-2 ${
             isDark
               ? "bg-white/[0.03] border border-white/10"
               : "bg-white/40 border border-black/5 shadow-sm"
@@ -134,30 +134,30 @@ export default function MorePage() {
                 key={item.description}
                 href={item.link}
                 {...(item.external ? { target: "_blank", rel: "noopener noreferrer" } : {})}
-                className={`group flex items-center justify-between rounded-xl px-4 py-3.5 transition-all ${
+                className={`group flex items-center justify-between rounded-xl px-3 md:px-4 py-3 md:py-3.5 transition-all ${
                   isDark
                     ? "hover:bg-white/[0.06] text-gray-300 hover:text-gray-100"
                     : "hover:bg-black/[0.06] text-gray-600 hover:text-gray-900"
                 } ${index !== links.length - 1 ? (isDark ? "border-b border-white/5" : "border-b border-black/5") : ""}`}
               >
-                <div className="flex items-center gap-3">
-                  <item.icon className={`h-5 w-5 ${
+                <div className="flex items-center gap-2 md:gap-3">
+                  <item.icon className={`h-4 w-4 md:h-5 md:w-5 ${
                     isDark ? "text-gray-500" : "text-gray-400"
                   } group-hover:text-emerald-400 transition-colors`} />
-                  <span className={`text-sm ${
+                  <span className={`text-xs md:text-sm ${
                     isDark ? "text-gray-400" : "text-gray-500"
                   }`}>
                     {item.description}
                   </span>
                 </div>
-                <div className="flex items-center gap-2">
-                  <span className={`text-sm font-medium ${
+                <div className="flex items-center gap-1 md:gap-2">
+                  <span className={`text-xs md:text-sm font-medium ${
                     isDark ? "text-gray-200" : "text-gray-700"
                   }`}>
                     {item.linkText}
                   </span>
                   {item.external && (
-                    <ArrowUpRight className={`h-4 w-4 transition-all ${
+                    <ArrowUpRight className={`h-3.5 w-3.5 md:h-4 md:w-4 transition-all ${
                       isDark ? "text-gray-600" : "text-gray-400"
                     } group-hover:translate-x-0.5 group-hover:-translate-y-0.5 group-hover:text-emerald-400`} />
                   )}
