@@ -102,21 +102,6 @@ export function DataTable<TData, TValue>({
 
       {/* 表格容器 - 带渐变边缘提示 */}
       <div className="relative rounded-xl sm:overflow-hidden overflow-visible">
-        {/* 移动端左侧渐变遮罩 */}
-        <div className={`sm:hidden absolute left-0 top-0 bottom-0 w-4 z-10 pointer-events-none ${
-          isDark
-            ? "bg-gradient-to-r from-black/60 to-transparent"
-            : "bg-gradient-to-r from-white/80 to-transparent"
-        }`} />
-
-        {/* 移动端右侧渐变遮罩 */}
-        <div className={`sm:hidden absolute right-0 top-0 bottom-0 w-4 z-10 pointer-events-none ${
-          isDark
-            ? "bg-gradient-to-l from-black/60 to-transparent"
-            : "bg-gradient-to-l from-white/80 to-transparent"
-        }`} />
-
-        {/* 表格 */}
         <div className={`rounded-xl overflow-x-auto border ${
           isDark ? "border-white/10" : "border-black/5"
         }`}>
@@ -135,7 +120,7 @@ export function DataTable<TData, TValue>({
                   return (
                     <TableHead
                       key={header.id}
-                      className={`h-12 px-4 whitespace-nowrap ${isDark ? "text-gray-300 font-semibold" : "text-gray-700 font-semibold"}`}
+                      className={`h-10 sm:h-12 px-2 sm:px-4 whitespace-nowrap ${isDark ? "text-gray-300 font-semibold" : "text-gray-700 font-semibold"}`}
                     >
                       {header.isPlaceholder
                         ? null
@@ -164,7 +149,7 @@ export function DataTable<TData, TValue>({
                   {row.getVisibleCells().map((cell) => (
                     <TableCell
                       key={cell.id}
-                      className={`px-4 py-3 sm:py-4 ${isDark ? "text-gray-200" : "text-gray-800"}`}
+                      className={`px-2 sm:px-4 py-2 sm:py-4 ${isDark ? "text-gray-200" : "text-gray-800"}`}
                     >
                       {flexRender(cell.column.columnDef.cell, cell.getContext())}
                     </TableCell>
