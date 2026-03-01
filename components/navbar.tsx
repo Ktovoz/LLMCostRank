@@ -179,9 +179,7 @@ export function Navbar() {
             ? isDark
               ? "bg-[#111111]/95 shadow-[0_4px_20px_rgb(0,0,0,0.5)] border-b border-white/10"
               : "bg-white/95 shadow-[0_4px_20px_rgb(0,0,0,0.12)] border-b border-black/10"
-            : isDark
-              ? "bg-[#161618]/90 border-b border-transparent"
-              : "bg-white/90 border-b border-transparent"
+            : "bg-transparent border-b border-transparent"
         }`}
       >
         <div className="flex items-center justify-between px-5 py-4">
