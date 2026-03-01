@@ -13,6 +13,14 @@ const eslintConfig = defineConfig([
     "build/**",
     "next-env.d.ts",
   ]),
+  // 针对 TanStack Table 的 incompatible-library 警告进行忽略
+  // React Compiler 会自动跳过这些组件的 memoization
+  {
+    files: ["**/data-table.tsx", "**/data-table-tab2.tsx"],
+    rules: {
+      "react-hooks/incompatible-library": "off",
+    },
+  },
 ]);
 
 export default eslintConfig;

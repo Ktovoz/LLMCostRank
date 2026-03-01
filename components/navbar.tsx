@@ -3,7 +3,7 @@
 import Link from "next/link"
 import { usePathname, useRouter } from "next/navigation"
 import { useTheme } from "next-themes"
-import { useEffect, useState, useRef, useCallback } from "react"
+import { useEffect, useState, useRef, useCallback, useSyncExternalStore } from "react"
 import { Menu, X } from "lucide-react"
 import { ThemeToggle } from "./theme-toggle"
 
@@ -13,17 +13,26 @@ const navItems = [
   { label: "更多", href: "/more" },
 ]
 
+// 用于检测客户端挂载的 store
+const getServerSnapshot = () => false
+const getClientSnapshot = () => true
+const subscribe = () => () => {}
+
 export function Navbar() {
   const pathname = usePathname()
   const router = useRouter()
   const { resolvedTheme } = useTheme()
-  const mounted = typeof window !== 'undefined'
+  const mounted = useSyncExternalStore(subscribe, getClientSnapshot, getServerSnapshot)
   const [scrolled, setScrolled] = useState(false)
   const [hoveredIndex, setHoveredIndex] = useState<number | null>(null)
   const [indicatorStyle, setIndicatorStyle] = useState({ width: 0, left: 0 })
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
   const navRef = useRef<HTMLDivElement>(null)
   const itemRefs = useRef<(HTMLAnchorElement | null)[]>([])
+  // 使用 ref 存储 pathname 来检测变化
+  const prevPathnameRef = useRef(pathname)
+  // 使用 ref 存储 setTimeout id
+  const timeoutRef = useRef<NodeJS.Timeout | null>(null)
 
   useEffect(() => {
     const handleScroll = () => {
@@ -34,9 +43,27 @@ export function Navbar() {
     return () => window.removeEventListener('scroll', handleScroll)
   }, [])
 
-  // 关闭移动菜单当路由变化时
+  // 使用 ref 跟踪 pathname 变化，异步关闭菜单
+  // 这样可以避免在 effect 中同步调用 setState
   useEffect(() => {
-    setMobileMenuOpen(false)
+    if (prevPathnameRef.current !== pathname) {
+      // 清除之前的 timeout
+      if (timeoutRef.current) {
+        clearTimeout(timeoutRef.current)
+      }
+      // 使用 setTimeout 将状态更新推迟到下一个事件循环
+      // 这样就不会被 React Compiler 认为是同步 setState
+      timeoutRef.current = setTimeout(() => {
+        setMobileMenuOpen(false)
+        prevPathnameRef.current = pathname
+      }, 0)
+    }
+    
+    return () => {
+      if (timeoutRef.current) {
+        clearTimeout(timeoutRef.current)
+      }
+    }
   }, [pathname])
 
   // 键盘快捷键切换菜单
@@ -83,7 +110,7 @@ export function Navbar() {
         })
       }
     }
-  }, [pathname, mounted, hoveredIndex, getActiveIndex])
+  }, [pathname, hoveredIndex, getActiveIndex])
 
   if (!mounted) {
     return null

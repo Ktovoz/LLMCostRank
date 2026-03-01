@@ -1,31 +1,58 @@
 'use client'
 
 import { useTheme } from "next-themes"
-import { useEffect, useState } from "react"
+import { useEffect, useState, useSyncExternalStore } from "react"
 import Papa from "papaparse"
 import { codingColumns, LLMModel } from "./columns"
 import { DataTable } from "./data-table"
 
+// 用于避免 SSR 水合问题的 store
+const getServerSnapshot = () => false
+const getClientSnapshot = () => true
+const subscribe = () => () => {}
+
+// CSV 行数据类型
+interface CSVRow {
+  id: string
+  rank: string
+  name: string
+  plan: string
+  provider: string
+  monthly: string
+  quarterly: string
+  yearly: string
+  limit: string
+  calculationMethod: string
+  supportModel: string
+  inputPrice: string
+  outputPrice: string
+  contextWindow: string
+  category: string
+  windowQuota: string
+  monthlyToken: string
+  quarterlyToken: string
+  yearlyToken: string
+  weeklyLimit: string
+  monthlyLimit: string
+  remark: string
+}
+
 export default function CodingPage() {
   const { resolvedTheme } = useTheme()
-  const [mounted, setMounted] = useState(false)
+  const mounted = useSyncExternalStore(subscribe, getClientSnapshot, getServerSnapshot)
   const [data, setData] = useState<LLMModel[]>([])
   const [loading, setLoading] = useState(true)
-
-  useEffect(() => {
-    setMounted(true)
-  }, [])
 
   useEffect(() => {
     // 从 codingplan.csv 加载数据
     fetch('/codingplan.csv')
       .then((response) => response.text())
       .then((csvText) => {
-        Papa.parse(csvText, {
+        Papa.parse<CSVRow>(csvText, {
           header: true,
           skipEmptyLines: true,
           complete: (results) => {
-            const parsedData = results.data.map((row: any) => ({
+            const parsedData = results.data.map((row) => ({
               id: row.id,
               rank: parseInt(row.rank),
               name: row.name,
