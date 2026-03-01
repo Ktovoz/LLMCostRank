@@ -23,10 +23,10 @@ export function ThemeToggle() {
   return (
     <button
       onClick={() => setTheme(isDark ? "light" : "dark")}
-      className={`p-2 rounded-full transition-all duration-200 border hover:scale-105 active:scale-95 flex items-center justify-center ${
+      className={`p-2 rounded-full transition-all duration-200 border flex items-center justify-center ${
         isDark
-          ? "bg-[#161618] border-white/10 text-gray-300 hover:bg-white/10 hover:text-white"
-          : "bg-white border-black/5 text-gray-700 hover:bg-black/5 hover:text-gray-900"
+          ? "bg-[#161618] border-white/10 text-gray-300"
+          : "bg-white border-black/5 text-gray-700"
       }`}
       aria-label="切换主题"
     >
