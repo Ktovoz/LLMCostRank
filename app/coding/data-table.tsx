@@ -70,12 +70,12 @@ export function DataTable<TData, TValue>({
   })
 
   return (
-    <div className="w-full space-y-4">
+    <div className="w-full space-y-5">
       {/* 搜索栏 */}
-      <div className="flex flex-col sm:flex-row items-start sm:items-center gap-3">
-        <div className="relative flex-1 max-w-sm">
-          <Search className={`absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 ${
-            isDark ? "text-gray-500" : "text-gray-400"
+      <div className="flex flex-col sm:flex-row items-start sm:items-center gap-4">
+        <div className="relative flex-1 max-w-sm group">
+          <Search className={`absolute left-3.5 top-1/2 -translate-y-1/2 h-4 w-4 transition-colors ${
+            isDark ? "text-gray-500 group-focus-within:text-sky-400" : "text-gray-400 group-focus-within:text-sky-500"
           }`} />
           <Input
             placeholder="搜索提供商..."
@@ -83,10 +83,10 @@ export function DataTable<TData, TValue>({
             onChange={(event) =>
               table.getColumn("provider")?.setFilterValue(event.target.value)
             }
-            className={`pl-9 ${
+            className={`pl-10 h-10 transition-all duration-200 ${
               isDark
-                ? "bg-white/5 border-white/10 focus:border-sky-500/50"
-                : "bg-black/[0.03] border-black/10 focus:border-sky-500/60"
+                ? "bg-[#161616] border-white/10 focus:border-sky-500/50 focus:ring-1 focus:ring-sky-500/20 hover:border-white/20"
+                : "bg-white border-black/10 focus:border-sky-500/60 focus:ring-1 focus:ring-sky-500/20 hover:border-black/20"
             }`}
           />
         </div>

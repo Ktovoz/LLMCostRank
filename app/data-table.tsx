@@ -317,15 +317,15 @@ export function DataTable<TData, TValue>({
   const hasProviderColumn = columns.some((col: ColumnDef<TData, TValue>) => (col as { accessorKey?: string; id?: string }).accessorKey === "provider" || (col as { accessorKey?: string; id?: string }).id === "provider")
 
   return (
-    <div className="w-full space-y-4">
+    <div className="w-full space-y-5">
       {/* 搜索栏和价格筛选 */}
-      <div className="flex flex-col gap-3">
+      <div className="flex flex-col gap-4">
         {/* 搜索栏行 */}
-        <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-3">
+        <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-4">
           {hasNameColumn && (
-            <div className="relative flex-1 max-w-full sm:max-w-sm">
-              <Search className={`absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 ${
-                isDark ? "text-gray-500" : "text-gray-400"
+            <div className="relative flex-1 max-w-full sm:max-w-sm group">
+              <Search className={`absolute left-3.5 top-1/2 -translate-y-1/2 h-4 w-4 transition-colors ${
+                isDark ? "text-gray-500 group-focus-within:text-sky-400" : "text-gray-400 group-focus-within:text-sky-500"
               }`} />
               <Input
                 placeholder="搜索模型名称..."
@@ -333,18 +333,18 @@ export function DataTable<TData, TValue>({
                 onChange={(event) =>
                   table.getColumn("name")?.setFilterValue(event.target.value)
                 }
-                className={`pl-9 ${
+                className={`pl-10 h-10 transition-all duration-200 ${
                   isDark
-                    ? "bg-white/5 border-white/10 focus:border-sky-500/50"
-                    : "bg-black/[0.03] border-black/10 focus:border-sky-500/60"
+                    ? "bg-[#161616] border-white/10 focus:border-sky-500/50 focus:ring-1 focus:ring-sky-500/20 hover:border-white/20"
+                    : "bg-white border-black/10 focus:border-sky-500/60 focus:ring-1 focus:ring-sky-500/20 hover:border-black/20"
                 }`}
               />
             </div>
           )}
           {hasProviderColumn && (
-            <div className="relative flex-1 max-w-full sm:max-w-sm">
-              <Search className={`absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 ${
-                isDark ? "text-gray-500" : "text-gray-400"
+            <div className="relative flex-1 max-w-full sm:max-w-sm group">
+              <Search className={`absolute left-3.5 top-1/2 -translate-y-1/2 h-4 w-4 transition-colors ${
+                isDark ? "text-gray-500 group-focus-within:text-sky-400" : "text-gray-400 group-focus-within:text-sky-500"
               }`} />
               <Input
                 placeholder="搜索提供商..."
@@ -352,10 +352,10 @@ export function DataTable<TData, TValue>({
                 onChange={(event) =>
                   table.getColumn("provider")?.setFilterValue(event.target.value)
                 }
-                className={`pl-9 ${
+                className={`pl-10 h-10 transition-all duration-200 ${
                   isDark
-                    ? "bg-white/5 border-white/10 focus:border-sky-500/50"
-                    : "bg-black/[0.03] border-black/10 focus:border-sky-500/60"
+                    ? "bg-[#161616] border-white/10 focus:border-sky-500/50 focus:ring-1 focus:ring-sky-500/20 hover:border-white/20"
+                    : "bg-white border-black/10 focus:border-sky-500/60 focus:ring-1 focus:ring-sky-500/20 hover:border-black/20"
                 }`}
               />
             </div>
@@ -363,16 +363,16 @@ export function DataTable<TData, TValue>({
         </div>
 
         {/* 控件行 */}
-        <div className="flex flex-wrap items-center gap-2 sm:gap-3">
+        <div className="flex flex-wrap items-center gap-3">
           {/* 货币切换 */}
           <Toggle
             pressed={currency === "CNY"}
             onPressedChange={(pressed) => setCurrency(pressed ? "CNY" : "USD")}
             aria-label="切换货币单位"
-            className={`px-3 sm:px-4 py-2 rounded-xl font-medium transition-all duration-200 text-sm sm:text-base ${
+            className={`px-4 h-10 rounded-lg font-medium transition-all duration-200 text-sm ${
               isDark
-                ? "bg-white/[0.06] border border-white/10 hover:bg-white/[0.1] data-[state=on]:bg-white/[0.12] data-[state=on]:border-white/20 data-[state=on]:text-white"
-                : "bg-white border border-black/10 hover:bg-gray-50 data-[state=on]:bg-gray-100 data-[state=on]:border-black/20 data-[state=on]:text-gray-900"
+                ? "bg-[#161616] border border-white/10 hover:bg-[#1f1f1f] hover:border-white/20 data-[state=on]:bg-white/10 data-[state=on]:border-white/20 data-[state=on]:text-white"
+                : "bg-white border border-black/10 hover:bg-gray-50 hover:border-black/20 shadow-sm data-[state=on]:bg-gray-100 data-[state=on]:border-black/20 data-[state=on]:text-gray-900"
             }`}
           >
             <span>{currency === "CNY" ? "¥ 人民币" : "$ 美元"}</span>
