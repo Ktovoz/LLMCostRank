@@ -57,7 +57,7 @@ export default function MorePage() {
   return (
     <main className="flex-1 flex flex-col min-h-0 pt-20 sm:pt-28 md:pt-36 relative z-10">
       {/* 装饰性光晕 */}
-      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[600px] h-[300px] bg-emerald-500/10 dark:bg-emerald-500/5 blur-[120px] rounded-full pointer-events-none" />
+      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[300px] md:w-[600px] h-[150px] md:h-[300px] bg-emerald-500/10 dark:bg-emerald-500/5 blur-[60px] md:blur-[120px] rounded-full pointer-events-none -z-10" />
 
       {/* 标题区域 */}
       <div className="text-center mb-10 sm:mb-16 px-4 relative z-10">
@@ -95,8 +95,8 @@ export default function MorePage() {
                 key={index}
                 className={`rounded-2xl sm:rounded-3xl p-5 sm:p-7 transition-all duration-300 hover:shadow-xl ${
                   isDark
-                    ? "bg-[#0a0a0a]/60 border border-white/10 backdrop-blur-md shadow-[0_8px_30px_-12px_rgba(0,0,0,0.5)]"
-                    : "bg-white/80 border border-black/5 backdrop-blur-md shadow-[0_8px_30px_-12px_rgba(0,0,0,0.05)]"
+                    ? "bg-[#0a0a0a]/60 border border-white/10 shadow-[0_8px_30px_-12px_rgba(0,0,0,0.5)]"
+                    : "bg-white/80 border border-black/5 shadow-[0_8px_30px_-12px_rgba(0,0,0,0.05)]"
                 }`}
               >
                 <div className="flex flex-col sm:flex-row sm:items-center justify-between mb-4 gap-3">
@@ -157,22 +157,22 @@ export default function MorePage() {
         <div className="w-full lg:w-[40%] flex flex-col mt-4 lg:mt-0">
           <div className={`rounded-2xl sm:rounded-3xl p-2 sm:p-3 transition-all duration-300 ${
             isDark
-              ? "bg-[#0a0a0a]/60 border border-white/10 backdrop-blur-md shadow-[0_8px_30px_-12px_rgba(0,0,0,0.5)]"
-              : "bg-white/80 border border-black/5 backdrop-blur-md shadow-[0_8px_30px_-12px_rgba(0,0,0,0.05)]"
+              ? "bg-[#0a0a0a]/60 border border-white/10 shadow-[0_8px_30px_-12px_rgba(0,0,0,0.5)]"
+              : "bg-white/80 border border-black/5 shadow-[0_8px_30px_-12px_rgba(0,0,0,0.05)]"
           }`}>
             {links.map((item, index) => (
               <a
                 key={item.description}
                 href={item.link}
                 {...(item.external ? { target: "_blank", rel: "noopener noreferrer" } : {})}
-                className={`group flex items-center justify-between rounded-xl sm:rounded-2xl px-4 py-4 sm:py-5 transition-all ${
+                className={`group flex flex-col sm:flex-row sm:items-center justify-between rounded-xl sm:rounded-2xl px-4 py-4 sm:py-5 transition-all gap-3 sm:gap-0 ${
                   isDark
                     ? "hover:bg-white/[0.08]"
                     : "hover:bg-black/[0.03]"
                 } ${index !== links.length - 1 ? (isDark ? "border-b border-white/5" : "border-b border-black/5") : ""}`}
               >
-                <div className="flex flex-col sm:flex-row sm:items-center gap-2 sm:gap-4">
-                  <div className={`p-2.5 rounded-xl transition-colors ${
+                <div className="flex items-center gap-3 sm:gap-4">
+                  <div className={`p-2.5 rounded-xl shrink-0 transition-colors ${
                     isDark ? "bg-white/5 group-hover:bg-emerald-500/20" : "bg-black/5 group-hover:bg-emerald-50"
                   }`}>
                     <item.icon className={`h-5 w-5 ${
@@ -185,14 +185,14 @@ export default function MorePage() {
                     {item.description}
                   </span>
                 </div>
-                <div className="flex items-center gap-2 mt-2 sm:mt-0 ml-11 sm:ml-0">
+                <div className="flex items-center gap-2 ml-[3.25rem] sm:ml-0">
                   <span className={`text-sm sm:text-base font-semibold ${
                     isDark ? "text-gray-100 group-hover:text-emerald-400" : "text-gray-900 group-hover:text-emerald-600"
                   } transition-colors`}>
                     {item.linkText}
                   </span>
                   {item.external && (
-                    <ArrowUpRight className={`h-4 w-4 transition-all ${
+                    <ArrowUpRight className={`h-4 w-4 transition-all shrink-0 ${
                       isDark ? "text-gray-500" : "text-gray-400"
                     } group-hover:translate-x-0.5 group-hover:-translate-y-0.5 group-hover:text-emerald-500 dark:group-hover:text-emerald-400`} />
                   )}
