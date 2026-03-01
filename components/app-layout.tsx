@@ -3,17 +3,20 @@
 import { Navbar } from "@/components/navbar"
 import { ThemeToggle } from "@/components/theme-toggle"
 import { useTheme } from "next-themes"
-import { useEffect, useState } from "react"
+import { useSyncExternalStore } from "react"
+
+// 用于 SSR 的默认快照
+const getServerSnapshot = () => false
+const getClientSnapshot = () => true
+const subscribe = () => () => {}
 
 export function AppLayout({ children }: { children: React.ReactNode }) {
   const { resolvedTheme } = useTheme()
-  const [mounted, setMounted] = useState(false)
-  const [currentYear, setCurrentYear] = useState(2025)
-
-  useEffect(() => {
-    setMounted(true)
-    setCurrentYear(new Date().getFullYear())
-  }, [])
+  // 使用 useSyncExternalStore 替代 useState + useEffect 模式
+  const mounted = useSyncExternalStore(subscribe, getClientSnapshot, getServerSnapshot)
+  
+  // 直接计算年份，不需要 useEffect
+  const currentYear = new Date().getFullYear()
 
   if (!mounted) {
     return (

@@ -2,15 +2,17 @@
 
 import { Moon, Sun } from "lucide-react"
 import { useTheme } from "next-themes"
-import { useEffect, useState } from "react"
+import { useSyncExternalStore } from "react"
+
+// 用于 SSR 的默认快照
+const getServerSnapshot = () => false
+const getClientSnapshot = () => true
+const subscribe = () => () => {}
 
 export function ThemeToggle() {
   const { theme, setTheme } = useTheme()
-  const [mounted, setMounted] = useState(false)
-
-  useEffect(() => {
-    setMounted(true)
-  }, [])
+  // 使用 useSyncExternalStore 替代 useState + useEffect 模式
+  const mounted = useSyncExternalStore(subscribe, getClientSnapshot, getServerSnapshot)
 
   if (!mounted) {
     return null

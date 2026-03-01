@@ -3,7 +3,7 @@
 import Link from "next/link"
 import { usePathname, useRouter } from "next/navigation"
 import { useTheme } from "next-themes"
-import { useEffect, useState, useRef } from "react"
+import { useEffect, useState, useRef, useCallback } from "react"
 
 const navItems = [
   { label: "首页", href: "/" },
@@ -15,16 +15,13 @@ export function Navbar() {
   const pathname = usePathname()
   const router = useRouter()
   const { resolvedTheme } = useTheme()
-  const [mounted, setMounted] = useState(false)
+  // 使用 typeof window 替代 mounted state
+  const mounted = typeof window !== 'undefined'
   const [scrolled, setScrolled] = useState(false)
   const [hoveredIndex, setHoveredIndex] = useState<number | null>(null)
   const [indicatorStyle, setIndicatorStyle] = useState({ width: 0, left: 0 })
   const navRef = useRef<HTMLDivElement>(null)
   const itemRefs = useRef<(HTMLAnchorElement | null)[]>([])
-
-  useEffect(() => {
-    setMounted(true)
-  }, [])
 
   useEffect(() => {
     const handleScroll = () => {
@@ -56,15 +53,15 @@ export function Navbar() {
     return () => window.removeEventListener('keydown', handleKeyDown)
   }, [pathname, router])
 
-  // 获取当前激活的索引
-  const getActiveIndex = () => {
+  // 获取当前激活的索引 - 使用 useCallback 缓存
+  const getActiveIndex = useCallback(() => {
     return navItems.findIndex(item => {
       if (item.href === "/") {
         return pathname === "/"
       }
       return pathname.startsWith(item.href)
     })
-  }
+  }, [pathname])
 
   // 更新指示器位置
   useEffect(() => {
@@ -79,7 +76,7 @@ export function Navbar() {
         })
       }
     }
-  }, [pathname, mounted, hoveredIndex])
+  }, [pathname, mounted, hoveredIndex, getActiveIndex])
 
   if (!mounted) {
     return null

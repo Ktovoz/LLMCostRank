@@ -87,7 +87,6 @@ export const columns: ColumnDef<LLMModel>[] = [
         </div>
       )
     },
-    filterFn: "priceRange",
   },
   {
     accessorKey: "outputPrice",
@@ -109,7 +108,6 @@ export const columns: ColumnDef<LLMModel>[] = [
       const price = row.getValue("outputPrice") as number
       return <div className="text-right font-mono pr-4">${price.toFixed(2)}</div>
     },
-    filterFn: "priceRange",
   },
   {
     accessorKey: "contextWindow",

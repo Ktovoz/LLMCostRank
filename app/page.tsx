@@ -38,7 +38,7 @@ export default function Home() {
             setData(parsedData)
             setLoading(false)
           },
-          error: (error) => {
+          error: (error: Error) => {
             console.error('CSV 解析错误:', error)
             setLoading(false)
           },

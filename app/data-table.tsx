@@ -128,7 +128,6 @@ function createColumns(currency: Currency): ColumnDef<LLMModel>[] {
           </div>
         )
       },
-      filterFn: "priceRange",
     },
     {
       accessorKey: "outputPrice",
@@ -150,7 +149,6 @@ function createColumns(currency: Currency): ColumnDef<LLMModel>[] {
         const price = row.getValue("outputPrice") as number
         return <div className="text-right font-mono pr-4">{currencySymbol}{formatPrice(price)}</div>
       },
-      filterFn: "priceRange",
     },
     {
       accessorKey: "contextWindow",
@@ -225,17 +223,31 @@ export function DataTable<TData, TValue>({
   // 计算价格最大值
   const priceLimits = React.useMemo(() => {
     const models = data as LLMModel[]
-    const maxInput = Math.max(...models.map(m => m.inputPrice))
-    const maxOutput = Math.max(...models.map(m => m.outputPrice))
+    if (models.length === 0) {
+      return { inputMax: 100, outputMax: 100 }
+    }
+    // 过滤掉非数字值
+    const inputPrices = models.map(m => m.inputPrice).filter(p => typeof p === 'number' && !isNaN(p))
+    const outputPrices = models.map(m => m.outputPrice).filter(p => typeof p === 'number' && !isNaN(p))
+
+    const maxInput = inputPrices.length > 0 ? Math.max(...inputPrices) : 0
+    const maxOutput = outputPrices.length > 0 ? Math.max(...outputPrices) : 0
+    // 最高值加 20%
     return {
-      inputMax: Math.ceil((maxInput + 5) * 10) / 10,
-      outputMax: Math.ceil((maxOutput + 5) * 2) / 2,
+      inputMax: maxInput > 0 ? Math.ceil(maxInput * 1.2 * 10) / 10 : 100,
+      outputMax: maxOutput > 0 ? Math.ceil(maxOutput * 1.2 * 10) / 10 : 100,
     }
   }, [data])
 
   // 价格区间状态（始终使用 USD）
-  const [inputPriceRange, setInputPriceRange] = React.useState([0, priceLimits.inputMax])
-  const [outputPriceRange, setOutputPriceRange] = React.useState([0, priceLimits.outputMax])
+  const [inputPriceRange, setInputPriceRange] = React.useState([0, 100])
+  const [outputPriceRange, setOutputPriceRange] = React.useState([0, 100])
+
+  // 当 priceLimits 变化时更新价格范围
+  React.useEffect(() => {
+    setInputPriceRange([0, priceLimits.inputMax])
+    setOutputPriceRange([0, priceLimits.outputMax])
+  }, [priceLimits.inputMax, priceLimits.outputMax])
 
   // Dialog 状态
   const [dialogOpen, setDialogOpen] = React.useState(false)
