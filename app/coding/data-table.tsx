@@ -25,7 +25,7 @@ import {
 } from "@/components/ui/table"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
-import { ChevronLeft, ChevronRight, Search } from "lucide-react"
+import { ChevronLeft, ChevronRight, Search, ChevronsRightLeft } from "lucide-react"
 
 interface DataTableProps<TData, TValue> {
   columns: ColumnDef<TData, TValue>[]
@@ -92,11 +92,35 @@ export function DataTable<TData, TValue>({
         </div>
       </div>
 
-      {/* 表格 */}
-      <div className={`rounded-xl overflow-hidden border ${
-        isDark ? "border-white/10" : "border-black/10"
+      {/* 水平滚动提示 */}
+      <div className={`flex items-center justify-center gap-1.5 py-2 text-xs sm:hidden ${
+        isDark ? "text-gray-500" : "text-gray-400"
       }`}>
-        <Table>
+        <ChevronsRightLeft className="h-3.5 w-3.5 animate-pulse" />
+        <span>左右滑动查看完整内容</span>
+      </div>
+
+      {/* 表格容器 - 带渐变边缘提示 */}
+      <div className="relative rounded-xl sm:overflow-hidden overflow-visible">
+        {/* 移动端左侧渐变遮罩 */}
+        <div className={`sm:hidden absolute left-0 top-0 bottom-0 w-4 z-10 pointer-events-none ${
+          isDark
+            ? "bg-gradient-to-r from-black/60 to-transparent"
+            : "bg-gradient-to-r from-white/80 to-transparent"
+        }`} />
+
+        {/* 移动端右侧渐变遮罩 */}
+        <div className={`sm:hidden absolute right-0 top-0 bottom-0 w-4 z-10 pointer-events-none ${
+          isDark
+            ? "bg-gradient-to-l from-black/60 to-transparent"
+            : "bg-gradient-to-l from-white/80 to-transparent"
+        }`} />
+
+        {/* 表格 */}
+        <div className={`rounded-xl overflow-x-auto border ${
+          isDark ? "border-white/10" : "border-black/10"
+        }`}>
+          <Table>
           <TableHeader>
             {table.getHeaderGroups().map((headerGroup) => (
               <TableRow
@@ -161,6 +185,7 @@ export function DataTable<TData, TValue>({
             )}
           </TableBody>
         </Table>
+        </div>
       </div>
 
       {/* 分页 */}

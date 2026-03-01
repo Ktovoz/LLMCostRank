@@ -1,16 +1,17 @@
 'use client'
 
 import { useTheme } from "next-themes"
-import { useEffect, useState } from "react"
+import { useSyncExternalStore } from "react"
 import { Mail, Globe, ArrowUpRight, Map, Database, ExternalLink } from "lucide-react"
+
+// 用于避免 SSR 水合问题的 store
+const getServerSnapshot = () => false
+const getClientSnapshot = () => true
+const subscribe = () => () => {}
 
 export default function MorePage() {
   const { resolvedTheme } = useTheme()
-  const [mounted, setMounted] = useState(false)
-
-  useEffect(() => {
-    setMounted(true)
-  }, [])
+  const mounted = useSyncExternalStore(subscribe, getClientSnapshot, getServerSnapshot)
 
   if (!mounted) {
     return null
