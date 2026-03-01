@@ -1,20 +1,33 @@
 'use client'
 
 import { useTheme } from "next-themes"
-import { useEffect, useState } from "react"
+import { useEffect, useState, useSyncExternalStore } from "react"
 import Papa from "papaparse"
 import { LLMModel } from "./columns"
 import { DataTable } from "./data-table"
 
+// 用于避免 SSR 水合问题的 store
+const getServerSnapshot = () => true
+const getClientSnapshot = () => true
+const subscribe = () => () => {}
+
+// CSV 行数据类型
+interface CSVRow {
+  id: string
+  name: string
+  provider: string
+  inputPrice: string
+  cachedInputPrice?: string
+  outputPrice: string
+  contextWindow: string
+  features?: string
+}
+
 export default function Home() {
   const { resolvedTheme } = useTheme()
-  const [mounted, setMounted] = useState(false)
+  const mounted = useSyncExternalStore(subscribe, getClientSnapshot, getServerSnapshot)
   const [data, setData] = useState<LLMModel[]>([])
   const [loading, setLoading] = useState(true)
-
-  useEffect(() => {
-    setMounted(true)
-  }, [])
 
   useEffect(() => {
     // 加载 CSV 数据
@@ -25,7 +38,7 @@ export default function Home() {
           header: true,
           skipEmptyLines: true,
           complete: (results) => {
-            const parsedData = results.data.map((row: any) => ({
+            const parsedData = results.data.map((row: CSVRow) => ({
               id: row.id,
               name: row.name,
               provider: row.provider,

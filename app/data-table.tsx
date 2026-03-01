@@ -33,7 +33,6 @@ import {
   Dialog,
   DialogContent,
   DialogDescription,
-  DialogFooter,
   DialogHeader,
   DialogTitle,
   DialogTrigger,
@@ -308,8 +307,8 @@ export function DataTable<TData, TValue>({
   const currencySymbol = currency === "CNY" ? "¥" : "$"
 
   // 检查列是否存在（通过检查原始列配置）
-  const hasNameColumn = columns.some((col: any) => col.accessorKey === "name" || col.id === "name")
-  const hasProviderColumn = columns.some((col: any) => col.accessorKey === "provider" || col.id === "provider")
+  const hasNameColumn = columns.some((col: ColumnDef<TData, TValue>) => (col as { accessorKey?: string; id?: string }).accessorKey === "name" || (col as { accessorKey?: string; id?: string }).id === "name")
+  const hasProviderColumn = columns.some((col: ColumnDef<TData, TValue>) => (col as { accessorKey?: string; id?: string }).accessorKey === "provider" || (col as { accessorKey?: string; id?: string }).id === "provider")
 
   return (
     <div className="w-full space-y-4">
