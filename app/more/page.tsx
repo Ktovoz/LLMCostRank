@@ -57,19 +57,19 @@ export default function MorePage() {
   return (
     <main className="flex-1 flex flex-col min-h-0 pt-20 sm:pt-28 md:pt-36 relative z-10">
       {/* 装饰性光晕 */}
-      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[300px] md:w-[600px] h-[150px] md:h-[300px] bg-emerald-500/10 dark:bg-emerald-500/5 blur-[60px] md:blur-[120px] rounded-full pointer-events-none -z-10" />
+      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[300px] md:w-[600px] h-[150px] md:h-[300px] bg-emerald-500/10 dark:bg-emerald-500/5 blur-[80px] md:blur-[120px] rounded-full pointer-events-none -z-10 animate-pulse" />
 
       {/* 标题区域 */}
-      <div className="text-center mb-10 sm:mb-16 px-4 relative z-10">
+      <div className="text-center mb-10 sm:mb-16 px-4 relative z-10 animate-fade-in">
         <h1 className={`text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold tracking-tight mb-4 ${
-          isDark 
-            ? "bg-gradient-to-br from-white via-gray-200 to-gray-500 bg-clip-text text-transparent" 
-            : "bg-gradient-to-br from-gray-900 via-gray-700 to-gray-500 bg-clip-text text-transparent"
+          isDark
+            ? "bg-gradient-to-br from-white via-gray-200 to-gray-500 bg-clip-text text-transparent drop-shadow-[0_0_40px_rgba(255,255,255,0.25)]"
+            : "bg-gradient-to-br from-gray-900 via-gray-700 to-gray-500 bg-clip-text text-transparent drop-shadow-[0_0_40px_rgba(0,0,0,0.15)]"
         }`}>
           更多与关于
         </h1>
         <p className={`text-base sm:text-lg md:text-xl max-w-2xl mx-auto font-medium ${
-          isDark ? "text-gray-400" : "text-gray-600"
+          isDark ? "text-gray-400/90" : "text-gray-600/90"
         }`}>
           探索项目的未来规划，或是与我们取得联系
         </p>

@@ -48,11 +48,11 @@ export default function BookmarksPage() {
   ]
 
   return (
-    <div className="flex flex-col items-center justify-center min-h-full px-3 sm:px-4 py-6 sm:py-8 pt-16 sm:pt-20 md:pt-36">
+    <div className="flex flex-col items-center justify-center min-h-full px-3 sm:px-4 py-6 sm:py-8 pt-16 sm:pt-20 md:pt-36 animate-fade-in">
       <h1 className={`mb-4 sm:mb-6 md:mb-10 text-2xl sm:text-3xl md:text-4xl font-bold tracking-tight lg:text-5xl ${
         isDark ? "text-gray-50" : "text-gray-900"
       }`}>
-        <span className={isDark ? "text-sky-400" : "text-sky-500"}>Kto</span> 书签
+        <span className={`bg-gradient-to-r from-sky-400 to-blue-500 bg-clip-text text-transparent ${isDark ? "drop-shadow-[0_0_20px_rgba(56,189,248,0.3)]" : ""}`}>Kto</span> 书签
       </h1>
 
       <div className="max-w-6xl w-full">
@@ -65,10 +65,10 @@ export default function BookmarksPage() {
                 href={site.url}
                 target="_blank"
                 rel="noopener noreferrer"
-                className={`group flex items-start gap-2.5 sm:gap-3 md:gap-4 rounded-lg sm:rounded-xl md:rounded-2xl p-3 sm:p-4 md:p-5 transition-all duration-200 ${
+                className={`group flex items-start gap-2.5 sm:gap-3 md:gap-4 rounded-xl sm:rounded-2xl md:rounded-3xl p-3 sm:p-4 md:p-5 transition-all duration-300 hover:scale-[1.02] ${
                   isDark
-                    ? "bg-white/5 hover:bg-white/10 border border-white/10 hover:border-white/20"
-                    : "bg-white/50 hover:bg-white/80 border border-black/5 hover:border-black/10 shadow-sm"
+                    ? "bg-white/5 hover:bg-white/10 border border-white/10 hover:border-white/20 shadow-[0_4px_12px_rgba(0,0,0,0.2)] hover:shadow-[0_8px_24px_rgba(0,0,0,0.3)]"
+                    : "bg-white/60 hover:bg-white/80 border border-black/5 hover:border-black/10 shadow-sm hover:shadow-md"
                 }`}
               >
                 <div className={`flex h-9 w-9 sm:h-10 sm:w-10 md:h-12 md:w-12 shrink-0 items-center justify-center rounded-lg md:rounded-xl transition-colors ${

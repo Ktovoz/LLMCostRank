@@ -333,8 +333,8 @@ export function DataTable<TData, TValue>({
         <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-4">
           {hasNameColumn && (
             <div className="relative flex-1 max-w-full sm:max-w-sm group">
-              <Search className={`absolute left-3.5 top-1/2 -translate-y-1/2 h-4 w-4 transition-colors ${
-                isDark ? "text-gray-500 group-focus-within:text-sky-400" : "text-gray-400 group-focus-within:text-sky-500"
+              <Search className={`absolute left-3.5 top-1/2 -translate-y-1/2 h-4 w-4 transition-all duration-300 ${
+                isDark ? "text-gray-500 group-focus-within:text-sky-400 group-focus-within:drop-shadow-[0_0_8px_rgba(56,189,248,0.5)]" : "text-gray-400 group-focus-within:text-sky-500 group-focus-within:drop-shadow-[0_0_8px_rgba(14,165,233,0.5)]"
               }`} />
               <Input
                 placeholder="搜索模型名称..."
@@ -342,18 +342,18 @@ export function DataTable<TData, TValue>({
                 onChange={(event) =>
                   table.getColumn("name")?.setFilterValue(event.target.value)
                 }
-                className={`pl-10 h-10 transition-all duration-300 rounded-xl ${
+                className={`pl-10 h-11 transition-all duration-300 rounded-xl ${
                   isDark
-                    ? "bg-black/20 border-white/10 focus:bg-black/40 focus:border-sky-500/50 focus:ring-2 focus:ring-sky-500/20 hover:border-white/20 hover:bg-black/30 text-white placeholder:text-gray-500 shadow-inner"
-                    : "bg-white/40 border-black/10 focus:bg-white/60 focus:border-sky-500/60 focus:ring-2 focus:ring-sky-500/20 hover:border-black/20 hover:bg-white/50 text-black placeholder:text-gray-400 shadow-inner"
+                    ? "bg-white/[0.03] border-white/10 focus:bg-white/[0.05] focus:border-sky-500/50 focus:ring-2 focus:ring-sky-500/20 hover:border-white/20 hover:bg-white/[0.06] text-white placeholder:text-gray-500 shadow-[0_0_0_1px_inset_rgba(255,255,255,0.02)]"
+                    : "bg-white/60 border-black/10 focus:bg-white/80 focus:border-sky-500/60 focus:ring-2 focus:ring-sky-500/20 hover:border-black/20 hover:bg-white/70 text-black placeholder:text-gray-400 shadow-[0_0_0_1px_inset_rgba(0,0,0,0.02)]"
                 }`}
               />
             </div>
           )}
           {hasProviderColumn && (
             <div className="relative flex-1 max-w-full sm:max-w-sm group">
-              <Search className={`absolute left-3.5 top-1/2 -translate-y-1/2 h-4 w-4 transition-colors ${
-                isDark ? "text-gray-500 group-focus-within:text-sky-400" : "text-gray-400 group-focus-within:text-sky-500"
+              <Search className={`absolute left-3.5 top-1/2 -translate-y-1/2 h-4 w-4 transition-all duration-300 ${
+                isDark ? "text-gray-500 group-focus-within:text-sky-400 group-focus-within:drop-shadow-[0_0_8px_rgba(56,189,248,0.5)]" : "text-gray-400 group-focus-within:text-sky-500 group-focus-within:drop-shadow-[0_0_8px_rgba(14,165,233,0.5)]"
               }`} />
               <Input
                 placeholder="搜索提供商..."
@@ -361,10 +361,10 @@ export function DataTable<TData, TValue>({
                 onChange={(event) =>
                   table.getColumn("provider")?.setFilterValue(event.target.value)
                 }
-                className={`pl-10 h-10 transition-all duration-300 rounded-xl ${
+                className={`pl-10 h-11 transition-all duration-300 rounded-xl ${
                   isDark
-                    ? "bg-black/20 border-white/10 focus:bg-black/40 focus:border-sky-500/50 focus:ring-2 focus:ring-sky-500/20 hover:border-white/20 hover:bg-black/30 text-white placeholder:text-gray-500 shadow-inner"
-                    : "bg-white/40 border-black/10 focus:bg-white/60 focus:border-sky-500/60 focus:ring-2 focus:ring-sky-500/20 hover:border-black/20 hover:bg-white/50 text-black placeholder:text-gray-400 shadow-inner"
+                    ? "bg-white/[0.03] border-white/10 focus:bg-white/[0.05] focus:border-sky-500/50 focus:ring-2 focus:ring-sky-500/20 hover:border-white/20 hover:bg-white/[0.06] text-white placeholder:text-gray-500 shadow-[0_0_0_1px_inset_rgba(255,255,255,0.02)]"
+                    : "bg-white/60 border-black/10 focus:bg-white/80 focus:border-sky-500/60 focus:ring-2 focus:ring-sky-500/20 hover:border-black/20 hover:bg-white/70 text-black placeholder:text-gray-400 shadow-[0_0_0_1px_inset_rgba(0,0,0,0.02)]"
                 }`}
               />
             </div>
@@ -378,10 +378,10 @@ export function DataTable<TData, TValue>({
             pressed={currency === "CNY"}
             onPressedChange={(pressed) => setCurrency(pressed ? "CNY" : "USD")}
             aria-label="切换货币单位"
-            className={`px-4 h-10 rounded-lg font-medium transition-all duration-200 text-sm ${
+            className={`px-4 h-11 rounded-xl font-semibold transition-all duration-300 text-sm ${
               isDark
-                ? "bg-[#161616] border border-white/10 hover:bg-[#1f1f1f] hover:border-white/20 data-[state=on]:bg-white/10 data-[state=on]:border-white/20 data-[state=on]:text-white"
-                : "bg-white border border-black/10 hover:bg-gray-50 hover:border-black/20 shadow-sm data-[state=on]:bg-gray-100 data-[state=on]:border-black/20 data-[state=on]:text-gray-900"
+                ? "bg-[#161616] border border-white/10 hover:bg-[#1f1f1f] hover:border-white/20 data-[state=on]:bg-gradient-to-br data-[state=on]:from-white/15 data-[state=on]:to-white/10 data-[state=on]:border-white/20 data-[state=on]:text-white data-[state=on]:shadow-[0_0_20px_rgba(255,255,255,0.1)]"
+                : "bg-white border border-black/10 hover:bg-gray-50 hover:border-black/20 shadow-sm data-[state=on]:bg-gradient-to-br data-[state=on]:from-gray-100 data-[state=on]:to-white data-[state=on]:border-black/20 data-[state=on]:text-gray-900 data-[state=on]:shadow-[0_0_20px_rgba(0,0,0,0.08)]"
             }`}
           >
             <span>{currency === "CNY" ? "¥ 人民币" : "$ 美元"}</span>
@@ -392,35 +392,35 @@ export function DataTable<TData, TValue>({
           <DialogTrigger asChild>
             <Button
               variant="outline"
-              className={`gap-2 ${
+              className={`gap-2 h-11 rounded-xl transition-all duration-300 ${
                 hasActiveFilters
                   ? isDark
-                    ? "border-white/30 bg-white/10 text-gray-200"
-                    : "border-black/30 bg-black/[0.08] text-gray-800"
+                    ? "border-white/30 bg-gradient-to-br from-white/15 to-white/10 text-gray-100 shadow-[0_0_20px_rgba(255,255,255,0.1)] hover:shadow-[0_0_30px_rgba(255,255,255,0.15)]"
+                    : "border-black/30 bg-gradient-to-br from-black/10 to-black/5 text-gray-800 shadow-[0_0_20px_rgba(0,0,0,0.08)] hover:shadow-[0_0_30px_rgba(0,0,0,0.12)]"
                   : isDark
-                    ? "border-white/10 bg-white/5 hover:bg-white/10"
-                    : "border-black/10 bg-white hover:bg-black/[0.02]"
+                    ? "border-white/10 bg-white/5 hover:bg-white/10 hover:border-white/20"
+                    : "border-black/10 bg-white hover:bg-gray-50 hover:border-black/20"
               }`}
             >
               <SlidersHorizontal className="h-4 w-4" />
               价格筛选
               {hasActiveFilters && (
-                <span className={`flex h-2 w-2 rounded-full ${
-                  isDark ? "bg-white/70" : "bg-black/60"
+                <span className={`flex h-2.5 w-2.5 rounded-full ${
+                  isDark ? "bg-white/90 shadow-[0_0_10px_rgba(255,255,255,0.5)]" : "bg-black/80 shadow-[0_0_10px_rgba(0,0,0,0.3)]"
                 }`} />
               )}
             </Button>
           </DialogTrigger>
           <DialogContent className={`w-[calc(100%-32px)] sm:max-w-[425px] p-0 overflow-hidden ${
             isDark
-              ? "bg-[#0a0a0a] border-white/10"
-              : "bg-white border-black/10"
+              ? "bg-[#0a0a0a] border-white/10 shadow-[0_0_60px_rgba(0,0,0,0.5)]"
+              : "bg-white border-black/10 shadow-[0_0_60px_rgba(0,0,0,0.15)]"
           }`}>
             {/* 标题区域 - 带背景色 */}
             <div className={`px-4 sm:px-6 py-4 sm:py-5 border-b ${
               isDark
-                ? "bg-white/[0.03] border-white/10"
-                : "bg-black/[0.02] border-black/10"
+                ? "bg-gradient-to-r from-white/[0.05] to-transparent border-white/10"
+                : "bg-gradient-to-r from-black/[0.03] to-transparent border-black/10"
             }`}>
               <DialogHeader className="space-y-1.5 sm:space-y-2">
                 <DialogTitle className={`text-base sm:text-lg font-semibold ${
@@ -446,16 +446,16 @@ export function DataTable<TData, TValue>({
                   }`}>
                     输入价格 ({currencySymbol}/1M tokens)
                   </Label>
-                  <span className={`text-xs sm:text-sm font-mono px-2 sm:px-2.5 py-1 rounded-md w-fit ${
+                  <span className={`text-xs sm:text-sm font-mono px-2.5 sm:px-3 py-1.5 rounded-xl w-fit transition-all ${
                     isDark
-                      ? "bg-white/[0.08] text-gray-200 border border-white/10"
-                      : "bg-black/[0.05] text-gray-700 border border-black/10"
+                      ? "bg-gradient-to-br from-white/10 to-white/5 text-gray-100 border border-white/15 shadow-[0_0_15px_rgba(255,255,255,0.05)]"
+                      : "bg-gradient-to-br from-black/5 to-black/3 text-gray-800 border border-black/10 shadow-[0_0_15px_rgba(0,0,0,0.05)]"
                   }`}>
                     {currencySymbol}{formatDisplayPrice(inputPriceRange[0])} - {currencySymbol}{formatDisplayPrice(inputPriceRange[1])}
                   </span>
                 </div>
-                <div className={`py-2 px-1 rounded-lg ${
-                  isDark ? "bg-white/[0.02]" : "bg-black/[0.02]"
+                <div className={`py-3 px-2 rounded-2xl ${
+                  isDark ? "bg-gradient-to-br from-white/[0.03] to-white/[0.01]" : "bg-gradient-to-br from-black/[0.03] to-black/[0.01]"
                 }`}>
                   <Slider
                     value={inputPriceRange}
@@ -484,16 +484,16 @@ export function DataTable<TData, TValue>({
                   }`}>
                     输出价格 ({currencySymbol}/1M tokens)
                   </Label>
-                  <span className={`text-xs sm:text-sm font-mono px-2 sm:px-2.5 py-1 rounded-md w-fit ${
+                  <span className={`text-xs sm:text-sm font-mono px-2.5 sm:px-3 py-1.5 rounded-xl w-fit transition-all ${
                     isDark
-                      ? "bg-white/[0.08] text-gray-200 border border-white/10"
-                      : "bg-black/[0.05] text-gray-700 border border-black/10"
+                      ? "bg-gradient-to-br from-white/10 to-white/5 text-gray-100 border border-white/15 shadow-[0_0_15px_rgba(255,255,255,0.05)]"
+                      : "bg-gradient-to-br from-black/5 to-black/3 text-gray-800 border border-black/10 shadow-[0_0_15px_rgba(0,0,0,0.05)]"
                   }`}>
                     {currencySymbol}{formatDisplayPrice(outputPriceRange[0])} - {currencySymbol}{formatDisplayPrice(outputPriceRange[1])}
                   </span>
                 </div>
-                <div className={`py-2 px-1 rounded-lg ${
-                  isDark ? "bg-white/[0.02]" : "bg-black/[0.02]"
+                <div className={`py-3 px-2 rounded-2xl ${
+                  isDark ? "bg-gradient-to-br from-white/[0.03] to-white/[0.01]" : "bg-gradient-to-br from-black/[0.03] to-black/[0.01]"
                 }`}>
                   <Slider
                     value={outputPriceRange}
@@ -516,16 +516,16 @@ export function DataTable<TData, TValue>({
             {/* 底部按钮区域 - 带背景色 */}
             <div className={`px-4 sm:px-6 py-3 sm:py-4 border-t flex flex-row gap-2 sm:gap-3 ${
               isDark
-                ? "bg-white/[0.03] border-white/10"
-                : "bg-black/[0.02] border-black/10"
+                ? "bg-gradient-to-r from-white/[0.03] to-transparent border-white/10"
+                : "bg-gradient-to-r from-black/[0.03] to-transparent border-black/10"
             }`}>
               <Button
                 variant="outline"
                 size="sm"
-                className={`flex-1 text-sm ${
+                className={`flex-1 text-sm h-11 rounded-xl transition-all duration-300 ${
                   isDark
-                    ? "bg-white/5 border-white/10 text-gray-300 hover:bg-white/10 hover:text-gray-100"
-                    : "bg-white border-black/10 text-gray-700 hover:bg-black/[0.03]"
+                    ? "bg-white/5 border-white/10 text-gray-300 hover:bg-white/10 hover:text-gray-100 hover:border-white/20"
+                    : "bg-white border-black/10 text-gray-700 hover:bg-black/[0.03] hover:border-black/20"
                 }`}
                 onClick={resetPriceFilters}
               >
@@ -533,10 +533,10 @@ export function DataTable<TData, TValue>({
               </Button>
               <Button
                 size="sm"
-                className={`flex-1 text-sm ${
+                className={`flex-1 text-sm h-11 rounded-xl transition-all duration-300 ${
                   isDark
-                    ? "bg-white/[0.15] hover:bg-white/20 text-white border border-white/20"
-                    : "bg-black/[0.08] hover:bg-black/[0.12] text-gray-900 border border-black/10"
+                    ? "bg-gradient-to-br from-white/20 to-white/10 hover:from-white/25 hover:to-white/15 text-white border border-white/20 shadow-[0_0_20px_rgba(255,255,255,0.1)] hover:shadow-[0_0_30px_rgba(255,255,255,0.15)]"
+                    : "bg-gradient-to-br from-black/10 to-black/5 hover:from-black/12 hover:to-black/8 text-gray-900 border border-black/10 shadow-[0_0_20px_rgba(0,0,0,0.08)] hover:shadow-[0_0_30px_rgba(0,0,0,0.12)]"
                 }`}
                 onClick={applyPriceFilters}
               >
@@ -559,24 +559,24 @@ export function DataTable<TData, TValue>({
       {/* 表格容器 - 带渐变边缘提示 */}
       <div className="relative rounded-xl sm:overflow-hidden overflow-visible">
         <div className={`rounded-xl overflow-x-auto border ${
-          isDark ? "border-white/10" : "border-black/5"
+          isDark ? "border-white/10 shadow-[inset_0_0_40px_rgba(255,255,255,0.01)]" : "border-black/5 shadow-[inset_0_0_40px_rgba(0,0,0,0.01)]"
         }`}>
           <Table>
             <TableHeader>
             {table.getHeaderGroups().map((headerGroup) => (
               <TableRow
                 key={headerGroup.id}
-                className={
+                className={`transition-all duration-300 ${
                   isDark
-                    ? "border-b border-white/10 bg-white/5 hover:bg-white/10"
-                    : "border-b border-black/5 bg-black/[0.03] hover:bg-black/[0.05]"
-                }
+                    ? "border-b border-white/10 bg-gradient-to-r from-white/[0.06] via-white/[0.03] to-white/[0.06] hover:from-white/[0.08] hover:via-white/[0.05] hover:to-white/[0.08]"
+                    : "border-b border-black/5 bg-gradient-to-r from-black/[0.04] via-black/[0.02] to-black/[0.04] hover:from-black/[0.06] hover:via-black/[0.03] hover:to-black/[0.06]"
+                }`}
               >
                 {headerGroup.headers.map((header) => {
                   return (
                     <TableHead
                       key={header.id}
-                      className={`h-10 sm:h-12 px-2 sm:px-4 whitespace-nowrap ${isDark ? "text-gray-300 font-semibold" : "text-gray-700 font-semibold"}`}
+                      className={`h-12 sm:h-14 px-2 sm:px-4 whitespace-nowrap ${isDark ? "text-gray-200 font-bold tracking-wide" : "text-gray-700 font-bold tracking-wide"}`}
                     >
                       {header.isPlaceholder
                         ? null
@@ -596,16 +596,16 @@ export function DataTable<TData, TValue>({
                 <TableRow
                   key={row.id}
                   data-state={row.getIsSelected() && "selected"}
-                  className={`transition-all duration-200 border-b ${
+                  className={`transition-all duration-300 border-b ${
                     isDark
-                      ? "border-white/5 hover:bg-white/[0.08] hover:shadow-[inset_0_1px_0_0_rgba(255,255,255,0.1)]"
-                      : "border-black/5 hover:bg-black/[0.04] hover:shadow-[inset_0_1px_0_0_rgba(0,0,0,0.05)]"
-                  } ${index % 2 === 0 ? "bg-transparent" : isDark ? "bg-white/[0.02]" : "bg-black/[0.015]"}`}
+                      ? "border-white/5 hover:bg-white/[0.06] hover:shadow-[inset_0_1px_0_0_rgba(255,255,255,0.08)]"
+                      : "border-black/5 hover:bg-black/[0.03] hover:shadow-[inset_0_1px_0_0_rgba(0,0,0,0.03)]"
+                  } ${index % 2 === 0 ? "bg-transparent" : isDark ? "bg-white/[0.015]" : "bg-black/[0.015]"}`}
                 >
                   {row.getVisibleCells().map((cell) => (
                     <TableCell
                       key={cell.id}
-                      className={`px-2 sm:px-4 py-2 sm:py-4 ${isDark ? "text-gray-200" : "text-gray-800"}`}
+                      className={`px-2 sm:px-4 py-3 sm:py-4 ${isDark ? "text-gray-200" : "text-gray-800"}`}
                     >
                       {flexRender(cell.column.columnDef.cell, cell.getContext())}
                     </TableCell>
