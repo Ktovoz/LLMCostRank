@@ -38,7 +38,7 @@ export default function Home() {
           header: true,
           skipEmptyLines: true,
           complete: (results) => {
-            const parsedData = results.data.map((row: CSVRow) => ({
+            const parsedData = (results.data as CSVRow[]).map((row) => ({
               id: row.id,
               name: row.name,
               provider: row.provider,
