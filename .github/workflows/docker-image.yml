@@ -33,17 +33,13 @@ jobs:
           username: ${{ secrets.PRIVATE_REGISTRY_USERNAME }}
           password: ${{ secrets.PRIVATE_REGISTRY_PASSWORD }}
 
-      - name: Get version tag
-        id: version
-        run: echo "VERSION=$(date +%Y%m%d)-${GITHUB_SHA::8}" >> $GITHUB_OUTPUT
-
       - name: Set image tags
         id: tags
         run: |
           if [[ "${{ github.ref }}" == "refs/heads/dev" ]]; then
-            echo "private_tags=${{ env.REGISTRY }}/${{ env.NAMESPACE }}/${{ steps.image.outputs.name }}:dev,${{ env.REGISTRY }}/${{ env.NAMESPACE }}/${{ steps.image.outputs.name }}:dev-${{ steps.version.outputs.VERSION }}" >> $GITHUB_OUTPUT
+            echo "private_tags=${{ env.REGISTRY }}/${{ env.NAMESPACE }}/${{ steps.image.outputs.name }}:dev" >> $GITHUB_OUTPUT
           else
-            echo "private_tags=${{ env.REGISTRY }}/${{ env.NAMESPACE }}/${{ steps.image.outputs.name }}:prod,${{ env.REGISTRY }}/${{ env.NAMESPACE }}/${{ steps.image.outputs.name }}:prod-${{ steps.version.outputs.VERSION }}" >> $GITHUB_OUTPUT
+            echo "private_tags=${{ env.REGISTRY }}/${{ env.NAMESPACE }}/${{ steps.image.outputs.name }}:prod" >> $GITHUB_OUTPUT
           fi
 
       - name: Build and push
