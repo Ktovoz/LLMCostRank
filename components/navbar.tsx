@@ -187,9 +187,7 @@ export function Navbar() {
           <Link
             href="/"
             className={`text-xl font-extrabold tracking-tight transition-all duration-300 hover:scale-105 ${
-              isDark
-                ? "text-white bg-gradient-to-r from-white to-neutral-400 bg-clip-text text-transparent"
-                : "text-gray-900 bg-gradient-to-r from-gray-900 to-gray-600 bg-clip-text text-transparent"
+              isDark ? "text-white" : "text-gray-900"
             }`}
           >
             LLMCostRank
@@ -205,11 +203,11 @@ export function Navbar() {
               className={`p-2 rounded-2xl transition-all duration-300 border ${
                 isDark
                   ? mobileMenuOpen
-                    ? "bg-gradient-to-br from-white/20 to-white/10 border-white/20 text-white shadow-[0_0_20px_rgba(255,255,255,0.15)] scale-105"
-                    : "bg-[#1a1a1c] border-white/10 text-gray-300 hover:bg-white/10 hover:border-white/20 hover:shadow-[0_0_15px_rgba(255,255,255,0.1)]"
+                    ? "bg-white/10 border-white/10 text-white"
+                    : "bg-[#1a1a1c] border-white/10 text-gray-300 hover:bg-white/10"
                   : mobileMenuOpen
-                    ? "bg-gradient-to-br from-black/15 to-black/10 border-black/20 text-gray-900 shadow-[0_0_20px_rgba(0,0,0,0.15)] scale-105"
-                    : "bg-white border-black/10 text-gray-700 hover:bg-black/5 hover:border-black/20 hover:shadow-[0_0_15px_rgba(0,0,0,0.08)]"
+                    ? "bg-black/5 border-black/5 text-gray-900"
+                    : "bg-white border-black/10 text-gray-700 hover:bg-black/5"
               }`}
               aria-label="切换菜单"
             >
