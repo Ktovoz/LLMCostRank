@@ -118,7 +118,7 @@ export function DataTable<TData, TValue>({
 
         {/* 表格 */}
         <div className={`rounded-xl overflow-x-auto border ${
-          isDark ? "border-white/10" : "border-black/10"
+          isDark ? "border-white/10" : "border-black/5"
         }`}>
           <Table>
           <TableHeader>
@@ -127,15 +127,15 @@ export function DataTable<TData, TValue>({
                 key={headerGroup.id}
                 className={
                   isDark
-                    ? "border-white/10 bg-white/[0.06] hover:bg-white/[0.08]"
-                    : "border-black/10 bg-black/[0.03] hover:bg-black/[0.05]"
+                    ? "border-b border-white/10 bg-white/[0.04] hover:bg-white/[0.06] backdrop-blur-sm"
+                    : "border-b border-black/5 bg-black/[0.02] hover:bg-black/[0.04] backdrop-blur-sm"
                 }
               >
                 {headerGroup.headers.map((header) => {
                   return (
                     <TableHead
                       key={header.id}
-                      className={isDark ? "text-gray-300" : "text-gray-600"}
+                      className={`h-12 px-4 whitespace-nowrap ${isDark ? "text-gray-300 font-semibold" : "text-gray-700 font-semibold"}`}
                     >
                       {header.isPlaceholder
                         ? null
@@ -155,16 +155,16 @@ export function DataTable<TData, TValue>({
                 <TableRow
                   key={row.id}
                   data-state={row.getIsSelected() && "selected"}
-                  className={`transition-colors ${
+                  className={`transition-colors border-b ${
                     isDark
-                      ? "border-white/5 hover:bg-white/[0.04]"
+                      ? "border-white/5 hover:bg-white/[0.06]"
                       : "border-black/5 hover:bg-black/[0.03]"
-                  } ${index % 2 === 0 ? "" : isDark ? "bg-white/[0.02]" : "bg-black/[0.015]"}`}
+                  } ${index % 2 === 0 ? "bg-transparent" : isDark ? "bg-white/[0.02]" : "bg-black/[0.015]"}`}
                 >
                   {row.getVisibleCells().map((cell) => (
                     <TableCell
                       key={cell.id}
-                      className={isDark ? "text-gray-200" : "text-gray-700"}
+                      className={`px-4 py-3 sm:py-4 ${isDark ? "text-gray-200" : "text-gray-800"}`}
                     >
                       {flexRender(cell.column.columnDef.cell, cell.getContext())}
                     </TableCell>
@@ -175,7 +175,7 @@ export function DataTable<TData, TValue>({
               <TableRow>
                 <TableCell
                   colSpan={columns.length}
-                  className={`h-24 text-center ${
+                  className={`h-32 text-center text-sm ${
                     isDark ? "text-gray-400" : "text-gray-500"
                   }`}
                 >

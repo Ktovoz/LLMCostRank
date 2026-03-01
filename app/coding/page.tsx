@@ -106,15 +106,6 @@ export default function CodingPage() {
     <div className="flex flex-col items-center px-4 sm:px-6 py-8 sm:py-12 pt-20 sm:pt-28 md:pt-36">
       {/* 主标题区域 */}
       <div className="text-center mb-8 sm:mb-12 md:mb-16 relative z-10">
-        <div className={`inline-flex items-center gap-1.5 mb-4 px-3 py-1 rounded-full text-xs sm:text-sm font-medium tracking-wide transition-colors ${
-          isDark ? "bg-purple-500/10 border border-purple-500/20 text-purple-400" : "bg-purple-50 border border-purple-200 text-purple-600"
-        }`}>
-          <span className="relative flex h-2 w-2">
-            <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-purple-400 opacity-75"></span>
-            <span className="relative inline-flex rounded-full h-2 w-2 bg-purple-500"></span>
-          </span>
-          Dev Tools
-        </div>
         <h1 className={`text-3xl sm:text-4xl md:text-5xl lg:text-7xl font-extrabold tracking-tight mb-4 sm:mb-6 ${
           isDark 
             ? "bg-gradient-to-b from-white via-gray-200 to-gray-500 bg-clip-text text-transparent drop-shadow-sm" 
