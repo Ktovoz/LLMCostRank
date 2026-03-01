@@ -169,3 +169,1059 @@ id,name,provider,inputPrice,cachedInputPrice,outputPrice,contextWindow,features
 168,Qwen2.5-7B-Instruct-Pro,硅基流动,0.04,,0.04,32000,tool_calls|prefix_cache|reasoning
 169,Qwen2-7B-Instruct-Pro,硅基流动,0.04,,0.04,32000,prefix_cache|reasoning
 170,glm-4-9b-chat-Pro,硅基流动,0.06,,0.06,128000,tool_calls|prefix_cache|reasoning
+
+171,ByteDance Seed: Seed-2.0-Mini,OpenRouter,0.72,,2.88,262144,vision
+172,Google: Nano Banana 2 (Gemini 3.1 Flash Image Preview),OpenRouter,1.8,,10.8,65536,vision
+173,Qwen: Qwen3.5-35B-A3B,OpenRouter,1.8,,14.4,262144,vision
+174,Qwen: Qwen3.5-27B,OpenRouter,2.16,,17.28,262144,vision
+175,Qwen: Qwen3.5-122B-A10B,OpenRouter,2.88,,23.04,262144,vision
+176,Qwen: Qwen3.5-Flash,OpenRouter,0.72,,2.88,1000000,vision
+177,LiquidAI: LFM2-24B-A2B,OpenRouter,0.22,,0.86,32768,
+178,Google: Gemini 3.1 Pro Preview Custom Tools,OpenRouter,14.4,,86.4,1048576,vision
+179,OpenAI: GPT-5.3-Codex,OpenRouter,12.6,,100.8,400000,vision
+180,AionLabs: Aion-2.0,OpenRouter,5.76,,11.52,131072,
+181,Google: Gemini 3.1 Pro Preview,OpenRouter,14.4,,86.4,1048576,vision
+182,Anthropic: Claude Sonnet 4.6,OpenRouter,21.6,,108.0,1000000,vision
+183,Qwen: Qwen3.5 Plus 2026-02-15,OpenRouter,2.88,,17.28,1000000,vision
+184,Qwen: Qwen3.5 397B A17B,OpenRouter,3.96,,25.2,262144,vision
+185,MiniMax: MiniMax M2.5,OpenRouter,2.12,,8.64,196608,
+186,Z.ai: GLM 5,OpenRouter,6.84,,18.36,204800,
+187,Qwen: Qwen3 Max Thinking,OpenRouter,8.64,,43.2,262144,
+188,Anthropic: Claude Opus 4.6,OpenRouter,36.0,,180.0,1000000,vision
+189,Qwen: Qwen3 Coder Next,OpenRouter,0.86,,5.4,262144,
+190,Free Models Router,OpenRouter,0.0,,0.0,200000,vision
+191,StepFun: Step 3.5 Flash (free),OpenRouter,0.0,,0.0,256000,
+192,StepFun: Step 3.5 Flash,OpenRouter,0.72,,2.16,256000,
+193,Arcee AI: Trinity Large Preview (free),OpenRouter,0.0,,0.0,131000,
+194,MoonshotAI: Kimi K2.5,OpenRouter,3.24,,15.84,262144,vision
+195,Upstage: Solar Pro 3 (free),OpenRouter,0.0,,0.0,128000,
+196,MiniMax: MiniMax M2-her,OpenRouter,2.16,,8.64,65536,
+197,Writer: Palmyra X5,OpenRouter,4.32,,43.2,1040000,
+198,LiquidAI: LFM2.5-1.2B-Thinking (free),OpenRouter,0.0,,0.0,32768,
+199,LiquidAI: LFM2.5-1.2B-Instruct (free),OpenRouter,0.0,,0.0,32768,
+200,OpenAI: GPT Audio,OpenRouter,18.0,,72.0,128000,
+201,OpenAI: GPT Audio Mini,OpenRouter,4.32,,17.28,128000,
+202,Z.ai: GLM 4.7 Flash,OpenRouter,0.43,,2.88,202752,
+203,OpenAI: GPT-5.2-Codex,OpenRouter,12.6,,100.8,400000,vision
+204,AllenAI: Molmo2 8B,OpenRouter,1.44,,1.44,36864,vision
+205,AllenAI: Olmo 3.1 32B Instruct,OpenRouter,1.44,,4.32,65536,
+206,ByteDance Seed: Seed 1.6 Flash,OpenRouter,0.54,,2.16,262144,vision
+207,ByteDance Seed: Seed 1.6,OpenRouter,1.8,,14.4,262144,vision
+208,MiniMax: MiniMax M2.1,OpenRouter,1.94,,6.84,196608,
+209,Z.ai: GLM 4.7,OpenRouter,2.16,,10.08,202752,
+210,Google: Gemini 3 Flash Preview,OpenRouter,3.6,,21.6,1048576,vision
+211,Mistral: Mistral Small Creative,OpenRouter,0.72,,2.16,32768,
+212,Xiaomi: MiMo-V2-Flash,OpenRouter,0.65,,2.09,262144,
+213,NVIDIA: Nemotron 3 Nano 30B A3B (free),OpenRouter,0.0,,0.0,256000,
+214,NVIDIA: Nemotron 3 Nano 30B A3B,OpenRouter,0.36,,1.44,262144,
+215,OpenAI: GPT-5.2 Chat,OpenRouter,12.6,,100.8,128000,vision
+216,OpenAI: GPT-5.2 Pro,OpenRouter,151.2,,1209.6,400000,vision
+217,OpenAI: GPT-5.2,OpenRouter,12.6,,100.8,400000,vision
+218,Mistral: Devstral 2 2512,OpenRouter,2.88,,14.4,262144,
+219,Relace: Relace Search,OpenRouter,7.2,,21.6,256000,
+220,Z.ai: GLM 4.6V,OpenRouter,2.16,,6.48,131072,vision
+221,Nex AGI: DeepSeek V3.1 Nex N1,OpenRouter,1.94,,7.2,131072,
+222,EssentialAI: Rnj 1 Instruct,OpenRouter,1.08,,1.08,32768,
+223,Body Builder (beta),OpenRouter,-7200000.0,,-7200000.0,128000,
+224,OpenAI: GPT-5.1-Codex-Max,OpenRouter,9.0,,72.0,400000,vision
+225,Amazon: Nova 2 Lite,OpenRouter,2.16,,18.0,1000000,vision
+226,Mistral: Ministral 3 14B 2512,OpenRouter,1.44,,1.44,262144,vision
+227,Mistral: Ministral 3 8B 2512,OpenRouter,1.08,,1.08,262144,vision
+228,Mistral: Ministral 3 3B 2512,OpenRouter,0.72,,0.72,131072,vision
+229,Mistral: Mistral Large 3 2512,OpenRouter,3.6,,10.8,262144,vision
+230,Arcee AI: Trinity Mini (free),OpenRouter,0.0,,0.0,131072,
+231,Arcee AI: Trinity Mini,OpenRouter,0.32,,1.08,131072,
+232,DeepSeek: DeepSeek V3.2 Speciale,OpenRouter,2.88,,8.64,163840,
+233,DeepSeek: DeepSeek V3.2,OpenRouter,1.8,,2.88,163840,
+234,Prime Intellect: INTELLECT-3,OpenRouter,1.44,,7.92,131072,
+235,Anthropic: Claude Opus 4.5,OpenRouter,36.0,,180.0,200000,vision
+236,AllenAI: Olmo 3 32B Think,OpenRouter,1.08,,3.6,65536,
+237,AllenAI: Olmo 3 7B Instruct,OpenRouter,0.72,,1.44,65536,
+238,AllenAI: Olmo 3 7B Think,OpenRouter,0.86,,1.44,65536,
+239,Google: Nano Banana Pro (Gemini 3 Pro Image Preview),OpenRouter,14.4,,86.4,65536,vision
+240,xAI: Grok 4.1 Fast,OpenRouter,1.44,,3.6,2000000,vision
+241,Google: Gemini 3 Pro Preview,OpenRouter,14.4,,86.4,1048576,vision
+242,Deep Cogito: Cogito v2.1 671B,OpenRouter,9.0,,9.0,128000,
+243,OpenAI: GPT-5.1,OpenRouter,9.0,,72.0,400000,vision
+244,OpenAI: GPT-5.1 Chat,OpenRouter,9.0,,72.0,128000,vision
+245,OpenAI: GPT-5.1-Codex,OpenRouter,9.0,,72.0,400000,vision
+246,OpenAI: GPT-5.1-Codex-Mini,OpenRouter,1.8,,14.4,400000,vision
+247,Kwaipilot: KAT-Coder-Pro V1,OpenRouter,1.49,,5.96,256000,
+248,MoonshotAI: Kimi K2 Thinking,OpenRouter,3.38,,14.4,131072,
+249,Amazon: Nova Premier 1.0,OpenRouter,18.0,,90.0,1000000,vision
+250,Perplexity: Sonar Pro Search,OpenRouter,21.6,,108.0,200000,vision
+251,Mistral: Voxtral Small 24B 2507,OpenRouter,0.72,,2.16,32000,
+252,OpenAI: gpt-oss-safeguard-20b,OpenRouter,0.54,,2.16,131072,
+253,NVIDIA: Nemotron Nano 12B 2 VL (free),OpenRouter,0.0,,0.0,128000,vision
+254,NVIDIA: Nemotron Nano 12B 2 VL,OpenRouter,1.44,,4.32,131072,vision
+255,MiniMax: MiniMax M2,OpenRouter,1.84,,7.2,196608,
+256,Qwen: Qwen3 VL 32B Instruct,OpenRouter,0.75,,3.0,131072,vision
+257,LiquidAI: LFM2-8B-A1B,OpenRouter,0.07,,0.14,32768,
+258,LiquidAI: LFM2-2.6B,OpenRouter,0.07,,0.14,32768,
+259,IBM: Granite 4.0 Micro,OpenRouter,0.12,,0.79,131000,
+260,OpenAI: GPT-5 Image Mini,OpenRouter,18.0,,14.4,400000,vision
+261,Anthropic: Claude Haiku 4.5,OpenRouter,7.2,,36.0,200000,vision
+262,Qwen: Qwen3 VL 8B Thinking,OpenRouter,0.84,,9.83,131072,vision
+263,Qwen: Qwen3 VL 8B Instruct,OpenRouter,0.58,,3.6,131072,vision
+264,OpenAI: GPT-5 Image,OpenRouter,72.0,,72.0,400000,vision
+265,OpenAI: o3 Deep Research,OpenRouter,72.0,,288.0,200000,vision
+266,OpenAI: o4 Mini Deep Research,OpenRouter,14.4,,57.6,200000,vision
+267,NVIDIA: Llama 3.3 Nemotron Super 49B V1.5,OpenRouter,0.72,,2.88,131072,
+268,Baidu: ERNIE 4.5 21B A3B Thinking,OpenRouter,0.5,,2.02,131072,
+269,Google: Nano Banana (Gemini 2.5 Flash Image),OpenRouter,2.16,,18.0,32768,vision
+270,Qwen: Qwen3 VL 30B A3B Thinking,OpenRouter,0.0,,0.0,131072,vision
+271,Qwen: Qwen3 VL 30B A3B Instruct,OpenRouter,0.94,,3.74,131072,vision
+272,OpenAI: GPT-5 Pro,OpenRouter,108.0,,864.0,400000,vision
+273,Z.ai: GLM 4.6,OpenRouter,2.52,,12.31,202752,
+274,Z.ai: GLM 4.6 (exacto),OpenRouter,3.17,,12.67,204800,
+275,Anthropic: Claude Sonnet 4.5,OpenRouter,21.6,,108.0,1000000,vision
+276,DeepSeek: DeepSeek V3.2 Exp,OpenRouter,1.94,,2.95,163840,
+277,TheDrummer: Cydonia 24B V4.1,OpenRouter,2.16,,3.6,131072,
+278,Relace: Relace Apply 3,OpenRouter,6.12,,9.0,256000,
+279,Google: Gemini 2.5 Flash Lite Preview 09-2025,OpenRouter,0.72,,2.88,1048576,vision
+280,Qwen: Qwen3 VL 235B A22B Thinking,OpenRouter,0.0,,0.0,131072,vision
+281,Qwen: Qwen3 VL 235B A22B Instruct,OpenRouter,1.44,,6.34,262144,vision
+282,Qwen: Qwen3 Max,OpenRouter,8.64,,43.2,262144,
+283,Qwen: Qwen3 Coder Plus,OpenRouter,7.2,,36.0,1000000,
+284,OpenAI: GPT-5 Codex,OpenRouter,9.0,,72.0,400000,vision
+285,DeepSeek: DeepSeek V3.1 Terminus (exacto),OpenRouter,1.51,,5.69,163840,
+286,DeepSeek: DeepSeek V3.1 Terminus,OpenRouter,1.51,,5.69,163840,
+287,xAI: Grok 4 Fast,OpenRouter,1.44,,3.6,2000000,vision
+288,Tongyi DeepResearch 30B A3B,OpenRouter,0.65,,3.24,131072,
+289,Qwen: Qwen3 Coder Flash,OpenRouter,2.16,,10.8,1000000,
+290,OpenGVLab: InternVL3 78B,OpenRouter,1.08,,4.32,32768,vision
+291,Qwen: Qwen3 Next 80B A3B Thinking,OpenRouter,1.08,,8.64,128000,
+292,Qwen: Qwen3 Next 80B A3B Instruct (free),OpenRouter,0.0,,0.0,262144,
+293,Qwen: Qwen3 Next 80B A3B Instruct,OpenRouter,0.65,,7.92,262144,
+294,Meituan: LongCat Flash Chat,OpenRouter,1.44,,5.76,131072,
+295,Qwen: Qwen Plus 0728 (thinking),OpenRouter,2.88,,8.64,1000000,
+296,Qwen: Qwen Plus 0728,OpenRouter,2.88,,8.64,1000000,
+297,NVIDIA: Nemotron Nano 9B V2 (free),OpenRouter,0.0,,0.0,128000,
+298,NVIDIA: Nemotron Nano 9B V2,OpenRouter,0.29,,1.15,131072,
+299,MoonshotAI: Kimi K2 0905,OpenRouter,2.88,,14.4,131072,
+300,MoonshotAI: Kimi K2 0905 (exacto),OpenRouter,4.32,,18.0,262144,
+301,Qwen: Qwen3 30B A3B Thinking 2507,OpenRouter,0.37,,2.45,32768,
+302,xAI: Grok Code Fast 1,OpenRouter,1.44,,10.8,256000,
+303,Nous: Hermes 4 70B,OpenRouter,0.94,,2.88,131072,
+304,Nous: Hermes 4 405B,OpenRouter,7.2,,21.6,131072,
+305,DeepSeek: DeepSeek V3.1,OpenRouter,1.08,,5.4,32768,
+306,OpenAI: GPT-4o Audio,OpenRouter,18.0,,72.0,128000,
+307,Mistral: Mistral Medium 3.1,OpenRouter,2.88,,14.4,131072,vision
+308,Baidu: ERNIE 4.5 21B A3B,OpenRouter,0.5,,2.02,120000,
+309,Baidu: ERNIE 4.5 VL 28B A3B,OpenRouter,1.01,,4.03,30000,vision
+310,Z.ai: GLM 4.5V,OpenRouter,4.32,,12.96,65536,vision
+311,AI21: Jamba Large 1.7,OpenRouter,14.4,,57.6,256000,
+312,OpenAI: GPT-5 Chat,OpenRouter,9.0,,72.0,128000,vision
+313,OpenAI: GPT-5,OpenRouter,9.0,,72.0,400000,vision
+314,OpenAI: GPT-5 Mini,OpenRouter,1.8,,14.4,400000,vision
+315,OpenAI: GPT-5 Nano,OpenRouter,0.36,,2.88,400000,vision
+316,OpenAI: gpt-oss-120b (free),OpenRouter,0.0,,0.0,131072,
+317,OpenAI: gpt-oss-120b,OpenRouter,0.28,,1.37,131072,
+318,OpenAI: gpt-oss-120b (exacto),OpenRouter,0.28,,1.37,131072,
+319,OpenAI: gpt-oss-20b (free),OpenRouter,0.0,,0.0,131072,
+320,OpenAI: gpt-oss-20b,OpenRouter,0.22,,1.01,131072,
+321,Anthropic: Claude Opus 4.1,OpenRouter,108.0,,540.0,200000,vision
+322,Mistral: Codestral 2508,OpenRouter,2.16,,6.48,256000,
+323,Qwen: Qwen3 Coder 30B A3B Instruct,OpenRouter,0.5,,1.94,160000,
+324,Qwen: Qwen3 30B A3B Instruct 2507,OpenRouter,0.65,,2.16,262144,
+325,Z.ai: GLM 4.5,OpenRouter,3.96,,14.4,131000,
+326,Z.ai: GLM 4.5 Air (free),OpenRouter,0.0,,0.0,131072,
+327,Z.ai: GLM 4.5 Air,OpenRouter,0.94,,6.12,131072,
+328,Qwen: Qwen3 235B A22B Thinking 2507,OpenRouter,0.0,,0.0,131072,
+329,Z.ai: GLM 4 32B ,OpenRouter,0.72,,0.72,128000,
+330,Qwen: Qwen3 Coder 480B A35B (free),OpenRouter,0.0,,0.0,262000,
+331,Qwen: Qwen3 Coder 480B A35B,OpenRouter,1.58,,7.2,262144,
+332,Qwen: Qwen3 Coder 480B A35B (exacto),OpenRouter,1.58,,12.96,262144,
+333,ByteDance: UI-TARS 7B ,OpenRouter,0.72,,1.44,128000,vision
+334,Google: Gemini 2.5 Flash Lite,OpenRouter,0.72,,2.88,1048576,vision
+335,Qwen: Qwen3 235B A22B Instruct 2507,OpenRouter,0.51,,0.72,262144,
+336,Switchpoint Router,OpenRouter,6.12,,24.48,131072,
+337,MoonshotAI: Kimi K2 0711,OpenRouter,3.96,,15.84,131000,
+338,Mistral: Devstral Medium,OpenRouter,2.88,,14.4,131072,
+339,Mistral: Devstral Small 1.1,OpenRouter,0.72,,2.16,131072,
+340,Venice: Uncensored (free),OpenRouter,0.0,,0.0,32768,
+341,xAI: Grok 4,OpenRouter,21.6,,108.0,256000,vision
+342,Google: Gemma 3n 2B (free),OpenRouter,0.0,,0.0,8192,
+343,Tencent: Hunyuan A13B Instruct,OpenRouter,1.01,,4.1,131072,
+344,TNG: DeepSeek R1T2 Chimera,OpenRouter,1.8,,6.12,163840,
+345,Morph: Morph V3 Large,OpenRouter,6.48,,13.68,262144,
+346,Morph: Morph V3 Fast,OpenRouter,5.76,,8.64,81920,
+347,Baidu: ERNIE 4.5 VL 424B A47B ,OpenRouter,3.02,,9.0,123000,vision
+348,Baidu: ERNIE 4.5 300B A47B ,OpenRouter,2.02,,7.92,123000,
+349,Inception: Mercury,OpenRouter,1.8,,7.2,128000,
+350,Mistral: Mistral Small 3.2 24B,OpenRouter,0.43,,1.3,131072,vision
+351,MiniMax: MiniMax M1,OpenRouter,2.88,,15.84,1000000,
+352,Google: Gemini 2.5 Flash,OpenRouter,2.16,,18.0,1048576,vision
+353,Google: Gemini 2.5 Pro,OpenRouter,9.0,,72.0,1048576,vision
+354,OpenAI: o3 Pro,OpenRouter,144.0,,576.0,200000,vision
+355,xAI: Grok 3 Mini,OpenRouter,2.16,,3.6,131072,
+356,xAI: Grok 3,OpenRouter,21.6,,108.0,131072,
+357,Google: Gemini 2.5 Pro Preview 06-05,OpenRouter,9.0,,72.0,1048576,vision
+358,DeepSeek: R1 0528,OpenRouter,3.24,,15.48,163840,
+359,Anthropic: Claude Opus 4,OpenRouter,108.0,,540.0,200000,vision
+360,Anthropic: Claude Sonnet 4,OpenRouter,21.6,,108.0,1000000,vision
+361,Google: Gemma 3n 4B (free),OpenRouter,0.0,,0.0,8192,
+362,Google: Gemma 3n 4B,OpenRouter,0.14,,0.29,32768,
+363,Mistral: Mistral Medium 3,OpenRouter,2.88,,14.4,131072,vision
+364,Google: Gemini 2.5 Pro Preview 05-06,OpenRouter,9.0,,72.0,1048576,vision
+365,Arcee AI: Spotlight,OpenRouter,1.3,,1.3,131072,vision
+366,Arcee AI: Maestro Reasoning,OpenRouter,6.48,,23.76,131072,
+367,Arcee AI: Virtuoso Large,OpenRouter,5.4,,8.64,131072,
+368,Arcee AI: Coder Large,OpenRouter,3.6,,5.76,32768,
+369,Inception: Mercury Coder,OpenRouter,1.8,,7.2,128000,
+370,Qwen: Qwen3 4B (free),OpenRouter,0.0,,0.0,40960,
+371,Meta: Llama Guard 4 12B,OpenRouter,1.3,,1.3,163840,vision
+372,Qwen: Qwen3 30B A3B,OpenRouter,0.58,,2.02,40960,
+373,Qwen: Qwen3 8B,OpenRouter,0.36,,2.88,40960,
+374,Qwen: Qwen3 14B,OpenRouter,0.43,,1.73,40960,
+375,Qwen: Qwen3 32B,OpenRouter,0.58,,1.73,40960,
+376,Qwen: Qwen3 235B A22B,OpenRouter,3.28,,13.1,131072,
+377,OpenAI: o4 Mini High,OpenRouter,7.92,,31.68,200000,vision
+378,OpenAI: o3,OpenRouter,14.4,,57.6,200000,vision
+379,OpenAI: o4 Mini,OpenRouter,7.92,,31.68,200000,vision
+380,Qwen: Qwen2.5 Coder 7B Instruct,OpenRouter,0.22,,0.65,32768,
+381,OpenAI: GPT-4.1,OpenRouter,14.4,,57.6,1047576,vision
+382,OpenAI: GPT-4.1 Mini,OpenRouter,2.88,,11.52,1047576,vision
+383,OpenAI: GPT-4.1 Nano,OpenRouter,0.72,,2.88,1047576,vision
+384,EleutherAI: Llemma 7b,OpenRouter,5.76,,8.64,4096,
+385,AlfredPros: CodeLLaMa 7B Instruct Solidity,OpenRouter,5.76,,8.64,4096,
+386,xAI: Grok 3 Mini Beta,OpenRouter,2.16,,3.6,131072,
+387,xAI: Grok 3 Beta,OpenRouter,21.6,,108.0,131072,
+388,Meta: Llama 4 Maverick,OpenRouter,1.08,,4.32,1048576,vision
+389,Meta: Llama 4 Scout,OpenRouter,0.58,,2.16,327680,vision
+390,Qwen: Qwen2.5 VL 32B Instruct,OpenRouter,1.44,,4.32,128000,vision
+391,DeepSeek: DeepSeek V3 0324,OpenRouter,1.44,,5.54,163840,
+392,OpenAI: o1-pro,OpenRouter,1080.0,,4320.0,200000,vision
+393,Mistral: Mistral Small 3.1 24B (free),OpenRouter,0.0,,0.0,128000,vision
+394,Mistral: Mistral Small 3.1 24B,OpenRouter,2.52,,4.03,128000,vision
+395,AllenAI: Olmo 2 32B Instruct,OpenRouter,0.36,,1.44,128000,
+396,Google: Gemma 3 4B (free),OpenRouter,0.0,,0.0,32768,vision
+397,Google: Gemma 3 4B,OpenRouter,0.29,,0.58,131072,vision
+398,Google: Gemma 3 12B (free),OpenRouter,0.0,,0.0,32768,vision
+399,Google: Gemma 3 12B,OpenRouter,0.29,,0.94,131072,vision
+400,Cohere: Command A,OpenRouter,18.0,,72.0,256000,
+401,OpenAI: GPT-4o-mini Search Preview,OpenRouter,1.08,,4.32,128000,
+402,OpenAI: GPT-4o Search Preview,OpenRouter,18.0,,72.0,128000,
+403,Google: Gemma 3 27B (free),OpenRouter,0.0,,0.0,131072,vision
+404,Google: Gemma 3 27B,OpenRouter,0.29,,1.08,128000,vision
+405,TheDrummer: Skyfall 36B V2,OpenRouter,3.96,,5.76,32768,
+406,Perplexity: Sonar Reasoning Pro,OpenRouter,14.4,,57.6,128000,vision
+407,Perplexity: Sonar Pro,OpenRouter,21.6,,108.0,200000,vision
+408,Perplexity: Sonar Deep Research,OpenRouter,14.4,,57.6,128000,
+409,Qwen: QwQ 32B,OpenRouter,1.08,,2.88,32768,
+410,Google: Gemini 2.0 Flash Lite,OpenRouter,0.54,,2.16,1048576,vision
+411,Anthropic: Claude 3.7 Sonnet,OpenRouter,21.6,,108.0,200000,vision
+412,Anthropic: Claude 3.7 Sonnet (thinking),OpenRouter,21.6,,108.0,200000,vision
+413,Mistral: Saba,OpenRouter,1.44,,4.32,32768,
+414,Llama Guard 3 8B,OpenRouter,0.14,,0.43,131072,
+415,OpenAI: o3 Mini High,OpenRouter,7.92,,31.68,200000,
+416,Google: Gemini 2.0 Flash,OpenRouter,0.72,,2.88,1048576,vision
+417,Qwen: Qwen VL Plus,OpenRouter,1.51,,4.54,131072,vision
+418,AionLabs: Aion-1.0,OpenRouter,28.8,,57.6,131072,
+419,AionLabs: Aion-1.0-Mini,OpenRouter,5.04,,10.08,131072,
+420,AionLabs: Aion-RP 1.0 (8B),OpenRouter,5.76,,11.52,32768,
+421,Qwen: Qwen VL Max,OpenRouter,5.76,,23.04,131072,vision
+422,Qwen: Qwen-Turbo,OpenRouter,0.36,,1.44,131072,
+423,Qwen: Qwen2.5 VL 72B Instruct,OpenRouter,5.76,,5.76,32768,vision
+424,Qwen: Qwen-Plus,OpenRouter,2.88,,8.64,1000000,
+425,Qwen: Qwen-Max ,OpenRouter,11.52,,46.08,32768,
+426,OpenAI: o3 Mini,OpenRouter,7.92,,31.68,200000,
+427,Mistral: Mistral Small 3,OpenRouter,0.36,,0.58,32768,
+428,DeepSeek: R1 Distill Qwen 32B,OpenRouter,2.09,,2.09,32768,
+429,Perplexity: Sonar,OpenRouter,7.2,,7.2,127072,vision
+430,DeepSeek: R1 Distill Llama 70B,OpenRouter,5.04,,5.76,131072,
+431,DeepSeek: R1,OpenRouter,5.04,,18.0,64000,
+432,MiniMax: MiniMax-01,OpenRouter,1.44,,7.92,1000192,vision
+433,Microsoft: Phi 4,OpenRouter,0.43,,1.01,16384,
+434,Sao10K: Llama 3.1 70B Hanami x1,OpenRouter,21.6,,21.6,16000,
+435,DeepSeek: DeepSeek V3,OpenRouter,2.3,,6.41,163840,
+436,Sao10K: Llama 3.3 Euryale 70B,OpenRouter,4.68,,5.4,131072,
+437,OpenAI: o1,OpenRouter,108.0,,432.0,200000,vision
+438,Cohere: Command R7B (12-2024),OpenRouter,0.27,,1.08,128000,
+439,Meta: Llama 3.3 70B Instruct (free),OpenRouter,0.0,,0.0,128000,
+440,Meta: Llama 3.3 70B Instruct,OpenRouter,0.72,,2.3,131072,
+441,Amazon: Nova Lite 1.0,OpenRouter,0.43,,1.73,300000,vision
+442,Amazon: Nova Micro 1.0,OpenRouter,0.25,,1.01,128000,
+443,Amazon: Nova Pro 1.0,OpenRouter,5.76,,23.04,300000,vision
+444,OpenAI: GPT-4o (2024-11-20),OpenRouter,18.0,,72.0,128000,vision
+445,Mistral Large 2411,OpenRouter,14.4,,43.2,131072,
+446,Mistral Large 2407,OpenRouter,14.4,,43.2,131072,
+447,Mistral: Pixtral Large 2411,OpenRouter,14.4,,43.2,131072,vision
+448,Qwen2.5 Coder 32B Instruct,OpenRouter,1.44,,1.44,32768,
+449,SorcererLM 8x22B,OpenRouter,32.4,,32.4,16000,
+450,TheDrummer: UnslopNemo 12B,OpenRouter,2.88,,2.88,32768,
+451,Anthropic: Claude 3.5 Haiku,OpenRouter,5.76,,28.8,200000,vision
+452,Magnum v4 72B,OpenRouter,21.6,,36.0,16384,
+453,Anthropic: Claude 3.5 Sonnet,OpenRouter,43.2,,216.0,200000,vision
+454,Qwen: Qwen2.5 7B Instruct,OpenRouter,0.29,,0.72,32768,
+455,NVIDIA: Llama 3.1 Nemotron 70B Instruct,OpenRouter,8.64,,8.64,131072,
+456,Inflection: Inflection 3 Pi,OpenRouter,18.0,,72.0,8000,
+457,Inflection: Inflection 3 Productivity,OpenRouter,18.0,,72.0,8000,
+458,TheDrummer: Rocinante 12B,OpenRouter,1.22,,3.1,32768,
+459,Meta: Llama 3.2 3B Instruct (free),OpenRouter,0.0,,0.0,131072,
+460,Meta: Llama 3.2 3B Instruct,OpenRouter,0.14,,0.14,131072,
+461,Meta: Llama 3.2 1B Instruct,OpenRouter,0.19,,1.44,60000,
+462,Meta: Llama 3.2 11B Vision Instruct,OpenRouter,0.35,,0.35,131072,vision
+463,Qwen2.5 72B Instruct,OpenRouter,0.86,,2.81,32768,
+464,NeverSleep: Lumimaid v0.2 8B,OpenRouter,0.65,,4.32,32768,
+465,Cohere: Command R (08-2024),OpenRouter,1.08,,4.32,128000,
+466,Cohere: Command R+ (08-2024),OpenRouter,18.0,,72.0,128000,
+467,Sao10K: Llama 3.1 Euryale 70B v2.2,OpenRouter,4.68,,5.4,32768,
+468,Qwen: Qwen2.5-VL 7B Instruct,OpenRouter,1.44,,1.44,32768,vision
+469,Nous: Hermes 3 70B Instruct,OpenRouter,2.16,,2.16,65536,
+470,Nous: Hermes 3 405B Instruct (free),OpenRouter,0.0,,0.0,131072,
+471,Nous: Hermes 3 405B Instruct,OpenRouter,7.2,,7.2,131072,
+472,Sao10K: Llama 3 8B Lunaris,OpenRouter,0.29,,0.36,8192,
+473,OpenAI: GPT-4o (2024-08-06),OpenRouter,18.0,,72.0,128000,vision
+474,Meta: Llama 3.1 405B (base),OpenRouter,28.8,,28.8,32768,
+475,Meta: Llama 3.1 8B Instruct,OpenRouter,0.14,,0.36,16384,
+476,Meta: Llama 3.1 405B Instruct,OpenRouter,28.8,,28.8,131000,
+477,Meta: Llama 3.1 70B Instruct,OpenRouter,2.88,,2.88,131072,
+478,Mistral: Mistral Nemo,OpenRouter,0.14,,0.29,131072,
+479,OpenAI: GPT-4o-mini (2024-07-18),OpenRouter,1.08,,4.32,128000,vision
+480,OpenAI: GPT-4o-mini,OpenRouter,1.08,,4.32,128000,vision
+481,Google: Gemma 2 27B,OpenRouter,4.68,,4.68,8192,
+482,Google: Gemma 2 9B,OpenRouter,0.22,,0.65,8192,
+483,Sao10k: Llama 3 Euryale 70B v2.1,OpenRouter,10.66,,10.66,8192,
+484,NousResearch: Hermes 2 Pro - Llama-3 8B,OpenRouter,1.01,,1.01,8192,
+485,Mistral: Mistral 7B Instruct,OpenRouter,1.44,,1.44,32768,
+486,Mistral: Mistral 7B Instruct v0.3,OpenRouter,1.44,,1.44,32768,
+487,Meta: LlamaGuard 2 8B,OpenRouter,1.44,,1.44,8192,
+488,OpenAI: GPT-4o (2024-05-13),OpenRouter,36.0,,108.0,128000,vision
+489,OpenAI: GPT-4o,OpenRouter,18.0,,72.0,128000,vision
+490,OpenAI: GPT-4o (extended),OpenRouter,43.2,,129.6,128000,vision
+491,Meta: Llama 3 70B Instruct,OpenRouter,3.67,,5.33,8192,
+492,Meta: Llama 3 8B Instruct,OpenRouter,0.22,,0.29,8192,
+493,Mistral: Mixtral 8x22B Instruct,OpenRouter,14.4,,43.2,65536,
+494,WizardLM-2 8x22B,OpenRouter,4.46,,4.46,65535,
+495,OpenAI: GPT-4 Turbo,OpenRouter,72.0,,216.0,128000,vision
+496,Anthropic: Claude 3 Haiku,OpenRouter,1.8,,9.0,200000,vision
+497,Mistral Large,OpenRouter,14.4,,43.2,128000,
+498,OpenAI: GPT-3.5 Turbo (older v0613),OpenRouter,7.2,,14.4,4095,
+499,OpenAI: GPT-4 Turbo Preview,OpenRouter,72.0,,216.0,128000,
+500,Mistral: Mixtral 8x7B Instruct,OpenRouter,3.89,,3.89,32768,
+501,Noromaid 20B,OpenRouter,7.2,,12.6,4096,
+502,Goliath 120B,OpenRouter,27.0,,54.0,6144,
+503,Auto Router,OpenRouter,-7200000.0,,-7200000.0,2000000,vision
+504,OpenAI: GPT-4 Turbo (older v1106),OpenRouter,72.0,,216.0,128000,
+505,OpenAI: GPT-3.5 Turbo Instruct,OpenRouter,10.8,,14.4,4095,
+506,Mistral: Mistral 7B Instruct v0.1,OpenRouter,0.79,,1.37,2824,
+507,OpenAI: GPT-3.5 Turbo 16k,OpenRouter,21.6,,28.8,16385,
+508,Mancer: Weaver (alpha),OpenRouter,5.4,,7.2,8000,
+509,ReMM SLERP 13B,OpenRouter,3.24,,4.68,6144,
+510,MythoMax 13B,OpenRouter,0.43,,0.43,4096,
+511,OpenAI: GPT-4 (older v0314),OpenRouter,216.0,,432.0,8191,
+512,OpenAI: GPT-4,OpenRouter,216.0,,432.0,8191,
+513,OpenAI: GPT-3.5 Turbo,OpenRouter,3.6,,10.8,16385,
+514,Gemini 3.1 Flash Image Preview,AiHubMix,3.6,3.6,21.6,0,vision
+515,Gemini 3.1 Pro Preview,AiHubMix,14.4,1.44,86.4,1000000,reasoning|tool_calls|vision
+516,Gemini 3.1 Pro Preview Customtools,AiHubMix,14.4,1.44,86.4,1000000,reasoning|tool_calls|vision
+517,Gemini 3.1 Pro Preview Search,AiHubMix,14.4,1.44,86.4,0,reasoning|tool_calls|vision
+518,Claude Sonnet 4.6,AiHubMix,21.6,2.16,108.0,1000000,reasoning|tool_calls|vision
+519,Qwen3.5 Plus,AiHubMix,0.79,0.08,4.73,991000,tool_calls|reasoning|vision
+520,Qwen3.5 122B A10B,AiHubMix,0.81,0.81,6.49,991000,tool_calls|reasoning|vision
+521,Qwen3.5 27B,AiHubMix,0.61,0.61,4.87,991000,tool_calls|reasoning|vision
+522,Qwen3.5 35B A3B,AiHubMix,0.41,0.41,3.25,991000,tool_calls|reasoning|vision
+523,Qwen3.5 397B A17B,AiHubMix,1.18,1.18,7.1,991000,tool_calls|reasoning|vision
+524,Qwen3.5 Flash,AiHubMix,0.2,0.02,2.03,991000,tool_calls|reasoning|vision
+525,GPT-5.3-Codex,AiHubMix,12.6,1.26,100.8,400000,reasoning|tool_calls|vision
+526,Claude Sonnet 4.6 Thinking,AiHubMix,21.6,2.16,108.0,200000,reasoning|tool_calls|vision
+527,Qwen3 Coder Next,AiHubMix,0.99,0.99,3.95,2000000,tool_calls
+528,Doubao Seed 2.0 Pro,AiHubMix,3.47,0.69,17.36,256000,reasoning|tool_calls|vision
+529,GLM 5,AiHubMix,6.34,1.27,20.28,202752,
+530,Claude Opus 4.6,AiHubMix,36.0,3.6,180.0,200000,reasoning|tool_calls|vision
+531,Coding GLM 5 (free),AiHubMix,0.0,0.0,0.0,0,reasoning|tool_calls
+532,Claude Opus 4.6 Thinking,AiHubMix,36.0,3.6,180.0,200000,reasoning|tool_calls|vision
+533,Coding MiniMax M2.5 (free),AiHubMix,0.0,,0.0,204800,
+534,Doubao Seed 2.0 Code Preview,AiHubMix,3.47,0.69,17.36,256000,reasoning|tool_calls|vision
+535,Doubao Seed 2.0 Lite,AiHubMix,0.65,0.13,3.91,256000,reasoning|tool_calls|vision
+536,Doubao Seed 2.0 Mini,AiHubMix,0.22,0.04,2.17,256000,reasoning|tool_calls|vision
+537,Gemini 3 Flash Preview,AiHubMix,3.6,0.36,21.6,1048576,reasoning|tool_calls|vision
+538,Gemini 3 Flash Preview Search,AiHubMix,3.6,0.36,21.6,1048576,reasoning|tool_calls|vision
+539,Gemini 3.1 Flash Image Preview (free),AiHubMix,0.0,0.0,0.0,0,vision
+540,Claude Opus 4.5,AiHubMix,36.0,3.6,180.0,200000,reasoning|tool_calls|vision
+541,Claude Opus 4.5 Thinking,AiHubMix,36.0,3.6,180.0,200000,reasoning|tool_calls|vision
+542,Gemini 3 Flash Preview (free),AiHubMix,0.0,0.0,0.0,1048576,tool_calls|reasoning|vision
+543,Gemini 2.0 Flash (free),AiHubMix,0.0,0.0,0.0,1048576,tool_calls|vision
+544,GPT 4.1 (free),AiHubMix,0.0,0.0,0.0,1047576,tool_calls|vision
+545,GPT 4.1 Mini (free),AiHubMix,0.0,0.0,0.0,1047576,tool_calls|vision
+546,GPT 4.1 Nano (free),AiHubMix,0.0,0.0,0.0,1047576,tool_calls|vision
+547,GPT 4o (free),AiHubMix,0.0,0.0,0.0,1047576,tool_calls|vision
+548,Coding GLM 5,AiHubMix,0.43,0.08,1.58,0,reasoning|tool_calls
+549,GLM 4.7,AiHubMix,1.97,0.39,7.89,200000,reasoning|tool_calls
+550,GLM 4.7 Flash (free),AiHubMix,0.0,0.0,0.0,0,reasoning|tool_calls
+551,Coding GLM 4.7 (free),AiHubMix,0.0,0.0,0.0,0,reasoning|tool_calls
+552,Gemini 3 Pro Image Preview,AiHubMix,14.4,14.4,86.4,0,vision
+553,GPT-5.2-Codex,AiHubMix,12.6,1.26,100.8,400000,reasoning|tool_calls|vision
+554,Doubao Seedream 5.0 Lite,AiHubMix,14.4,0.0,0.0,0,vision
+555,GPT Image 1.5,AiHubMix,36.0,36.0,72.0,0,vision
+556,GPT 5.2,AiHubMix,12.6,1.26,100.8,400000,reasoning|tool_calls|vision
+557,GPT 5.2 Chat,AiHubMix,12.6,1.26,100.8,128000,tool_calls|vision
+558,GPT 5.2 High,AiHubMix,12.6,1.26,100.8,400000,reasoning|tool_calls|vision
+559,GPT 5.2 Low,AiHubMix,12.6,1.26,100.8,400000,reasoning|tool_calls|vision
+560,Gemini 3 Pro Preview,AiHubMix,14.4,1.44,86.4,0,reasoning|tool_calls|vision
+561,GPT 5.2 Pro,AiHubMix,151.2,15.12,1209.6,400000,reasoning|tool_calls|vision
+562,GPT 5.1,AiHubMix,9.0,0.9,72.0,400000,reasoning|tool_calls|vision
+563,GPT-5.1-Codex Max,AiHubMix,9.0,0.9,72.0,400000,tool_calls|reasoning|vision
+564,Doubao Seed 1.8,AiHubMix,0.79,0.16,1.97,256000,reasoning|tool_calls|vision
+565,Gemini 3 Pro Preview Search,AiHubMix,14.4,1.44,86.4,0,reasoning|tool_calls|vision
+566,GPT 5.1 Chat,AiHubMix,9.0,0.9,72.0,128000,tool_calls|vision
+567,GPT-5.1-Codex,AiHubMix,9.0,0.9,72.0,400000,reasoning|tool_calls|vision
+568,GPT-5.1-Codex Mini,AiHubMix,1.8,0.18,14.4,400000,reasoning|tool_calls|vision
+569,Claude Haiku 4.5,AiHubMix,7.92,0.79,39.6,204800,reasoning|tool_calls|vision
+570,Claude Sonnet 4.5,AiHubMix,23.76,2.38,118.8,1000000,reasoning|tool_calls|vision
+571,Claude Sonnet 4.5 Thinking,AiHubMix,23.76,2.38,118.8,1000000,reasoning|tool_calls|vision
+572,Mistral Large 3,AiHubMix,3.6,,10.8,256000,tool_calls|vision
+573,MiMo V2 Flash,AiHubMix,1.38,0.28,4.14,0,
+574,Step 3.5 Flash (free),AiHubMix,0.0,0.0,0.0,256000,vision
+575,Web GPT Image 1.5,AiHubMix,21.6,0.0,21.6,0,vision
+576,Gemini 2.5 Flash Image,AiHubMix,2.16,2.16,17.99,32800,vision
+577,Grok 4.1 Fast,AiHubMix,1.44,0.36,3.6,2000000,tool_calls|vision
+578,Grok 4.1 Fast (reasoning),AiHubMix,1.44,0.36,3.6,2000000,reasoning|tool_calls|vision
+579,Grok Code Fast 1,AiHubMix,1.44,0.36,3.6,256000,reasoning|tool_calls|vision
+580,CC GLM 5,AiHubMix,0.43,,1.58,0,
+581,GPT 5,AiHubMix,9.0,0.9,72.0,400000,reasoning|tool_calls|vision
+582,DeepSeek V3.2 Fast,AiHubMix,7.89,7.89,23.67,128000,tool_calls
+583,DeepSeek V3.2,AiHubMix,2.17,0.22,3.26,128000,tool_calls
+584,DeepSeek V3.2 Speciale,AiHubMix,4.18,,12.1,128000,reasoning
+585,DeepSeek V3.2 Thinking,AiHubMix,2.17,0.22,3.26,128000,tool_calls
+586,DeepSeek Math V2,AiHubMix,3.54,0.71,14.17,163000,reasoning
+587,DeepSeek V3.2 Exp,AiHubMix,1.97,0.2,2.96,163000,tool_calls
+588,DeepSeek V3.2 Exp Thinking,AiHubMix,1.97,0.2,2.96,131000,reasoning|tool_calls
+589,GPT-5-Codex,AiHubMix,9.0,0.9,72.0,400000,reasoning|tool_calls|vision
+590,DeepSeek V3.1 Terminus,AiHubMix,4.03,,12.1,160000,tool_calls
+591,DeepSeek V3.1 Thinking,AiHubMix,4.03,,12.1,128000,reasoning|tool_calls
+592,GPT 5 Pro,AiHubMix,108.0,,864.0,400000,reasoning|tool_calls|vision
+593,GPT 5 Mini,AiHubMix,1.8,0.18,14.4,400000,reasoning|tool_calls|vision
+594,GPT 5 Nano,AiHubMix,0.36,0.04,2.88,400000,reasoning|tool_calls|vision
+595,GPT 5 Chat,AiHubMix,9.0,0.9,72.0,400000,vision
+596,Claude Opus 4.1,AiHubMix,118.8,,594.0,200000,reasoning|tool_calls|vision
+597,O3 Deep Research,AiHubMix,72.0,18.0,288.0,0,
+598,Qwen3 Max 2026 01-23,AiHubMix,2.47,2.47,9.86,252000,reasoning|tool_calls
+599,Kimi K2.5,AiHubMix,4.32,0.76,21.6,256000,reasoning|tool_calls|vision
+600,Qwen3 VL Flash,AiHubMix,0.15,0.03,1.48,254000,tool_calls|vision
+601,Qwen3 VL Flash 2026 01-22,AiHubMix,0.15,0.15,1.48,254000,tool_calls|vision
+602,Qwen3 VL Plus,AiHubMix,0.99,0.2,9.86,256000,tool_calls|vision
+603,MiniMax M2.5,AiHubMix,2.07,,8.29,204800,
+604,MiniMax M2.5 Highspeed,AiHubMix,2.07,,8.29,204800,
+605,CC MiniMax M2.5,AiHubMix,0.72,,0.72,0,tool_calls
+606,CC MiniMax M2.5 Highspeed,AiHubMix,0.72,,0.72,0,tool_calls
+607,Coding MiniMax M2.5,AiHubMix,1.44,,1.44,204800,reasoning|tool_calls
+608,Coding MiniMax M2.5 Highspeed,AiHubMix,1.44,,1.44,204800,reasoning|tool_calls
+609,Sora 2,AiHubMix,14.4,,14.4,0,
+610,Sora 2 Pro,AiHubMix,14.4,,14.4,0,
+611,Doubao Seedream 4.5,AiHubMix,14.4,0.0,0.0,0,vision
+612,GPT 4o Audio Preview,AiHubMix,18.0,,72.0,128000,
+613,GPT 4o Mini Audio Preview,AiHubMix,1.08,,4.32,0,
+614,CC GLM 4.7,AiHubMix,0.43,,1.58,0,
+615,CC MiniMax M2.1,AiHubMix,0.72,,0.72,0,tool_calls
+616,Coding GLM 4.7,AiHubMix,0.43,0.08,1.58,0,reasoning|tool_calls
+617,Coding MiniMax M2.1,AiHubMix,1.44,,1.44,204800,reasoning|tool_calls
+618,Coding MiniMax M2.1 (free),AiHubMix,0.0,,0.0,204800,
+619,MiniMax M2.1,AiHubMix,2.07,,8.29,204800,
+620,O3,AiHubMix,14.4,3.6,57.6,200000,reasoning|tool_calls|vision
+621,Wan2.6 I2v,AiHubMix,14.4,,0.0,0,vision
+622,Wan2.6 T2v,AiHubMix,14.4,,0.0,0,
+623,O3 Pro,AiHubMix,144.0,144.0,576.0,200000,reasoning|tool_calls|vision
+624,Qianfan Ocr,AiHubMix,0.45,,1.79,32000,vision
+625,Qianfan Ocr Fast,AiHubMix,4.78,,19.72,32000,vision
+626,Step 3.5 Flash,AiHubMix,0.72,,2.16,256000,vision
+627,Wan2.2 I2v Plus,AiHubMix,14.4,,0.0,0,vision
+628,Wan2.2 T2v Plus,AiHubMix,14.4,,0.0,0,
+629,Wan2.5 I2v Preview,AiHubMix,14.4,,0.0,0,vision
+630,Wan2.5 T2v Preview,AiHubMix,14.4,,0.0,0,
+631,Web Sora 2,AiHubMix,14.4,,14.4,0,
+632,Web Sora 2 Pro,AiHubMix,14.4,,14.4,0,
+633,Flux 2 Flex,AiHubMix,14.4,0.0,0.0,0,vision
+634,Flux 2 Pro,AiHubMix,14.4,0.0,0.0,0,vision
+635,Gemini 2.5 Pro,AiHubMix,9.0,0.9,72.0,1048576,tool_calls|reasoning|vision
+636,GLM 4.6,AiHubMix,0.0,0.0,0.0,204800,reasoning|tool_calls
+637,GLM 4.6 Vision,AiHubMix,0.99,0.2,2.96,128000,vision
+638,Jimeng 3.0 1080p,AiHubMix,14.4,,0.0,0,vision
+639,Jimeng 3.0 720p,AiHubMix,14.4,,0.0,0,vision
+640,Jimeng 3.0 Pro,AiHubMix,14.4,,0.0,0,vision
+641,Kimi For Coding (free),AiHubMix,0.0,0.0,0.0,256000,reasoning|tool_calls
+642,CC GLM 4.6,AiHubMix,0.43,,1.58,0,
+643,Coding GLM 4.6,AiHubMix,0.43,0.08,1.58,0,reasoning|tool_calls
+644,Coding GLM 4.6 (free),AiHubMix,0.0,0.0,0.0,200000,reasoning|tool_calls
+645,Coding MiniMax M2,AiHubMix,1.44,,1.44,204800,reasoning|tool_calls
+646,Coding MiniMax M2 (free),AiHubMix,0.0,0.0,0.0,204800,reasoning|tool_calls
+647,Gemini 2.5 Pro Search,AiHubMix,9.0,0.9,72.0,1048576,reasoning|tool_calls|vision
+648,Kimi K2 Thinking,AiHubMix,3.95,0.99,15.78,262144,reasoning|tool_calls
+649,Kimi K2 0905,AiHubMix,3.95,,15.78,262144,tool_calls
+650,DeepSeek V3.1 Fast,AiHubMix,7.89,,23.67,163000,tool_calls
+651,Claude Opus 4.0,AiHubMix,118.8,,594.0,200000,tool_calls|vision
+652,Claude Sonnet 4.0,AiHubMix,23.76,2.38,118.8,1000000,reasoning|tool_calls|vision
+653,Gemini 2.5 Flash,AiHubMix,2.16,0.22,17.99,1048576,tool_calls|vision
+654,Gemini 2.5 Flash Preview 09 2025,AiHubMix,2.16,0.22,17.99,1048576,tool_calls|vision
+655,GLM 4.5 Vision,AiHubMix,1.97,1.97,5.92,64000,vision
+656,Gemini 2.5 Flash Lite,AiHubMix,0.72,0.07,2.88,1048576,tool_calls|vision
+657,Gemini 2.5 Flash Lite Preview 09 2025,AiHubMix,0.72,0.07,2.88,1048576,tool_calls|vision
+658,Gemini 2.5 Flash (no think),AiHubMix,2.16,0.22,17.99,1047576,tool_calls|vision
+659,Gemini 2.5 Flash Search,AiHubMix,2.16,0.22,17.99,1048576,tool_calls|vision
+660,Gemini 2.5 Flash Preview 05-20 (no think),AiHubMix,2.16,0.22,17.99,1048576,tool_calls|vision
+661,Gemini 2.5 Flash Preview 05-20 Search,AiHubMix,2.16,0.22,17.99,1048576,tool_calls|vision
+662,DeepSeek V3 Fast,AiHubMix,4.03,,16.13,32000,tool_calls
+663,Veo 2.0 Generate 001,AiHubMix,14.4,0.0,14.4,0,
+664,Veo3.1,AiHubMix,1440.0,,1440.0,0,
+665,Imagen 4.0,AiHubMix,14.4,0.0,14.4,0,vision
+666,Imagen 4.0 Fast Generate 001,AiHubMix,14.4,,14.4,0,vision
+667,Imagen 4.0 Fast Generate Preview 06-06,AiHubMix,14.4,,14.4,0,vision
+668,Imagen 4.0 Generate 001,AiHubMix,14.4,,14.4,0,vision
+669,Imagen 4.0 Ultra Generate 001,AiHubMix,14.4,,14.4,0,vision
+670,Imagen 4.0 Ultra,AiHubMix,14.4,0.0,14.4,0,vision
+671,GPT Image 1,AiHubMix,36.0,36.0,288.0,0,vision
+672,GPT Image 1 Mini,AiHubMix,36.0,36.0,288.0,0,vision
+673,O4 Mini,AiHubMix,7.92,1.98,31.68,200000,reasoning|tool_calls|vision
+674,Paddleocr VL 0.9b,AiHubMix,14.4,,0.0,0,
+675,Pp Structurev3,AiHubMix,14.4,,0.0,0,
+676,Qwen3 VL 235B A22B Instruct,AiHubMix,1.97,,7.89,131000,tool_calls|vision
+677,Qwen3 VL 235B A22B Thinking,AiHubMix,1.97,,19.73,131000,reasoning|tool_calls|vision
+678,Qwen3 VL 30B A3B Instruct,AiHubMix,0.74,,2.96,128000,tool_calls|vision
+679,Qwen3 VL 30B A3B Thinking,AiHubMix,0.74,,7.4,128000,reasoning|tool_calls|vision
+680,Veo 3.0 Generate Preview,AiHubMix,14.4,0.0,14.4,0,vision
+681,Veo 3.1 Fast Generate Preview,AiHubMix,14.4,,0.0,0,vision
+682,Veo 3.1 Generate Preview,AiHubMix,14.4,0.0,14.4,0,vision
+683,DeepSeek Ocr,AiHubMix,0.14,,0.14,8000,vision
+684,DeepSeek Ocr,AiHubMix,0.14,,0.14,8000,vision
+685,ERNIE 5.0 Thinking Exp,AiHubMix,5.92,5.92,23.67,119000,reasoning|vision
+686,Flux Kontext Max,AiHubMix,14.4,0.0,0.0,0,
+687,Gemini 2.5 Flash Image Preview,AiHubMix,2.16,2.16,8.64,32800,vision
+688,GLM 4.5,AiHubMix,2.88,,11.52,131072,
+689,GPT 4.1,AiHubMix,14.4,3.6,57.6,1047576,tool_calls|vision
+690,Grok 4,AiHubMix,23.76,5.94,118.8,256000,tool_calls|reasoning|vision
+691,Grok 4 Fast,AiHubMix,1.44,0.36,3.6,2000000,
+692,Grok 4 Fast (reasoning),AiHubMix,1.44,0.36,3.6,2000000,
+693,Kimi K2 0711,AiHubMix,3.89,,15.55,131000,tool_calls
+694,Kimi K2 Instruct,AiHubMix,3.89,,15.55,0,tool_calls
+695,Kimi K2 Turbo Preview,AiHubMix,8.64,2.16,34.56,262144,tool_calls
+696,GPT 4.1 Mini,AiHubMix,2.88,0.72,11.52,1047576,tool_calls|vision
+697,Aihubmix Router,AiHubMix,2.88,0.72,11.52,0,vision
+698,GPT 4.1 Nano,AiHubMix,0.72,0.18,2.88,1047576,tool_calls|vision
+699,Gemini 2.5 Pro Preview 05-06,AiHubMix,9.0,0.9,72.0,1048576,reasoning|vision
+700,Gemini 2.5 Pro Preview 03-25,AiHubMix,9.0,0.9,72.0,0,reasoning|tool_calls|vision
+701,Gemini 2.5 Pro Preview 05-06 Search,AiHubMix,9.0,0.9,72.0,0,reasoning|vision
+702,Gemini 2.5 Pro Preview 03-25 Search,AiHubMix,9.0,0.9,72.0,0,reasoning|tool_calls|vision
+703,Qwen3 Max Preview,AiHubMix,5.92,5.92,23.67,0,tool_calls|vision
+704,Qwen3 Max,AiHubMix,2.47,2.47,9.86,262144,tool_calls|vision
+705,Qwen3 Next 80B A3B Instruct,AiHubMix,0.99,,3.97,256000,tool_calls|vision
+706,Qwen3 Next 80B A3B Thinking,AiHubMix,0.99,,9.94,256000,reasoning|tool_calls|vision
+707,Qwen3 235B A22B Instruct 2507,AiHubMix,2.02,,8.06,262144,tool_calls|vision
+708,Qwen3 235B A22B Thinking 2507,AiHubMix,2.02,,20.16,262144,reasoning|tool_calls|vision
+709,Qwen3 Coder 30B A3B Instruct,AiHubMix,1.44,1.44,5.76,2000000,tool_calls
+710,Qwen3 Coder 480B A35B Instruct,AiHubMix,5.9,5.9,23.62,262000,tool_calls
+711,Qwen3 235B A22B,AiHubMix,2.02,,8.06,131100,tool_calls|vision
+712,Qwen3 Coder Flash,AiHubMix,0.98,0.98,3.92,256000,tool_calls
+713,Qwen3 Coder Plus,AiHubMix,3.89,0.78,15.55,1048576,tool_calls
+714,Qwen3 Coder Plus 2025 07-22,AiHubMix,3.89,3.89,15.55,128000,tool_calls
+715,Gemini 2.5 Pro Preview 06-05 Search,AiHubMix,9.0,0.9,72.0,0,reasoning|tool_calls|vision
+716,Imagen 4.0 Ultra Generate,AiHubMix,14.4,0.0,14.4,0,vision
+717,Jina Embeddings V5 Text Nano,AiHubMix,0.36,,0.36,0,vision
+718,Jina Embeddings V5 Text Small,AiHubMix,0.36,,0.36,0,vision
+719,DeepSeek V3,AiHubMix,1.96,,7.83,1638000,tool_calls
+720,Longcat Flash Chat,AiHubMix,1.01,,5.04,0,
+721,Qwen2.5 VL 72B Instruct,AiHubMix,4.46,,4.46,0,vision
+722,ERNIE 5.0 Thinking Preview,AiHubMix,5.92,5.92,23.67,183000,reasoning|tool_calls
+723,Ling 1t,AiHubMix,3.95,,15.78,0,tool_calls
+724,Ring 1t,AiHubMix,3.95,,15.78,0,reasoning|tool_calls
+725,Doubao Seedream 4.0,AiHubMix,14.4,0.0,0.0,0,vision
+726,Embedding V1,AiHubMix,0.49,,0.49,0,
+727,ERNIE 4.5 Turbo,AiHubMix,0.79,,3.17,135000,tool_calls|vision
+728,ERNIE Irag Edit,AiHubMix,14.4,0.0,0.0,0,tool_calls|vision
+729,GLM 4.5 X,AiHubMix,15.84,3.17,64.15,0,
+730,Gme Qwen2 VL 2B Instruct,AiHubMix,0.99,,0.99,0,vision
+731,Gte Rerank V2,AiHubMix,0.79,,0.79,0,vision
+732,Ling Flash 2.0,AiHubMix,0.98,,3.92,0,tool_calls
+733,Ling Mini 2.0,AiHubMix,0.49,,1.96,0,tool_calls
+734,Ring Flash 2.0,AiHubMix,0.98,,3.92,0,reasoning|tool_calls
+735,Irag 1.0,AiHubMix,14.4,0.0,0.0,0,
+736,Jina Deepsearch V1,AiHubMix,0.36,,0.36,1000000,reasoning|vision
+737,Jina Embeddings V4,AiHubMix,0.36,,0.36,0,vision
+738,Jina Reranker V3,AiHubMix,0.36,,0.36,131000,vision
+739,Llama 4 Maverick,AiHubMix,1.44,,1.44,1048576,tool_calls|vision
+740,Llama 4 Scout,AiHubMix,1.44,,1.44,131000,tool_calls|vision
+741,Qwen Image,AiHubMix,14.4,0.0,0.0,0,vision
+742,Qwen Image Edit,AiHubMix,14.4,0.0,0.0,0,vision
+743,Qwen Image Plus,AiHubMix,14.4,0.0,0.0,0,vision
+744,Qwen Mt Plus,AiHubMix,3.54,,10.63,16000,
+745,Qwen Mt Turbo,AiHubMix,1.38,,3.85,16000,
+746,Qwen3 Embedding 0.6b,AiHubMix,0.49,,0.49,0,
+747,Qwen3 Embedding 4B,AiHubMix,0.49,,0.49,0,
+748,Qwen3 Embedding 8B,AiHubMix,0.49,,0.49,0,
+749,Qwen3 Reranker 0.6b,AiHubMix,0.79,,0.79,16000,vision
+750,Qwen3 Reranker 4B,AiHubMix,0.79,,0.79,0,vision
+751,Qwen3 Reranker 8B,AiHubMix,0.79,,0.79,0,vision
+752,Tao 8K,AiHubMix,0.49,,0.49,0,
+753,Bce Reranker Base,AiHubMix,0.49,,0.49,0,vision
+754,Codex Mini,AiHubMix,10.8,2.7,43.2,0,vision
+755,Jina Clip V2,AiHubMix,0.36,,0.36,0,vision
+756,Jina Reranker M0,AiHubMix,0.36,,0.36,0,vision
+757,Jina Colbert V2,AiHubMix,0.36,,0.36,0,
+758,GPT 4o Search Preview,AiHubMix,18.0,9.0,72.0,128000,tool_calls|vision
+759,DeepSeek R1,AiHubMix,2.88,,14.4,1638000,tool_calls
+760,GPT 4o Mini Search Preview,AiHubMix,1.08,0.54,4.32,128000,tool_calls|vision
+761,Jina Embeddings V3,AiHubMix,0.36,0.0,0.36,0,
+762,ERNIE 4.5,AiHubMix,0.49,,1.96,160000,tool_calls|vision
+763,ERNIE 4.5 Turbo VL,AiHubMix,2.88,,8.64,139000,tool_calls|vision
+764,Gemini 2.0 Flash,AiHubMix,0.72,0.18,2.88,1048576,tool_calls|vision
+765,Gemini 2.0 Flash Preview Image Generation,AiHubMix,0.72,0.0,2.88,0,vision
+766,Flux.1 Kontext Pro,AiHubMix,288.0,,288.0,0,vision
+767,Claude 3.7 Sonnet,AiHubMix,23.76,,118.8,200000,reasoning|tool_calls|vision
+768,MiMo V2 Flash (free),AiHubMix,0.0,0.0,0.0,256000,
+769,Flux 1.1 Pro,AiHubMix,288.0,0.0,288.0,0,vision
+770,O3 Mini,AiHubMix,7.92,3.96,31.68,200000,reasoning|vision
+771,Doubao Seed 1.6 Flash,AiHubMix,0.32,0.06,3.17,256000,tool_calls|vision
+772,Doubao Seed 1.6 Lite,AiHubMix,0.59,0.12,4.72,256000,tool_calls|vision
+773,Doubao Seed 1.6 Thinking,AiHubMix,1.3,0.26,12.96,256000,tool_calls|vision
+774,Doubao Seed 1.6,AiHubMix,1.3,0.26,12.96,256000,tool_calls|vision
+775,Qwen3 30B A3B Instruct 2507,AiHubMix,0.74,,2.96,0,
+776,Qwen3 30B A3B Thinking 2507,AiHubMix,0.86,,8.64,0,
+777,Qwen 3 235B A22B Thinking 2507,AiHubMix,2.02,,20.16,0,
+778,DeepSeek R1 Distill Qwen 32B,AiHubMix,2.02,,6.05,0,
+779,DeepSeek R1 Distill Qwen 7B,AiHubMix,0.43,,0.86,0,
+780,QwQ 32B,AiHubMix,2.02,,6.05,0,
+781,Qwen2 VL 72B Instruct,AiHubMix,15.7,,47.09,0,vision
+782,Qwen2 VL 7B Instruct,AiHubMix,2.02,,5.04,0,vision
+783,CC Kimi For Coding,AiHubMix,1.44,0.14,1.44,0,
+784,Gemini Embedding 001,AiHubMix,1.08,,1.08,0,
+785,gpt-oss-120b,AiHubMix,1.3,,6.48,131072,reasoning|tool_calls
+786,Qwen3 30B A3B,AiHubMix,7.2,,7.2,0,
+787,Qwen3 32B,AiHubMix,2.88,,5.76,0,
+788,Qwen3 14B,AiHubMix,3.6,,3.6,0,
+789,Qwen3 8B,AiHubMix,1.44,,1.44,0,
+790,Gemini 2.0 Pro Search,AiHubMix,9.0,,36.0,0,vision
+791,Embedding 2,AiHubMix,0.49,,0.49,8000,
+792,Embedding 3,AiHubMix,0.49,,0.49,8000,
+793,Gemini 2.0 Flash Search,AiHubMix,0.72,0.18,2.88,0,vision
+794,Gemini 2.5 Pro Preview 06-05,AiHubMix,9.0,0.9,72.0,1048576,reasoning|tool_calls|vision
+795,Aihubmix Mai Ds R1,AiHubMix,4.32,,12.96,0,
+796,Qwen2.5 VL 72B Instruct,AiHubMix,3.6,0.0,3.6,0,vision
+797,O1,AiHubMix,108.0,54.0,432.0,0,reasoning
+798,O1 Pro,AiHubMix,1224.0,1224.0,4896.0,0,reasoning
+799,Seed Oss 36B Instruct,AiHubMix,1.44,,3.84,256000,tool_calls|vision
+800,Doubao Seed 1.6 250615,AiHubMix,1.3,0.26,18.14,0,
+801,Doubao Seed 1.6 Flash 250615,AiHubMix,0.32,0.06,3.17,0,
+802,Doubao Seed 1.6 Thinking 250615,AiHubMix,1.3,0.26,18.14,0,
+803,Doubao Seed 1.6 Vision 250815,AiHubMix,0.79,0.16,7.89,0,
+804,Gemini 2.5 Flash Preview Tts,AiHubMix,3.6,0.0,3.6,0,
+805,Gemini 2.5 Pro Preview Tts,AiHubMix,7.2,0.0,7.2,0,
+806,Gemma 3 12B It,AiHubMix,1.44,0.0,1.44,0,
+807,Gemma 3 27B It,AiHubMix,1.44,0.0,1.44,0,
+808,Gemma 3 4B It,AiHubMix,1.44,0.0,1.44,0,
+809,Gemma 3n E4B It,AiHubMix,1.44,0.0,1.44,0,
+810,GPT 4o Image Vip,AiHubMix,50.4,0.0,50.4,0,vision
+811,Doubao 1.5 Thinking Pro,AiHubMix,4.46,4.46,17.86,0,
+812,CC MiniMax M2,AiHubMix,0.72,,0.72,0,tool_calls
+813,DeepSeek Prover V2 671B,AiHubMix,0.72,,0.72,0,
+814,GPT 4o Image,AiHubMix,21.6,0.0,21.6,0,vision
+815,Gemma 3 1B It,AiHubMix,1.44,0.0,1.44,0,
+816,DeepSeek R1 Distill Llama 70B,AiHubMix,5.76,,11.52,0,reasoning
+817,GPT 4o Mini Tts,AiHubMix,4.32,4.32,86.4,0,
+818,Gemini 2.0 Flash Exp,AiHubMix,0.14,,0.58,0,vision
+819,DeepSeek R1t Chimera,AiHubMix,0.14,,0.14,0,
+820,Claude 3.5 Sonnet,AiHubMix,23.76,,118.8,200000,tool_calls|vision
+821,O1 Preview,AiHubMix,108.0,54.0,432.0,0,reasoning|vision
+822,O1 Mini,AiHubMix,21.6,10.8,86.4,0,
+823,Gemini 2.0 Flash Thinking,AiHubMix,0.55,,2.19,0,reasoning|vision
+824,GPT 4o 2024 11-20,AiHubMix,18.0,9.0,72.0,128000,vision
+825,GPT 4o,AiHubMix,18.0,9.0,72.0,128000,tool_calls|vision
+826,Chatgpt 4o,AiHubMix,36.0,,108.0,0,vision
+827,GPT 4o Mini,AiHubMix,1.08,0.54,4.32,128000,vision
+828,Aihubmix Mistral Medium,AiHubMix,2.88,,14.4,0,
+829,Gemini 2.0 Pro,AiHubMix,9.0,,36.0,0,vision
+830,ERNIE X1.1 Preview,AiHubMix,0.98,,3.92,0,
+831,MiniMax M2,AiHubMix,2.07,,8.29,204800,
+832,ERNIE X1.1 Preview,AiHubMix,0.98,,3.92,119000,reasoning|tool_calls
+833,QwQ 32B,AiHubMix,1.01,,4.03,0,tool_calls
+834,Mistral Small 3.1 24B Instruct 2503,AiHubMix,1.44,,5.76,0,
+835,MiniMax M1 80K,AiHubMix,4.32,,17.28,0,
+836,Qwen2.5 VL 32B Instruct,AiHubMix,1.73,,1.73,0,tool_calls|vision
+837,ERNIE 4.5 300B A47B,AiHubMix,2.3,0.0,9.22,0,tool_calls|vision
+838,Bge Large En,AiHubMix,0.49,,0.49,0,tool_calls|vision
+839,Bge Large Zh,AiHubMix,0.49,,0.49,0,tool_calls|vision
+840,Codestral,AiHubMix,2.88,,8.64,0,
+841,ERNIE 4.5 0.3b,AiHubMix,0.1,,0.39,0,tool_calls|vision
+842,ERNIE 4.5 Turbo 128K Preview,AiHubMix,0.78,,3.11,0,tool_calls|vision
+843,ERNIE X1 Turbo,AiHubMix,0.98,,3.92,50500,reasoning|tool_calls
+844,Gemini 2.0 Flash Exp Search,AiHubMix,0.72,,2.88,0,tool_calls|vision
+845,Kat Dev,AiHubMix,0.99,,3.95,128000,tool_calls
+846,Llama 3.3 70B,AiHubMix,4.32,,4.32,65536,
+847,Kimi Dev 72B,AiHubMix,2.3,0.0,9.22,0,
+848,Moonlight 16B A3B Instruct,AiHubMix,1.44,0.0,1.44,0,
+849,O1 Global,AiHubMix,108.0,54.0,432.0,0,
+850,Qianfan Qi VL,AiHubMix,1.44,,4.32,0,
+851,Qwen2.5 VL 72B Instruct,AiHubMix,17.28,,51.84,0,vision
+852,Hunyuan A13B Instruct,AiHubMix,1.01,,4.03,0,
+853,Gemma 3 27B It,AiHubMix,1.58,0.0,1.58,0,
+854,Qwen Qwq 32B,AiHubMix,2.88,,5.76,0,
+855,Gemma 3 12B It,AiHubMix,1.44,0.0,5.76,0,
+856,Gemini,AiHubMix,9.0,,36.0,0,
+857,GPT 4o Zh,AiHubMix,18.0,,72.0,0,vision
+858,Claude 3.5 Haiku,AiHubMix,7.92,,39.6,200000,tool_calls|vision
+859,Qwen Max 0125,AiHubMix,2.74,,10.94,0,
+860,Hunyuan Mt 7B,AiHubMix,1.44,,1.44,0,
+861,Bge Large En V1.5,AiHubMix,0.24,,0.24,0,tool_calls|vision
+862,Bge Large Zh V1.5,AiHubMix,0.24,,0.24,0,tool_calls|vision
+863,Bge Reranker V2 M3,AiHubMix,0.24,,0.24,0,vision
+864,Gemini 2.0 Flash Lite Preview 02-05,AiHubMix,0.54,0.54,2.16,0,
+865,V3,AiHubMix,14.4,0.0,14.4,0,vision
+866,Sonar (reasoning),AiHubMix,11.52,,57.6,0,
+867,V_2,AiHubMix,14.4,0.0,14.4,0,vision
+868,V_2_turbo,AiHubMix,14.4,0.0,14.4,0,vision
+869,V_2a,AiHubMix,14.4,0.0,14.4,0,vision
+870,V_2a_turbo,AiHubMix,14.4,0.0,14.4,0,vision
+871,V_1,AiHubMix,14.4,0.0,14.4,0,vision
+872,V_1_turbo,AiHubMix,14.4,0.0,14.4,0,vision
+873,Doubao Embedding Large Text 240915,AiHubMix,0.72,,0.72,0,
+874,Kimi Thinking Preview,AiHubMix,216.0,,216.0,0,
+875,GPT 4o 2024 08-06,AiHubMix,18.0,9.0,72.0,0,
+876,Aihubmix Phi 4 (reasoning),AiHubMix,1.44,,1.44,128000,reasoning
+877,Qwen Plus 2025 07-28,AiHubMix,0.79,0.79,1.98,0,
+878,Qwen Plus,AiHubMix,0.79,0.79,1.98,0,
+879,Sonar,AiHubMix,11.52,,11.52,0,
+880,Step3,AiHubMix,7.92,,19.8,0,
+881,Text Embedding V4,AiHubMix,0.58,,0.58,0,
+882,Qwen Turbo,AiHubMix,0.33,0.0,6.62,0,
+883,Aihubmix Phi 4 Mini (reasoning),AiHubMix,0.86,,0.86,128000,
+884,Aihub Phi 4 Multimodal Instruct,AiHubMix,0.86,,3.46,128000,vision
+885,Qwen3 30B A3B,AiHubMix,0.86,0.0,8.64,0,
+886,Qwen3 32B,AiHubMix,2.3,0.0,23.04,0,
+887,Grok 3,AiHubMix,21.6,,108.0,0,
+888,Aihub Phi 4 Mini Instruct,AiHubMix,0.86,,3.46,128000,
+889,Aihub Phi 4,AiHubMix,0.86,,3.46,16400,
+890,Claude 3 Opus 20240229,AiHubMix,118.8,,594.0,0,
+891,Dall E 3,AiHubMix,288.0,,288.0,0,vision
+892,Doubao Embedding Text 240715,AiHubMix,5.04,,5.04,0,
+893,Qwen3 14B,AiHubMix,1.15,0.0,11.52,0,
+894,Grok 3 Beta,AiHubMix,21.6,0.0,108.0,0,
+895,Grok 3 Fast,AiHubMix,39.6,0.0,198.0,0,
+896,Qwen3 8B,AiHubMix,0.58,0.0,5.76,0,
+897,Qwen3 4B,AiHubMix,0.33,0.0,3.31,0,
+898,DeepSeek R1 Zero,AiHubMix,15.84,,15.84,0,
+899,Grok 3 Fast Beta,AiHubMix,39.6,0.0,198.0,0,
+900,Grok 3 Mini,AiHubMix,2.16,0.0,3.61,0,
+901,Grok 3 Mini Beta,AiHubMix,2.38,0.0,3.97,0,
+902,Qwen3 1.7b,AiHubMix,0.33,0.0,3.31,0,
+903,Qwen3 0.6b,AiHubMix,0.33,0.0,3.31,0,
+904,Qwen 3 32B,AiHubMix,2.88,,11.52,0,
+905,Qwen Turbo 2025 04-28,AiHubMix,0.33,0.0,6.62,0,
+906,Grok 3 Mini Fast Beta,AiHubMix,2.38,,15.84,0,
+907,Alicloud Glm 5,AiHubMix,4.06,0.81,18.25,0,
+908,Command A 03 2025,AiHubMix,18.0,0.0,72.0,0,
+909,Qwen Plus 2025 04-28,AiHubMix,0.94,0.0,18.72,0,
+910,GLM Z1 32B 0414,AiHubMix,0.58,,0.58,0,
+911,Thudm/glm 4.1 Vision 9B Thinking,AiHubMix,0.29,0.0,1.15,0,
+912,GLM 4.1 Vision 9B Thinking,AiHubMix,0.72,0.0,0.72,0,
+913,Text Embedding 004,AiHubMix,0.14,,0.14,0,
+914,GLM 4 32B 0414,AiHubMix,0.58,,0.58,0,
+915,GLM Z1 9B 0414,AiHubMix,0.36,,0.36,0,
+916,GLM 4 9B 0414,AiHubMix,0.36,,0.36,0,
+917,CC Doubao Seed Code Preview,AiHubMix,1.44,,1.44,0,
+918,Doubao Seed Code Preview,AiHubMix,1.44,,1.44,0,
+919,GLM Zero Preview,AiHubMix,14.4,,14.4,0,
+920,Qwen 3 235B A22B Instruct 2507,AiHubMix,2.02,,10.08,0,
+921,Janus Pro 7B,AiHubMix,14.4,,14.4,0,
+922,Gemini 2.0 Flash Thinking,AiHubMix,0.55,,2.19,0,
+923,GLM 4.5 Air,AiHubMix,1.01,,6.05,131072,
+924,GPT 4 32K,AiHubMix,432.0,,864.0,0,
+925,Coding GLM 4.5 Air,AiHubMix,0.1,,0.6,0,
+926,Nvidia Llama 3.1 Nemotron 70B Instruct,AiHubMix,9.5,,9.5,0,
+927,Nvidia Llama 3.3 Nemotron Super 49B V1.5,AiHubMix,0.79,,3.17,0,
+928,Nvidia Nemotron 3 Nano 30B A3B,AiHubMix,0.48,,1.9,0,
+929,Nvidia Nemotron Nano 12B V2 VL,AiHubMix,1.58,,4.75,0,
+930,Nvidia Nemotron Nano 9B V2,AiHubMix,0.32,,1.27,0,
+931,O1 Preview 2024 09-12,AiHubMix,108.0,54.0,432.0,0,
+932,Qvq 72B Preview,AiHubMix,8.64,,8.64,0,
+933,QwQ 32B Preview,AiHubMix,1.15,,1.15,0,
+934,Llama 3.1 Sonar Huge 128K Online,AiHubMix,40.32,,40.32,0,
+935,Llama 3.1 Sonar Large 128K Online,AiHubMix,8.64,,8.64,0,
+936,Aihubmix Mistral Large 2411,AiHubMix,14.4,,43.2,0,
+937,Aihubmix Mistral Large 2407,AiHubMix,21.6,,64.8,0,
+938,Grok 2 1212,AiHubMix,12.96,,64.8,0,
+939,Llama 3.1 70B,AiHubMix,3.17,,3.17,0,
+940,Gemini 2.0 Flash Thinking Exp,AiHubMix,0.55,,2.19,0,
+941,GPT Image Test,AiHubMix,36.0,0.0,288.0,0,
+942,Imagen 3.0 Generate 002,AiHubMix,14.4,0.0,14.4,0,vision
+943,Describe,AiHubMix,14.4,0.0,14.4,0,vision
+944,Upscale,AiHubMix,14.4,0.0,14.4,0,vision
+945,Bai Qwen3 VL 235B A22B Instruct,AiHubMix,1.97,,7.89,0,
+946,CC MiniMax M2,AiHubMix,0.72,,0.72,0,tool_calls
+947,CC DeepSeek V3,AiHubMix,2.16,,2.16,0,
+948,CC DeepSeek V3.1,AiHubMix,4.03,,12.1,0,tool_calls
+949,CC ERNIE 4.5 300B A47B,AiHubMix,2.3,0.0,9.22,0,tool_calls|vision
+950,CC Kimi Dev 72B,AiHubMix,2.3,0.0,9.22,0,
+951,CC Kimi K2 Instruct,AiHubMix,7.92,,23.76,0,tool_calls
+952,CC Kimi K2 Instruct 0905,AiHubMix,7.92,,23.76,0,tool_calls
+953,CC Kimi K2 Thinking,AiHubMix,3.95,,15.78,0,
+954,Computer Use Preview,AiHubMix,21.6,,86.4,0,
+955,Crush Glm 4.6 (free),AiHubMix,0.0,,0.0,0,
+956,Llama3.1 8B,AiHubMix,2.16,,4.32,0,
+957,O1 2024 12-17,AiHubMix,108.0,54.0,432.0,0,reasoning|vision
+958,Sf Kimi K2 Thinking,AiHubMix,3.95,,15.78,0,
+959,Llama 3.2 11B Vision Preview,AiHubMix,1.44,,1.44,0,
+960,Llama 3.2 1B Preview,AiHubMix,1.44,,1.44,0,
+961,Llama 3.2 3B Preview,AiHubMix,1.44,,1.44,0,
+962,Llama 3.2 90B Vision Preview,AiHubMix,17.28,,17.28,0,
+963,Llama2 70B 4096,AiHubMix,3.6,,3.6,0,
+964,Llama2 70B 40960,AiHubMix,3.6,,3.6,0,
+965,Llama2 7B 2048,AiHubMix,0.72,,0.72,0,
+966,Llama3 70B 8192,AiHubMix,5.04,,6.75,0,
+967,Llama3 70B 8192(33),AiHubMix,19.08,,19.08,0,
+968,Llama3 8B 8192,AiHubMix,0.43,,0.86,0,
+969,Llama3 8B 8192(33),AiHubMix,2.16,,2.16,0,
+970,Llama3 Groq 70B 8192 Tool Use Preview,AiHubMix,0.01,,0.01,0,
+971,Llama3 Groq 8B 8192 Tool Use Preview,AiHubMix,0.0,,0.0,0,
+972,Llama 3.2 90B Vision Instruct,AiHubMix,3.6,,3.6,0,
+973,Llama 3.1 405B Instruct (free),AiHubMix,0.14,,0.14,0,
+974,Llama 3.1 70B Instruct (free),AiHubMix,0.14,,0.14,0,
+975,Llama 3.1 8B Instruct (free),AiHubMix,0.14,,0.14,0,
+976,Llama 3.2 11B Vision Instruct (free),AiHubMix,0.14,,0.14,0,
+977,Llama 3.2 3B Instruct (free),AiHubMix,0.14,,0.14,0,
+978,Llama 3.1 405B Instruct,AiHubMix,36.0,,36.0,0,
+979,Llama3 8B Chat,AiHubMix,2.16,,2.16,0,
+980,Mistral 7B Instruct (free),AiHubMix,0.01,,0.01,0,
+981,Moonshot Kimi K2.5,AiHubMix,4.32,0.76,21.6,0,
+982,Moonshot V1 128K,AiHubMix,72.0,,72.0,0,
+983,Moonshot V1 128K Vision Preview,AiHubMix,72.0,,72.0,0,
+984,Moonshot V1 32K,AiHubMix,28.8,,28.8,0,
+985,Moonshot V1 32K Vision Preview,AiHubMix,28.8,,28.8,0,
+986,Moonshot V1 8K,AiHubMix,14.4,,14.4,0,
+987,Moonshot V1 8K Vision Preview,AiHubMix,14.4,,14.4,0,
+988,Llama 3_1 Nemotron Ultra 253B V1,AiHubMix,3.6,0.0,3.6,0,
+989,O1 Mini 2024 09-12,AiHubMix,21.6,10.8,86.4,0,
+990,Omni Moderation,AiHubMix,0.14,,0.14,0,
+991,Qwen Flash,AiHubMix,0.14,0.14,1.44,0,
+992,Qwen Flash 2025 07-28,AiHubMix,0.14,0.14,1.44,0,
+993,Qwen Long,AiHubMix,0.72,,2.88,0,
+994,Qwen Max,AiHubMix,2.74,,10.94,0,
+995,Qwen Max Longcontext,AiHubMix,50.4,,151.2,0,
+996,Qwen Plus,AiHubMix,5.04,,15.12,0,
+997,Qwen Turbo,AiHubMix,2.59,,7.78,0,
+998,Qwen Turbo 2024 11-01,AiHubMix,2.59,,7.78,0,
+999,Qwen2.5 14B Instruct,AiHubMix,2.88,,8.64,0,
+1000,Qwen2.5 32B Instruct,AiHubMix,4.32,,8.64,0,
+1001,Qwen2.5 3B Instruct,AiHubMix,2.88,,5.76,0,
+1002,Qwen2.5 72B Instruct,AiHubMix,5.76,,17.28,0,
+1003,Qwen2.5 7B Instruct,AiHubMix,2.88,,5.76,0,
+1004,Qwen2.5 Coder 1.5b Instruct,AiHubMix,1.44,,2.88,0,
+1005,Qwen2.5 Coder 7B Instruct,AiHubMix,1.44,,2.88,0,
+1006,Qwen2.5 Math 1.5b Instruct,AiHubMix,1.44,,1.44,0,
+1007,Qwen2.5 Math 72B Instruct,AiHubMix,5.76,,17.28,0,
+1008,Qwen2.5 Math 7B Instruct,AiHubMix,1.44,,2.88,0,
+1009,Sonar Pro (reasoning),AiHubMix,21.6,,86.4,0,
+1010,Step 2 16K,AiHubMix,14.4,,14.4,0,
+1011,Text Ada 001,AiHubMix,2.88,,2.88,0,
+1012,Text Babbage 001,AiHubMix,3.6,,3.6,0,
+1013,Text Curie 001,AiHubMix,14.4,,14.4,0,
+1014,Text Davinci 002,AiHubMix,144.0,,144.0,0,
+1015,Text Davinci 003,AiHubMix,144.0,,144.0,0,
+1016,Text Davinci Edit 001,AiHubMix,144.0,,144.0,0,
+1017,Text Embedding 3 Large,AiHubMix,0.94,,0.94,0,
+1018,Text Embedding 3 Small,AiHubMix,0.14,,0.14,0,
+1019,Text Embedding Ada 002,AiHubMix,0.72,,0.72,0,
+1020,Text Embedding V1,AiHubMix,0.72,,0.72,0,
+1021,Text Moderation 007,AiHubMix,1.44,,1.44,0,
+1022,Text Moderation,AiHubMix,1.44,,1.44,0,
+1023,Text Moderation Stable,AiHubMix,1.44,,1.44,0,
+1024,Text Search Ada Doc 001,AiHubMix,144.0,,144.0,0,
+1025,Tts 1,AiHubMix,108.0,,108.0,0,
+1026,Tts 1 1106,AiHubMix,108.0,,108.0,0,
+1027,Tts 1 Hd,AiHubMix,216.0,,216.0,0,
+1028,Tts 1 Hd 1106,AiHubMix,216.0,,216.0,0,
+1029,Veo 3,AiHubMix,14.4,0.0,14.4,0,vision
+1030,Veo3,AiHubMix,14.4,0.0,14.4,0,vision
+1031,Whisper 1,AiHubMix,720.0,,720.0,0,
+1032,Whisper Large V3,AiHubMix,222.0,,222.0,0,
+1033,Whisper Large V3 Turbo,AiHubMix,40.0,,40.0,0,
+1034,Yi Large,AiHubMix,21.6,,21.6,0,
+1035,Yi Large Rag,AiHubMix,28.8,,28.8,0,
+1036,Yi Large Turbo,AiHubMix,12.96,,12.96,0,
+1037,Yi Lightning,AiHubMix,1.44,,1.44,0,
+1038,Yi Medium,AiHubMix,2.88,,2.88,0,
+1039,Yi VL Plus,AiHubMix,0.01,,0.01,0,
+1040,Fx Flux 2 Pro,AiHubMix,14.4,0.0,0.0,0,
+1041,Gemini 2.0 Flash 001,AiHubMix,0.72,1.8,2.88,0,
+1042,Gemini 2.0 Flash Exp Image Generation,AiHubMix,0.72,,2.88,0,
+1043,Gemini 2.0 Flash Lite,AiHubMix,0.55,0.55,2.19,0,vision
+1044,Gemini 2.0 Flash Lite 001,AiHubMix,0.55,0.55,2.19,0,
+1045,Gemini 2.5 Pro,AiHubMix,9.0,0.9,36.0,0,tool_calls|vision
+1046,Gemini Embedding,AiHubMix,0.14,,0.14,0,
+1047,Gemini,AiHubMix,9.0,,36.0,0,
+1048,Gemini,AiHubMix,9.0,,36.0,0,
+1049,Gemini Pro,AiHubMix,1.44,,4.32,0,
+1050,Gemini Pro Vision,AiHubMix,7.2,,7.2,0,
+1051,Gemma 7B It,AiHubMix,0.72,,0.72,0,
+1052,Gemma2 9B It,AiHubMix,2.88,,2.88,0,
+1053,GLM 3 Turbo,AiHubMix,5.11,,5.11,0,
+1054,GLM 4,AiHubMix,102.24,,102.24,0,
+1055,GLM 4 Flash,AiHubMix,0.72,,0.72,0,
+1056,GLM 4 Plus,AiHubMix,57.6,,57.6,0,
+1057,GLM 4.5 Airx,AiHubMix,7.92,1.58,32.47,0,
+1058,GLM 4 Vision,AiHubMix,102.24,,102.24,0,
+1059,GLM 4 Vision Plus,AiHubMix,14.4,,14.4,0,
+1060,Google Gemma 3 12B It,AiHubMix,1.44,,1.44,0,
+1061,Google Gemma 3 27B It,AiHubMix,1.44,0.0,1.44,0,
+1062,Google Gemma 3 4B It,AiHubMix,1.44,0.0,1.44,0,
+1063,Gemini,AiHubMix,9.0,,36.0,0,
+1064,Gemma 2 27B It,AiHubMix,5.76,,5.76,0,
+1065,Gemma 2 9B It (free),AiHubMix,0.14,,0.14,0,
+1066,GPT 3.5 Turbo,AiHubMix,3.6,,10.8,0,
+1067,GPT 3.5 Turbo 0301,AiHubMix,10.8,,10.8,0,
+1068,GPT 3.5 Turbo 0613,AiHubMix,10.8,,14.4,0,
+1069,GPT 3.5 Turbo 1106,AiHubMix,7.2,,14.4,0,
+1070,GPT 3.5 Turbo 16K,AiHubMix,21.6,,28.8,0,
+1071,GPT 3.5 Turbo 16K 0613,AiHubMix,21.6,,28.8,0,
+1072,GPT 3.5 Turbo Instruct,AiHubMix,10.8,,14.4,0,
+1073,GPT 4,AiHubMix,216.0,,432.0,0,
+1074,GPT 4 0125 Preview,AiHubMix,72.0,,216.0,0,
+1075,GPT 4 0314,AiHubMix,216.0,,432.0,0,
+1076,GPT 4 0613,AiHubMix,216.0,,432.0,0,
+1077,GPT 4 1106 Preview,AiHubMix,72.0,,216.0,0,
+1078,GPT 4 32K 0314,AiHubMix,432.0,,864.0,0,
+1079,GPT 4 32K 0613,AiHubMix,432.0,,864.0,0,
+1080,GPT 4 Turbo,AiHubMix,72.0,,216.0,0,
+1081,GPT 4 Turbo 2024 04-09,AiHubMix,72.0,,216.0,0,
+1082,GPT 4 Turbo Preview,AiHubMix,72.0,,216.0,0,
+1083,GPT 4 Vision Preview,AiHubMix,72.0,,216.0,0,
+1084,GPT 4o 2024 05-13,AiHubMix,36.0,36.0,108.0,128000,
+1085,GPT 4o Mini 2024 07-18,AiHubMix,1.08,0.54,4.32,0,vision
+1086,gpt-oss-20b,AiHubMix,0.79,,3.96,128000,reasoning|tool_calls
+1087,Grok 2 Vision 1212,AiHubMix,12.96,,64.8,0,vision
+1088,Grok Vision Beta,AiHubMix,40.32,,120.96,0,vision
+1089,Groq Llama 3.1 8B Instant,AiHubMix,0.4,,0.63,0,
+1090,Groq Llama 3.3 70B Versatile,AiHubMix,4.67,,6.26,0,
+1091,Groq Llama 4 Maverick 17B 128e Instruct,AiHubMix,1.58,,4.75,0,
+1092,Groq Llama 4 Scout 17B 16e Instruct,AiHubMix,0.88,,2.64,0,
+1093,Imagen 4.0 Generate Preview 05-20,AiHubMix,14.4,0.0,14.4,0,vision
+1094,Jina Embeddings V2 Base Code,AiHubMix,0.36,,0.36,0,
+1095,Learnlm 1.5 Pro Experimental,AiHubMix,9.0,,36.0,0,
+1096,Llama 3.1 405B Instruct,AiHubMix,28.8,,28.8,0,
+1097,Llama 3.1 405B (reasoning),AiHubMix,28.8,,28.8,0,
+1098,Llama 3.1 70B Versatile,AiHubMix,4.32,,4.32,0,
+1099,Llama 3.1 8B Instant,AiHubMix,2.16,,4.32,0,
+1100,Llama 3.1 Sonar Small 128K Online,AiHubMix,2.16,,2.16,0,
+1101,Baichuan3 Turbo,AiHubMix,13.68,,13.68,0,
+1102,Baichuan3 Turbo 128K,AiHubMix,27.36,,27.36,0,
+1103,Baichuan4,AiHubMix,115.2,,115.2,0,
+1104,Baichuan4 Air,AiHubMix,1.15,,1.15,0,
+1105,Baichuan4 Turbo,AiHubMix,17.28,,17.28,0,
+1106,DeepSeek V3,AiHubMix,1.96,,7.83,0,
+1107,Doubao 1.5 Lite 32K,AiHubMix,0.36,0.07,0.72,0,
+1108,Doubao 1.5 Pro 256K,AiHubMix,5.76,5.76,10.37,0,
+1109,Doubao 1.5 Pro 32K,AiHubMix,0.96,0.19,2.41,0,
+1110,Doubao 1.5 Vision Pro 32K,AiHubMix,3.31,,9.94,0,
+1111,Doubao Lite 128K,AiHubMix,1.01,1.01,2.02,0,
+1112,Doubao Lite 32K,AiHubMix,0.43,0.09,0.86,0,
+1113,Doubao Lite 4K,AiHubMix,0.43,0.43,0.86,0,
+1114,Doubao Pro 128K,AiHubMix,5.76,,10.37,0,
+1115,Doubao Pro 256K,AiHubMix,5.76,5.76,10.37,0,
+1116,Doubao Pro 32K,AiHubMix,1.01,0.2,2.52,0,
+1117,Doubao Pro 4K,AiHubMix,1.01,,2.52,0,
+1118,gpt-oss-20b,AiHubMix,0.79,,3.96,0,
+1119,Mythomax L2 13B,AiHubMix,2.88,,2.88,0,
+1120,MiniMax Text 01,AiHubMix,1.01,,8.06,0,
+1121,Mistral Large 2407,AiHubMix,21.6,,64.8,0,
+1122,Qwen2 1.5b Instruct,AiHubMix,1.44,,1.44,0,
+1123,Qwen2 57B A14B Instruct,AiHubMix,1.73,,1.73,0,
+1124,Qwen2 72B Instruct,AiHubMix,5.76,,5.76,0,
+1125,Qwen2 7B Instruct,AiHubMix,0.58,,0.58,0,
+1126,Qwen2.5 32B Instruct,AiHubMix,4.32,,4.32,0,
+1127,Qwen2.5 72B Instruct,AiHubMix,5.76,,5.76,0,
+1128,Qwen2.5 72B Instruct 128K,AiHubMix,5.76,,5.76,0,
+1129,Qwen2.5 7B Instruct,AiHubMix,2.88,,2.88,0,
+1130,Qwen2.5 Coder 32B Instruct,AiHubMix,1.15,,1.15,0,
+1131,Qwen3 235B A22B Thinking 2507,AiHubMix,2.02,,20.16,0,
+1132,Stable Diffusion 3.5 Large,AiHubMix,28.8,0.0,28.8,0,vision
+1133,Wizardcoder Python 34B V1.0,AiHubMix,6.48,,6.48,0,
+1134,Ahm Phi 3.5 Moe Instruct,AiHubMix,2.88,,11.52,0,
+1135,Ahm Phi 3.5 Mini Instruct,AiHubMix,7.2,,21.6,0,
+1136,Ahm Phi 3.5 Vision Instruct,AiHubMix,2.88,,11.52,0,vision
+1137,Ahm Phi 3 Medium 128K,AiHubMix,43.2,,129.6,0,
+1138,Ahm Phi 3 Medium 4K,AiHubMix,7.2,,21.6,0,
+1139,Ahm Phi 3 Small 128K,AiHubMix,7.2,,21.6,0,
+1140,Aihubmix Codestral 2501,AiHubMix,2.88,,8.64,0,
+1141,Aihubmix Cohere Command R,AiHubMix,4.61,,13.82,0,
+1142,Aihubmix Jamba 1.5 Large,AiHubMix,15.84,,63.36,0,
+1143,Aihubmix Llama 3.1 405B Instruct,AiHubMix,36.0,,108.0,0,
+1144,Aihubmix Llama 3.1 70B Instruct,AiHubMix,4.32,,5.62,0,
+1145,Aihubmix Llama 3.1 8B Instruct,AiHubMix,2.16,,4.32,0,
+1146,Aihubmix Llama 3.2 11B Vision,AiHubMix,2.88,,2.88,0,
+1147,Aihubmix Llama 3.2 90B Vision,AiHubMix,17.28,,17.28,0,
+1148,Aihubmix Llama 3 70B Instruct,AiHubMix,5.04,,5.04,0,
+1149,Aihubmix Mistral Large,AiHubMix,28.8,,86.4,0,
+1150,Aihubmix Command R 08 2024,AiHubMix,1.44,,5.76,0,
+1151,Aihubmix Command R Plus,AiHubMix,27.65,,138.24,0,
+1152,Aihubmix Command R Plus 08 2024,AiHubMix,20.16,,80.64,0,
+1153,Alicloud Deepseek V3.2,AiHubMix,1.97,0.39,2.96,0,
+1154,Alicloud Glm 4.7,AiHubMix,2.96,2.96,13.81,0,
+1155,Alicloud Kimi K2 Thinking,AiHubMix,3.95,,15.78,0,
+1156,Alicloud Kimi K2.5,AiHubMix,3.95,0.69,20.71,256000,
+1157,Alicloud Minimax M2.5,AiHubMix,2.07,,8.28,0,
+1158,Azure Deepseek V3.2,AiHubMix,4.18,,12.1,0,
+1159,Azure Deepseek V3.2 Speciale,AiHubMix,4.18,,12.1,0,
+1160,Azure Kimi K2.5,AiHubMix,4.32,,21.6,256000,
+1161,Cbs Glm 4.7,AiHubMix,16.2,,19.8,0,
+1162,Cerebras Llama 3.3 70B,AiHubMix,4.32,,4.32,0,
+1163,Chatglm_lite,AiHubMix,2.06,,2.06,0,
+1164,Chatglm_pro,AiHubMix,10.29,,10.29,0,
+1165,Chatglm_std,AiHubMix,5.14,,5.14,0,
+1166,Chatglm_turbo,AiHubMix,5.14,,5.14,0,
+1167,Claude 2,AiHubMix,63.36,,63.36,0,
+1168,Claude 2.0,AiHubMix,63.36,,285.12,0,
+1169,Claude 2.1,AiHubMix,63.36,,285.12,0,
+1170,Claude 3.5 Sonnet 20240620,AiHubMix,23.76,,118.8,200000,vision
+1171,Claude 3.5 Sonnet@20240620,AiHubMix,23.76,,118.8,0,
+1172,Claude 3 Haiku 20240229,AiHubMix,1.98,,1.98,0,vision
+1173,Claude 3 Haiku 20240307,AiHubMix,1.98,,9.9,0,vision
+1174,Claude 3 Haiku@20240307,AiHubMix,1.98,,9.9,0,vision
+1175,Claude 3 Opus@20240229,AiHubMix,118.8,,594.0,0,
+1176,Claude 3 Sonnet 20240229,AiHubMix,23.76,,118.8,0,vision
+1177,Claude Instant 1,AiHubMix,12.91,,12.91,0,
+1178,Claude Instant 1.2,AiHubMix,6.34,,28.51,0,
+1179,Code Davinci Edit 001,AiHubMix,144.0,,144.0,0,
+1180,Cogview 3,AiHubMix,255.6,,255.6,0,
+1181,Cogview 3 Plus,AiHubMix,72.0,,72.0,0,
+1182,Command,AiHubMix,7.2,,14.4,0,
+1183,Command Light,AiHubMix,7.2,,14.4,0,
+1184,Command Light Nightly,AiHubMix,7.2,,14.4,0,
+1185,Command Nightly,AiHubMix,7.2,,14.4,0,
+1186,Command R,AiHubMix,4.61,,13.82,0,
+1187,Command R 08 2024,AiHubMix,1.44,,5.76,0,
+1188,Command R Plus,AiHubMix,27.65,,138.24,0,
+1189,Command R Plus 08 2024,AiHubMix,20.16,,80.64,0,
+1190,Dall E 2,AiHubMix,115.2,,115.2,0,vision
+1191,Daocloud Deepseek V3.2,AiHubMix,1.58,,2.38,0,
+1192,Davinci,AiHubMix,144.0,,144.0,0,
+1193,Davinci 002,AiHubMix,14.4,,14.4,0,
+1194,Deepinfra Llama 3.1 8B Instant,AiHubMix,0.24,,0.4,0,
+1195,Deepinfra Llama 3.3 70B Instant Turbo,AiHubMix,0.79,,2.53,0,
+1196,Deepinfra Llama 4 Maverick 17B 128e Instruct,AiHubMix,11.88,,47.52,0,
+1197,Deepinfra Llama 4 Scout 17B 16e Instruct,AiHubMix,0.63,0.0,2.38,0,
+1198,DeepSeek Coder V2 Instruct,AiHubMix,1.15,,2.3,0,
+1199,DeepSeek R1 Distill Llama 70B,AiHubMix,4.32,,4.32,0,
+1200,DeepSeek R1 Distill Llama 8B,AiHubMix,0.07,,0.07,0,
+1201,DeepSeek R1 Distill Qwen 1.5b,AiHubMix,0.07,,0.07,0,
+1202,DeepSeek R1 Distill Qwen 14B,AiHubMix,0.72,,0.72,0,
+1203,DeepSeek R1 Distill Qwen 32B,AiHubMix,1.44,,1.44,0,
+1204,DeepSeek R1 Distill Qwen 7B,AiHubMix,0.07,,0.07,0,
+1205,DeepSeek V2 Chat,AiHubMix,1.15,,2.3,0,
+1206,DeepSeek V2.5,AiHubMix,1.15,,2.3,0,
+1207,DeepSeek Llm 67B Chat,AiHubMix,1.15,,1.15,0,
+1208,DeepSeek Vl2,AiHubMix,1.15,,1.15,0,
+1209,DeepSeek V3,AiHubMix,1.96,0.0,7.83,0,
+1210,Distil Whisper Large V3 En,AiHubMix,40.0,,40.0,0,
+1211,Doubao 1.5 Thinking Vision Pro 250428,AiHubMix,14.4,14.4,14.4,0,
+1212,Aistudio_gemini 2.0 Flash,AiHubMix,0.72,1.8,2.88,0,
+1213,Aistudio_gpt 4.1 Mini,AiHubMix,2.88,0.72,11.52,0,
+1214,DeepSeek R1 Distill Qianfan Llama 8B,AiHubMix,0.99,,3.95,0,
+1215,Doubao 1.5 Pro 256K 250115,AiHubMix,4.92,,8.86,0,
+1216,Doubao 1.5 Pro 32K 250115,AiHubMix,0.78,,1.94,0,
+1217,GPT 4o 2024 08-06 Global,AiHubMix,18.0,9.0,72.0,0,
+1218,GPT 4o Mini Global,AiHubMix,1.08,0.54,4.32,0,
+1219,Meta Llama 3 70B,AiHubMix,34.52,,34.52,0,
+1220,Meta Llama 3 8B,AiHubMix,3.95,,3.95,0,
+1221,O3 Global,AiHubMix,14.4,3.6,57.6,0,
+1222,O3 Mini Global,AiHubMix,7.92,3.96,31.68,0,
+1223,O3 Pro Global,AiHubMix,144.0,,576.0,0,
+1224,Qianfan Chinese Llama 2 13B,AiHubMix,5.92,,5.92,0,
+1225,Qianfan Llama VL 8B,AiHubMix,1.97,,4.93,0,
