@@ -31,16 +31,6 @@ export default function RootLayout({
       <head>
         <meta name="theme-color" media="(prefers-color-scheme: light)" content="#fff" />
         <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#000" />
-        {/* 裸域重定向脚本 */}
-        <script dangerouslySetInnerHTML={{
-          __html: `
-            (function() {
-              if (window.location.hostname === 'llmcostrank.com') {
-                window.location.replace('https://www.llmcostrank.com' + window.location.pathname + window.location.search);
-              }
-            })();
-          `
-        }} />
       </head>
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased min-h-screen relative overflow-x-hidden`}
