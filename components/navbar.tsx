@@ -123,27 +123,23 @@ export function Navbar() {
     <>
       {/* 桌面端导航栏 - md 及以上显示 */}
       <nav
-        className={`hidden md:flex fixed top-4 left-1/2 -translate-x-1/2 z-50 nav-capsule transition-all duration-300 ease-out ${
+        className={`hidden md:flex fixed top-4 left-1/2 -translate-x-1/2 z-50 rounded-2xl transition-all duration-300 ease-out ${
           scrolled
             ? isDark
-              ? "bg-white/[0.08] shadow-lg shadow-black/20 backdrop-blur-lg"
-              : "bg-white/50 shadow-lg shadow-black/10 backdrop-blur-lg"
+              ? "bg-[#161618] shadow-xl shadow-black/40 border border-white/10"
+              : "bg-white shadow-xl shadow-black/5 border border-black/5"
             : isDark
-              ? "bg-white/[0.06] backdrop-blur-md"
-              : "bg-white/40 backdrop-blur-md"
-        } ${
-          isDark
-            ? scrolled ? "border border-white/10" : "border border-white/5"
-            : scrolled ? "border border-black/5" : "border border-black/5"
+              ? "bg-[#161618] border border-white/10"
+              : "bg-white border border-black/5"
         }`}
       >
         <div ref={navRef} className="relative flex items-center gap-2 px-3 py-2">
-          {/* 滑动指示器 - 凹陷效果 */}
+          {/* 滑动指示器 - 选中效果 */}
           <div
             className={`absolute top-2 h-[calc(100%-16px)] transition-all duration-300 ease-out rounded-xl ${
               isDark
-                ? "bg-black/[0.25] border border-black/[0.15] shadow-[inset_0_1px_2px_rgba(0,0,0,0.25)]"
-                : "bg-black/[0.04] border border-black/[0.06] shadow-[inset_0_1px_2px_rgba(0,0,0,0.08)]"
+                ? "bg-white/10 border border-white/5 shadow-sm"
+                : "bg-gray-100 border border-black/5 shadow-sm"
             }`}
             style={{
               width: indicatorStyle.width,
@@ -179,59 +175,60 @@ export function Navbar() {
       {/* 移动端导航栏 - md 以下显示 */}
       <nav
         className={`md:hidden fixed top-0 left-0 right-0 z-50 transition-all duration-300 ease-out ${
-          scrolled
+          scrolled || mobileMenuOpen
             ? isDark
-              ? "bg-[#0a0a0a]/95 shadow-lg shadow-black/20 backdrop-blur-lg"
-              : "bg-white/95 shadow-lg shadow-black/10 backdrop-blur-lg"
+              ? "bg-[#111111] shadow-xl shadow-black/40 border-b border-white/10"
+              : "bg-white shadow-xl shadow-black/5 border-b border-black/5"
             : isDark
-              ? "bg-[#0a0a0a]/80 backdrop-blur-md"
-              : "bg-white/80 backdrop-blur-md"
-        } ${
-          isDark ? "border-b border-white/10" : "border-b border-black/5"
+              ? "bg-transparent"
+              : "bg-transparent"
         }`}
       >
-        <div className="flex items-center justify-between px-4 py-3">
+        <div className="flex items-center justify-between px-5 py-4">
           {/* Logo */}
           <Link
             href="/"
-            className={`text-lg font-bold ${
+            className={`text-xl font-extrabold tracking-tight transition-colors ${
               isDark ? "text-white" : "text-gray-900"
             }`}
           >
             LLMCostRank
           </Link>
 
-          <div className="flex items-center gap-2">
+          <div className="flex items-center gap-3">
             {/* 主题切换按钮 */}
             <ThemeToggle />
 
             {/* 汉堡菜单按钮 */}
             <button
-            onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-            className={`p-2 rounded-lg transition-colors ${
-              isDark
-                ? "text-gray-300 hover:bg-white/10"
-                : "text-gray-700 hover:bg-black/5"
-            }`}
-            aria-label="切换菜单"
-          >
-            {mobileMenuOpen ? (
-              <X className="h-6 w-6" />
-            ) : (
-              <Menu className="h-6 w-6" />
-            )}
-          </button>
+              onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+              className={`p-2 rounded-full transition-all duration-200 border ${
+                isDark
+                  ? mobileMenuOpen ? "bg-white/10 border-white/10 text-white" : "bg-[#161618] border-white/10 text-gray-300 hover:bg-white/10"
+                  : mobileMenuOpen ? "bg-black/5 border-black/5 text-gray-900" : "bg-white border-black/5 text-gray-700 hover:bg-black/5"
+              }`}
+              aria-label="切换菜单"
+            >
+              <div className="relative w-5 h-5 flex items-center justify-center">
+                <span className={`absolute transition-all duration-300 ease-out ${mobileMenuOpen ? 'opacity-0 scale-50' : 'opacity-100 scale-100'}`}>
+                  <Menu className="w-5 h-5" />
+                </span>
+                <span className={`absolute transition-all duration-300 ease-out ${mobileMenuOpen ? 'opacity-100 scale-100' : 'opacity-0 scale-50'}`}>
+                  <X className="w-5 h-5" />
+                </span>
+              </div>
+            </button>
           </div>
         </div>
 
         {/* 移动端菜单下拉 */}
         <div
-          className={`overflow-hidden transition-all duration-300 ease-out ${
-            mobileMenuOpen ? "max-h-64" : "max-h-0"
+          className={`overflow-hidden transition-all duration-400 ease-[cubic-bezier(0.4,0,0.2,1)] origin-top ${
+            mobileMenuOpen ? "max-h-[400px] opacity-100" : "max-h-0 opacity-0"
           }`}
         >
-          <div className={`px-4 pb-4 space-y-1 border-t ${
-            isDark ? "border-white/10" : "border-black/5"
+          <div className={`px-4 pb-6 pt-2 space-y-2 ${
+            isDark ? "bg-[#111111]" : "bg-white"
           }`}>
             {navItems.map((item, index) => {
               const isActive = index === activeIndex
@@ -240,17 +237,25 @@ export function Navbar() {
                 <Link
                   key={item.href}
                   href={item.href}
-                  className={`block px-4 py-3 rounded-xl text-base font-medium transition-all duration-200 ${
+                  className={`flex items-center w-full px-5 py-3.5 rounded-2xl text-[17px] font-semibold transition-all duration-200 relative overflow-hidden group ${
                     isActive
                       ? isDark
-                        ? "bg-white/10 text-white"
-                        : "bg-black/5 text-gray-900"
+                        ? "bg-white/10 text-white shadow-[inset_0_1px_1px_rgba(255,255,255,0.05)] border border-white/10"
+                        : "bg-gray-100 text-gray-900 shadow-[inset_0_1px_1px_rgba(255,255,255,1)] border border-black/5"
                       : isDark
-                        ? "text-gray-400 hover:bg-white/5 hover:text-white"
-                        : "text-gray-600 hover:bg-black/[0.02] hover:text-gray-900"
+                        ? "text-gray-400 hover:bg-white/5 hover:text-white border border-transparent"
+                        : "text-gray-600 hover:bg-gray-50 hover:text-gray-900 border border-transparent"
                   }`}
+                  style={{
+                    transitionDelay: mobileMenuOpen ? `${index * 50}ms` : '0ms'
+                  }}
                 >
-                  {item.label}
+                  <span className="relative z-10">{item.label}</span>
+                  {isActive && (
+                    <div className={`absolute left-0 w-1.5 h-1/2 rounded-r-full top-1/2 -translate-y-1/2 ${
+                      isDark ? "bg-white" : "bg-gray-900"
+                    }`} />
+                  )}
                 </Link>
               )
             })}
@@ -261,7 +266,7 @@ export function Navbar() {
       {/* 移动端菜单打开时的遮罩 */}
       {mobileMenuOpen && (
         <div
-          className="md:hidden fixed inset-0 z-40 bg-black/20 backdrop-blur-sm"
+          className="md:hidden fixed inset-0 z-40 bg-black/60 transition-opacity duration-300 ease-out"
           onClick={() => setMobileMenuOpen(false)}
         />
       )}
