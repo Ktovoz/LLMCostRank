@@ -2,7 +2,7 @@
 
 import { useTheme } from "next-themes"
 import { useSyncExternalStore } from "react"
-import { Mail, Globe, ArrowUpRight, Map, Database, ExternalLink } from "lucide-react"
+import { Mail, Globe, ArrowUpRight, Map, Database, ExternalLink, Github } from "lucide-react"
 
 // 用于避免 SSR 水合问题的 store
 const getServerSnapshot = () => false
@@ -20,6 +20,13 @@ export default function MorePage() {
   const isDark = resolvedTheme === "dark"
 
   const links = [
+    {
+      icon: Github,
+      description: "开源项目仓库",
+      link: "https://github.com/Ktovoz/LLMCostRank",
+      linkText: "LLMCostRank",
+      external: true,
+    },
     {
       icon: Mail,
       description: "需要更新数据？请联系",
@@ -48,8 +55,8 @@ export default function MorePage() {
   ]
 
   return (
-    <main className="min-h-screen flex flex-col">
-      <section className="flex-1 flex flex-col items-center px-3 sm:px-4 py-8 sm:py-12 md:py-16 pt-16 sm:pt-20 md:pt-24 lg:pt-36">
+    <main className="flex flex-col">
+      <section className="flex flex-col items-center justify-center px-3 sm:px-4 py-8 sm:py-12 min-h-[calc(100vh-12rem)] md:min-h-[calc(100vh-8rem)]">
         {/* 路线图 */}
         <div className="w-full max-w-2xl mb-6 sm:mb-8 md:mb-12">
           <div className="flex items-center gap-2 sm:gap-3 mb-3 sm:mb-4 md:mb-6">

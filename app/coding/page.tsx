@@ -103,31 +103,42 @@ export default function CodingPage() {
   const isDark = resolvedTheme === "dark"
 
   return (
-    <div className="flex flex-col items-center px-3 sm:px-4 py-6 sm:py-8 pt-16 sm:pt-20 md:pt-36">
+    <div className="flex flex-col items-center px-4 sm:px-6 py-8 sm:py-12 pt-20 sm:pt-28 md:pt-36">
       {/* 主标题区域 */}
-      <div className="text-center mb-4 sm:mb-6 md:mb-8">
-        <h1 className={`text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold tracking-tight mb-2 sm:mb-3 md:mb-4 ${
-          isDark ? "text-gray-50" : "text-gray-900"
+      <div className="text-center mb-8 sm:mb-12 md:mb-16 relative z-10">
+        <div className={`inline-flex items-center gap-1.5 mb-4 px-3 py-1 rounded-full text-xs sm:text-sm font-medium tracking-wide transition-colors ${
+          isDark ? "bg-purple-500/10 border border-purple-500/20 text-purple-400" : "bg-purple-50 border border-purple-200 text-purple-600"
+        }`}>
+          <span className="relative flex h-2 w-2">
+            <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-purple-400 opacity-75"></span>
+            <span className="relative inline-flex rounded-full h-2 w-2 bg-purple-500"></span>
+          </span>
+          Dev Tools
+        </div>
+        <h1 className={`text-3xl sm:text-4xl md:text-5xl lg:text-7xl font-extrabold tracking-tight mb-4 sm:mb-6 ${
+          isDark 
+            ? "bg-gradient-to-b from-white via-gray-200 to-gray-500 bg-clip-text text-transparent drop-shadow-sm" 
+            : "bg-gradient-to-b from-gray-900 via-gray-700 to-gray-500 bg-clip-text text-transparent drop-shadow-sm"
         }`}>
           编码套餐
         </h1>
-        <p className={`text-sm sm:text-base md:text-lg lg:text-xl ${
+        <p className={`text-base sm:text-lg md:text-xl max-w-2xl mx-auto font-medium mb-3 ${
           isDark ? "text-gray-400" : "text-gray-600"
         }`}>
           为开发者优化的 LLM 成本对比
         </p>
-        <p className={`text-xs sm:text-sm mt-1.5 sm:mt-2 ${
-          isDark ? "text-gray-500" : "text-gray-400"
+        <p className={`text-xs sm:text-sm font-mono ${
+          isDark ? "text-gray-600" : "text-gray-400"
         }`}>
-          更新时间：2026-03-01
+          Updated: 2026-03-01
         </p>
       </div>
 
       {/* 数据表格 */}
-      <div className={`w-full max-w-[1800px] p-2 sm:p-3 md:p-4 lg:p-6 rounded-xl sm:rounded-2xl ${
+      <div className={`w-full max-w-[1800px] p-3 sm:p-5 md:p-8 rounded-2xl sm:rounded-3xl relative z-10 transition-all duration-500 hover:shadow-2xl ${
         isDark
-          ? "bg-black/40 border border-white/10"
-          : "bg-white/80 border border-black/10 shadow-lg shadow-black/5"
+          ? "bg-[#0a0a0a]/60 border border-white/10 shadow-[0_0_40px_-15px_rgba(0,0,0,0.7)] backdrop-blur-xl"
+          : "bg-white/70 border border-black/5 shadow-[0_20px_60px_-15px_rgba(0,0,0,0.05)] backdrop-blur-xl"
       }`}>
         <DataTable columns={codingColumns} data={data} initialSorting={[{ id: "id", desc: false }]} unitLabel="套餐" />
       </div>
