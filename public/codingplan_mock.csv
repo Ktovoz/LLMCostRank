@@ -1,0 +1,25 @@
+id,rank,name,plan,provider,monthly,quarterly,yearly,quota,calculationMethod,supportModel,inputPrice,outputPrice,contextWindow,category,windowQuota,monthlyToken,quarterlyToken,yearlyToken,weeklyLimit,monthlyLimit
+1,1,GitHub Copilot Pro,订阅制,GitHub,10,30,100,无限额/无限额,请求,GPT-4o/GPT-4o mini,2.50,10.00,128000,flagship,无限额,无限额,无限额,无限额,无限额,无限额
+2,2,Claude 4 Opus,按量计费,Anthropic,-,-,-,无限额/无限额,请求,Claude 4 Opus/Sonnet,15.00,75.00,200000,flagship,无限额,无限额,无限额,无限额,无限额,无限额
+3,3,Cursor Pro,订阅制,Cursor,20,60,200,无限额/无限额,请求,GPT-4o/Claude 3.5 Sonnet,2.50,10.00,128000,flagship,无限额,无限额,无限额,无限额,无限额,无限额
+4,4,Windsurf Pro,订阅制,Windsurf,15,45,150,无限额/无限额,请求,GPT-4o/Claude 3.5 Sonnet,2.50,10.00,128000,flagship,无限额,无限额,无限额,无限额,无限额,无限额
+5,5,Replit Core,订阅制,Replit,20,60,200,无限额/无限额,请求,GPT-4o/Claude 3.5 Sonnet,2.50,10.00,128000,flagship,无限额,无限额,无限额,无限额,无限额,无限额
+6,6,Claude 4 Sonnet,按量计费,Anthropic,-,-,-,无限额/无限额,请求,Claude 4 Opus/Sonnet,3.00,15.00,200000,advanced,无限额,无限额,无限额,无限额,无限额,无限额
+7,7,Gemini 2.5 Pro,免费额度,Google,0,0,0,1000/5000,token,Gemini 2.5 Pro/Flash,1.25,10.00,1000000,flagship,128K,1M,3M,10M,1000,5000
+8,8,Claude 3.5 Sonnet,按量计费,Anthropic,-,-,-,无限额/无限额,请求,Claude 3.5 Sonnet/Haiku,3.00,15.00,200000,advanced,无限额,无限额,无限额,无限额,无限额,无限额
+9,9,DeepSeek V3,订阅制,DeepSeek,20,50,180,5000/20000,prompt,DeepSeek V3/R1,0.27,1.10,64000,budget,64K,500K,1.5M,5M,5000,20000
+10,10,DeepSeek R1,订阅制,DeepSeek,30,80,280,5000/20000,prompt,DeepSeek V3/R1,0.55,2.19,64000,advanced,64K,500K,1.5M,5M,5000,20000
+11,11,GPT-4o mini,按量计费,OpenAI,-,-,-,无限额/无限额,请求,GPT-4o/GPT-4o mini,0.15,0.60,128000,budget,无限额,无限额,无限额,无限额,无限额,无限额
+12,12,Claude 4 Haiku,按量计费,Anthropic,-,-,-,无限额/无限额,请求,Claude 4 Haiku,0.80,4.00,200000,budget,无限额,无限额,无限额,无限额,无限额,无限额
+13,13,Gemini 2.5 Flash,免费额度,Google,0,0,0,2000/10000,token,Gemini 2.5 Pro/Flash,0.30,2.50,1000000,budget,128K,2M,6M,20M,2000,10000
+14,14,Llama 4 Maverick,开源免费,Meta,0,0,0,无限额/无限额,token,Llama 4 Maverick/Scout,0.20,0.60,128000,standard,无限额,无限额,无限额,无限额,无限额,无限额
+15,15,Llama 4 Scout,开源免费,Meta,0,0,0,无限额/无限额,token,Llama 4 Maverick/Scout,0.15,0.50,256000,budget,无限额,无限额,无限额,无限额,无限额,无限额
+16,16,Mistral Large 2,按量计费,Mistral,-,-,-,无限额/无限额,请求,Mistral Large 2,2.00,6.00,128000,advanced,无限额,无限额,无限额,无限额,无限额,无限额
+17,17,Qwen 2.5 Max,免费额度,Alibaba,0,0,0,3000/15000,token,Qwen 2.5 Max/Turbo,0.80,2.40,128000,advanced,128K,1M,3M,10M,3000,15000
+18,18,Qwen 2.5 Turbo,免费额度,Alibaba,0,0,0,5000/25000,token,Qwen 2.5 Max/Turbo,0.05,0.20,128000,budget,128K,2M,6M,20M,5000,25000
+19,19,Groq Llama 4,按量计费,Groq,-,-,-,无限额/无限额,请求,Groq Llama 4,0.20,0.60,128000,standard,无限额,无限额,无限额,无限额,无限额,无限额
+20,20,GPT-4 Turbo,企业版,OpenAI,200,550,2000,无限额/无限额,请求,GPT-4 Turbo/3.5 Turbo,10.00,30.00,128000,flagship,无限额,无限额,无限额,无限额,无限额,无限额
+21,21,GPT-3.5 Turbo,按量计费,OpenAI,-,-,-,无限额/无限额,请求,GPT-4 Turbo/3.5 Turbo,0.50,1.50,16384,budget,无限额,无限额,无限额,无限额,无限额,无限额
+22,22,Claude 3.5 Haiku,按量计费,Anthropic,-,-,-,无限额/无限额,请求,Claude 3.5 Sonnet/Haiku,0.25,1.25,200000,budget,无限额,无限额,无限额,无限额,无限额,无限额
+23,23,Gemini 1.5 Pro,企业版,Google,150,400,1500,无限额/无限额,token,Gemini 1.5 Pro,3.50,10.50,2000000,flagship,无限额,无限额,无限额,无限额,无限额,无限额
+24,24,Claude 3.5 Sonnet,按量计费,Anthropic,-,-,-,无限额/无限额,请求,Claude 3.5 Sonnet/Haiku,3.00,15.00,200000,advanced,无限额,无限额,无限额,无限额,无限额,无限额

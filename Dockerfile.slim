@@ -1,0 +1,53 @@
+# 阶段1: 安装依赖
+FROM node:20-alpine AS deps
+WORKDIR /app
+RUN apk add --no-cache libc6-compat
+COPY package.json package-lock.json* ./
+RUN npm ci --legacy-peer-deps || npm install
+
+# 阶段2: 构建应用
+FROM node:20-alpine AS builder
+WORKDIR /app
+COPY --from=deps /app/node_modules ./node_modules
+COPY . .
+ENV NEXT_TELEMETRY_DISABLED=1
+RUN npm run build
+
+# 清理 standalone 中不必要的文件
+RUN find .next/standalone -name "*.map" -delete && \
+    find .next/standalone -name "*.ts" -delete && \
+    find .next/standalone -name "*.md" -delete && \
+    find .next/standalone -type d -name "test" -exec rm -rf {} + 2>/dev/null || true && \
+    find .next/standalone -type d -name "tests" -exec rm -rf {} + 2>/dev/null || true
+
+# 阶段3: 极简运行环境
+FROM alpine:3.19 AS runner
+WORKDIR /app
+
+# 安装最小化 nodejs + UPX 压缩工具
+RUN apk add --no-cache nodejs upx && \
+    # 压缩 node 二进制
+    upx --best --lzma /usr/bin/node 2>/dev/null || true && \
+    apk del upx
+
+ENV NODE_ENV=production
+ENV NEXT_TELEMETRY_DISABLED=1
+ENV NODE_NO_WARNINGS=1
+
+# 创建用户
+RUN addgroup -S -g 1001 nodejs && \
+    adduser -S -u 1001 -G nodejs nextjs
+
+# 只复制必要的文件
+COPY --from=builder --chown=nextjs:nodejs /app/public ./public
+COPY --from=builder --chown=nextjs:nodejs /app/.next/standalone ./
+COPY --from=builder --chown=nextjs:nodejs /app/.next/static ./.next/static
+
+USER nextjs
+
+ENV PORT=3000
+ENV HOSTNAME="0.0.0.0"
+
+EXPOSE 3000
+
+CMD ["node", "server.js"]

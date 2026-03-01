@@ -1,0 +1,68 @@
+id,name,provider,inputPrice,cachedInputPrice,outputPrice,contextWindow,features
+1,GPT-4o,OpenAI,2.50,1.25,10.00,128000,prefix_cache|vision|tool_calls
+2,Claude 4 Opus,Anthropic,15.00,1.50,75.00,200000,prefix_cache|vision|tool_calls
+3,Claude 4 Sonnet,Anthropic,3.00,0.30,15.00,200000,prefix_cache|vision|tool_calls
+4,Gemini 2.5 Pro,Google,1.25,0.31,10.00,1000000,prefix_cache|vision|tool_calls|reasoning
+5,GPT-4o mini,OpenAI,0.15,0.075,0.60,128000,prefix_cache|vision|tool_calls
+6,Claude 4 Haiku,Anthropic,0.80,0.08,4.00,200000,prefix_cache|vision|tool_calls
+7,Gemini 2.5 Flash,Google,0.30,,2.50,1000000,prefix_cache|vision|tool_calls
+8,DeepSeek V3,DeepSeek,0.27,,1.10,64000,tool_calls
+9,DeepSeek R1,DeepSeek,0.55,,2.19,64000,reasoning|tool_calls
+10,Llama 4 Maverick,Meta,0.20,,0.60,128000,tool_calls
+11,Llama 4 Scout,Meta,0.15,,0.50,256000,tool_calls
+12,Mistral Large 2,Mistral,2.00,,6.00,128000,prefix_cache|vision|tool_calls
+13,Qwen 2.5 Max,Alibaba,0.80,,2.40,128000,prefix_cache|vision|tool_calls
+14,Qwen 2.5 Turbo,Alibaba,0.05,,0.20,128000,tool_calls
+15,Groq Llama 4,Groq,0.20,,0.60,128000,tool_calls
+16,GPT-4 Turbo,OpenAI,10.00,5.00,30.00,128000,prefix_cache|vision|tool_calls
+17,GPT-3.5 Turbo,OpenAI,0.50,,1.50,16384,tool_calls
+18,Claude 3.5 Sonnet,Anthropic,3.00,0.30,15.00,200000,prefix_cache|vision|tool_calls
+19,Claude 3.5 Haiku,Anthropic,0.25,0.025,1.25,200000,prefix_cache|vision|tool_calls
+20,Gemini 1.5 Pro,Google,3.50,0.875,10.50,2000000,prefix_cache|vision|tool_calls
+21,Gemini 1.5 Flash,Google,0.35,,1.05,1000000,prefix_cache|vision|tool_calls
+22,Cohere Command R+,Cohere,3.00,,15.00,128000,tool_calls
+23,Cohere Command R,Cohere,0.15,,0.60,128000,tool_calls
+24,AI21 Jurassic-2 Ultra,AI21,18.00,,18.00,8192,
+25,AI21 Jurassic-2 Mid,AI21,10.00,,10.00,8192,
+26,Mistral Medium,Mistral,2.70,,8.10,32000,tool_calls
+27,Mistral Small,Mistral,0.20,,0.60,32000,tool_calls
+28,Mistral 7B,Mistral,0.07,,0.07,32000,
+29,Mixtral 8x7B,Mistral,0.60,,0.60,32000,tool_calls
+30,Mixtral 8x22B,Mistral,2.00,,6.00,64000,tool_calls
+31,Qwen 2.5 72B,Alibaba,0.35,,0.70,128000,vision|tool_calls
+32,Qwen 2.5 7B,Alibaba,0.10,,0.20,128000,
+33,Qwen 2 72B,Alibaba,0.90,,0.90,32000,
+34,Yi-Large,01.AI,2.00,,2.00,32000,tool_calls
+35,Yi-Medium,01.AI,0.30,,0.30,16000,
+36,Yi-Spark,01.AI,0.15,,0.15,16000,
+37,InternLM2.5-20B,Shanghai AI Lab,0.15,,0.30,32000,
+38,InternLM2.5-102B,Shanghai AI Lab,1.00,,2.00,32000,
+39,ChatGLM4-9B,Zhipu AI,0.05,,0.05,128000,
+40,ChatGLM4-Plus,Zhipu AI,0.50,,0.50,128000,tool_calls
+41,SparkDesk 4.0,iFlytek,2.00,,2.00,8000,
+42,SparkDesk 3.5,iFlytek,0.60,,0.60,8000,
+43,ERNIE 4.0,Baidu,2.00,,2.00,8000,tool_calls
+44,ERNIE 3.5,Baidu,0.40,,0.40,8000,
+45,ERNIE Speed,Baidu,0.08,,0.08,8000,
+46,Hunyuan Pro,Tencent,2.00,,2.00,32000,tool_calls
+47,Hunyuan Standard,Tencent,0.40,,0.40,32000,
+48,Hunyuan Lite,Tencent,0.05,,0.05,32000,
+49,SenseChat 5.0,SenseTime,2.00,,2.00,8000,
+50,SenseChat 4.0,SenseTime,0.60,,0.60,8000,
+51,abab 6.5,MiniMax,0.40,,1.00,8000,
+52,Moonshot-v1-128k,Moonshot AI,1.00,,1.00,128000,tool_calls
+53,Moonshot-v1-32k,Moonshot AI,0.50,,0.50,32000,tool_calls
+54,Moonshot-v1-8k,Moonshot AI,0.12,,0.12,8000,
+55,Gemma 2 27B,Google,0.80,,0.80,8000,
+56,Gemma 2 9B,Google,0.20,,0.20,8000,
+57,Phi-4,Microsoft,0.20,,0.60,16000,
+58,Phi-3 Medium,Microsoft,0.15,,0.45,128000,
+59,Nous Hermes 2,Mistral,0.17,,0.17,32000,
+60,DBRX,Databricks,2.00,,6.00,32000,tool_calls
+61,Snowflake Arctic,Snowflake,0.40,,0.80,4000,
+62,Reka Core,Reka AI,10.00,,25.00,32000,vision
+63,Reka Flash,Reka AI,1.30,,4.00,100000,vision
+64,Reka Edge,Reka AI,0.40,,1.00,32000,
+65,Nova Pro,Amazon,1.20,,4.80,300000,prefix_cache|vision|tool_calls
+66,Nova Lite,Amazon,0.30,,1.20,300000,prefix_cache|vision|tool_calls
+67,Nova Micro,Amazon,0.10,,0.40,128000,tool_calls

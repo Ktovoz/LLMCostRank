@@ -1,0 +1,18 @@
+id,name,provider,monthly,quarterly,yearly,limit,calculationMethod,windowQuota,remark
+1,GLM Coding Lite,智谱,49,147|132,588|411,月,按prompt计费,80次,周限额 400次
+2,GLM Coding Pro,智谱,149,447|402,1788|1251,月,按prompt计费,400次,周限额 2000次
+3,GLM Coding Max,智谱,469,1407|1266,5628|3939,月,按prompt计费,1600次,周限额 8000次
+4,Lite 基础套餐,阿里云百炼,40|7.9,-,-,周/月,按调用次数计费,1200次,首月7.9 次月20 周9000次 月18000次
+5,Pro 高级套餐,阿里云百炼,200|39.9,-,-,周/月,按调用次数计费,6000次,首月39.9 次月100 周45000次 月90000次
+6,Starter,MiniMax,29,-,290,月,按prompt计费,40次,基础用量
+7,Plus,MiniMax,49,-,490,月,按prompt计费,100次,2.5倍用量
+8,Max,MiniMax,119,-,1190,月,按prompt计费,300次,7.5倍用量
+9,Plus-极速版,MiniMax,98,-,980,月,按prompt计费,100次,2.5倍用量
+10,Max-极速版,MiniMax,199,-,1990,月,按prompt计费,300次,7.5倍用量
+11,Ultra-极速版,MiniMax,899,-,8990,月,按prompt计费,2000次,50倍用量
+12,Coding Plan Lite,火山方舟,40|9.9,-,-,周/月,按调用次数计费,1200次,首购9.9 续费40 周9000次 月18000次
+13,Coding Plan Pro,火山方舟,200|49.9,-,-,周/月,按调用次数计费,6000次,首购49.9 续费200 5倍用量 周45000次 月90000次
+14,Andante,Kimi,49,-,588|468,月,按Agent额度计费,基础,Agent 4倍速 K2.5提速
+15,Moderato,Kimi,99,-,1188|948,月,按Agent额度计费,2倍,Agent多任务 K2.5 2倍 Kimi Code 4倍
+16,Allegretto,Kimi,199,-,-,月,按Agent额度计费,4倍,Agent多任务 K2.5 4倍 Kimi Code 20倍 专属助理
+17,Allegro,Kimi,699,-,-,月,按Agent额度计费,10倍,Agent多任务 K2.5 10倍 Kimi Code 60倍 专属助理 Agent集群
