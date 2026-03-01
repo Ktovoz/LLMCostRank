@@ -38,7 +38,16 @@ import {
   DialogTrigger,
 } from "@/components/ui/dialog"
 import { Toggle } from "@/components/ui/toggle"
-import { ChevronLeft, ChevronRight, Search, SlidersHorizontal, ArrowUpDown, ChevronsRightLeft } from "lucide-react"
+import { ChevronLeft, ChevronRight, Search, SlidersHorizontal, ArrowUpDown, ChevronsRightLeft, ChevronsLeft, ChevronsRight } from "lucide-react"
+import {
+  Pagination,
+  PaginationContent,
+  PaginationEllipsis,
+  PaginationItem,
+  PaginationLink,
+  PaginationNext,
+  PaginationPrevious,
+} from "@/components/ui/pagination"
 import { LLMModel, featureConfig } from "./columns"
 
 // 汇率：1 USD = 7.2 CNY
@@ -622,46 +631,171 @@ export function DataTable<TData, TValue>({
 
       {/* 分页 */}
       <div className={`flex flex-col sm:flex-row items-center justify-between gap-3 sm:gap-4 py-2 px-1`}>
-        <div className={`text-xs sm:text-sm ${isDark ? "text-gray-400" : "text-gray-500"}`}>
-          共 <span className="font-medium">{table.getFilteredRowModel().rows.length}</span> 个模型
-        </div>
-        <div className="flex items-center gap-1 sm:gap-2">
-          <Button
-            variant="outline"
-            size="sm"
-            onClick={() => table.previousPage()}
-            disabled={!table.getCanPreviousPage()}
-            className={`gap-1 h-8 sm:h-9 ${
-              isDark
-                ? "border-white/10 bg-white/5 hover:bg-white/10 disabled:opacity-30"
-                : "border-black/10 bg-white hover:bg-black/[0.02] disabled:opacity-30"
-            }`}
-          >
-            <ChevronLeft className="h-4 w-4" />
-            <span className="hidden xs:inline">上一页</span>
-          </Button>
-          <div className={`flex items-center gap-1 px-2 sm:px-3 py-1.5 rounded-md text-xs sm:text-sm ${
-            isDark ? "bg-white/5 text-gray-300" : "bg-black/[0.05] text-gray-600"
-          }`}>
-            <span className="font-medium">{table.getState().pagination.pageIndex + 1}</span>
-            <span className={isDark ? "text-gray-500" : "text-gray-400"}>/</span>
-            <span>{table.getPageCount()}</span>
+        <div className="flex items-center gap-4">
+          <div className={`text-xs sm:text-sm ${isDark ? "text-gray-400" : "text-gray-500"}`}>
+            共 <span className="font-medium">{table.getFilteredRowModel().rows.length}</span> 个模型
           </div>
-          <Button
-            variant="outline"
-            size="sm"
-            onClick={() => table.nextPage()}
-            disabled={!table.getCanNextPage()}
-            className={`gap-1 h-8 sm:h-9 ${
-              isDark
-                ? "border-white/10 bg-white/5 hover:bg-white/10 disabled:opacity-30"
-                : "border-black/10 bg-white hover:bg-black/[0.02] disabled:opacity-30"
-            }`}
-          >
-            <span className="hidden xs:inline">下一页</span>
-            <ChevronRight className="h-4 w-4" />
-          </Button>
+          {/* 每页条数选择 */}
+          <div className="flex items-center gap-2">
+            <span className={`text-xs sm:text-sm ${isDark ? "text-gray-400" : "text-gray-500"}`}>每页</span>
+            <select
+              value={table.getState().pagination.pageSize}
+              onChange={(e) => table.setPageSize(Number(e.target.value))}
+              className={`h-8 rounded-md border px-2 text-xs sm:text-sm ${
+                isDark
+                  ? "bg-white/5 border-white/10 text-gray-300 focus:border-sky-500/50 focus:ring-1 focus:ring-sky-500/20"
+                  : "bg-white border-black/10 text-gray-700 focus:border-sky-500/50 focus:ring-1 focus:ring-sky-500/20"
+              }`}
+            >
+              {[10, 20, 30, 50, 100].map((pageSize) => (
+                <option key={pageSize} value={pageSize}>
+                  {pageSize}
+                </option>
+              ))}
+            </select>
+            <span className={`text-xs sm:text-sm ${isDark ? "text-gray-400" : "text-gray-500"}`}>条</span>
+          </div>
         </div>
+
+        <Pagination>
+          <PaginationContent>
+            {/* 首页 */}
+            <PaginationItem>
+              <PaginationLink
+                onClick={() => table.setPageIndex(0)}
+                disabled={!table.getCanPreviousPage()}
+                className={`h-8 w-8 p-0 ${
+                  !table.getCanPreviousPage()
+                    ? "opacity-30 cursor-not-allowed"
+                    : isDark
+                      ? "hover:bg-white/10"
+                      : "hover:bg-black/5"
+                }`}
+                aria-label="首页"
+              >
+                <ChevronsLeft className="h-4 w-4" />
+              </PaginationLink>
+            </PaginationItem>
+
+            {/* 上一页 */}
+            <PaginationItem>
+              <PaginationPrevious
+                onClick={() => table.previousPage()}
+                disabled={!table.getCanPreviousPage()}
+                className={`h-8 ${
+                  !table.getCanPreviousPage()
+                    ? "opacity-30 cursor-not-allowed"
+                    : isDark
+                      ? "hover:bg-white/10"
+                      : "hover:bg-black/5"
+                }`}
+              />
+            </PaginationItem>
+
+            {/* 页码 */}
+            {(() => {
+              const currentPage = table.getState().pagination.pageIndex
+              const totalPages = table.getPageCount()
+
+              // 生成要显示的页码
+              const getVisiblePages = () => {
+                const pages: (number | string)[] = []
+
+                if (totalPages <= 7) {
+                  // 如果总页数小于等于7，显示所有页码
+                  for (let i = 0; i < totalPages; i++) {
+                    pages.push(i)
+                  }
+                } else {
+                  // 始终显示第一页
+                  pages.push(0)
+
+                  if (currentPage > 2) {
+                    pages.push('ellipsis-start')
+                  }
+
+                  // 显示当前页附近的页码
+                  const start = Math.max(1, currentPage - 1)
+                  const end = Math.min(totalPages - 2, currentPage + 1)
+
+                  for (let i = start; i <= end; i++) {
+                    pages.push(i)
+                  }
+
+                  if (currentPage < totalPages - 3) {
+                    pages.push('ellipsis-end')
+                  }
+
+                  // 始终显示最后一页
+                  pages.push(totalPages - 1)
+                }
+
+                return pages
+              }
+
+              return getVisiblePages().map((page, index) => {
+                if (typeof page === 'string') {
+                  return (
+                    <PaginationItem key={page}>
+                      <PaginationEllipsis className={isDark ? "text-gray-500" : "text-gray-400"} />
+                    </PaginationItem>
+                  )
+                }
+
+                return (
+                  <PaginationItem key={index}>
+                    <PaginationLink
+                      onClick={() => table.setPageIndex(page as number)}
+                      isActive={currentPage === page}
+                      className={`h-8 w-8 ${
+                        currentPage === page
+                          ? ""
+                          : isDark
+                            ? "hover:bg-white/10"
+                            : "hover:bg-black/5"
+                      }`}
+                    >
+                      {(page as number) + 1}
+                    </PaginationLink>
+                  </PaginationItem>
+                )
+              })
+            })()}
+
+            {/* 下一页 */}
+            <PaginationItem>
+              <PaginationNext
+                onClick={() => table.nextPage()}
+                disabled={!table.getCanNextPage()}
+                className={`h-8 ${
+                  !table.getCanNextPage()
+                    ? "opacity-30 cursor-not-allowed"
+                    : isDark
+                      ? "hover:bg-white/10"
+                      : "hover:bg-black/5"
+                }`}
+              />
+            </PaginationItem>
+
+            {/* 末页 */}
+            <PaginationItem>
+              <PaginationLink
+                onClick={() => table.setPageIndex(table.getPageCount() - 1)}
+                disabled={!table.getCanNextPage()}
+                className={`h-8 w-8 p-0 ${
+                  !table.getCanNextPage()
+                    ? "opacity-30 cursor-not-allowed"
+                    : isDark
+                      ? "hover:bg-white/10"
+                      : "hover:bg-black/5"
+                }`}
+                aria-label="末页"
+              >
+                <ChevronsRight className="h-4 w-4" />
+              </PaginationLink>
+            </PaginationItem>
+          </PaginationContent>
+        </Pagination>
       </div>
     </div>
   )
