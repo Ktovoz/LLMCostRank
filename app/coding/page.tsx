@@ -110,7 +110,7 @@ export default function CodingPage() {
           <span className={`text-xs sm:text-sm font-mono tracking-wider font-semibold ${
             isDark ? "text-neutral-300" : "text-slate-600"
           }`}>
-            ✨ UPDATED: 2026-03-01
+            ✨ UPDATED: 2026-03-08
           </span>
         </div>
         <h1 className={`text-4xl sm:text-5xl md:text-6xl lg:text-[5.5rem] font-extrabold tracking-tight mb-6 sm:mb-8 leading-[1.1] ${
